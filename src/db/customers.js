@@ -54,7 +54,13 @@ async function getCustomer({ name, password }) {
   }
 }
 
-async function getAllCustomers() {}
+async function getAllCustomers() {
+  try {
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
 
 async function getCustomerById(customerId) {
   try {
