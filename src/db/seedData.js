@@ -1,6 +1,7 @@
 const client = require("./client");
 const { createCustomer } = require("./customers");
 const { createProduct } = require("./products");
+const { createReview } = require("./reviews");
 
 //drops all tables (if they exist)
 const dropTables = async () => {
@@ -173,6 +174,24 @@ async function createInitialProducts() {
   }
 }
 
+async function createInitialReviews() {
+  console.log("Starting to create reviews...");
+  try {
+    const reviewsToCreate = [
+      { name: "Spicy Beef Pho", description: "INCREDIBLE", rating: 10 },
+      { name: "Kimchi Burger", description: "DELICIOUS", rating: 10 },
+      { name: "Vietnamese Pork Tacos!", description: "HOLY MOLY", rating: 10 },
+    ];
+    const reviews = await Promise.all(reviewsToCreate.map(createReview));
+    console.log("Reviews created");
+    console.log(reviews);
+    console.log("Finished creating reviews");
+  } catch (error) {
+    console.error("Error creating reviews!");
+    throw error;
+  }
+}
+
 async function rebuildDB() {
   try {
     client.connect();
@@ -180,6 +199,7 @@ async function rebuildDB() {
     await createTables();
     await createInitialCustomers();
     await createInitialProducts();
+    await createInitialReviews();
   } catch (error) {
     console.log("Error during rebuildDB");
     throw error;
