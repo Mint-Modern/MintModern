@@ -7,11 +7,11 @@ Tri Approved
 
 createCustomer **
 getCustomer **
-getAllCustomers (ifAdmin)
+getAllCustomers (ifAdmin) **
 getCustomerById **
 getCustomerByUsername **
-updateCustomer
-deleteCustomer
+updateCustomer **
+deleteCustomer **
 
 */
 
@@ -54,11 +54,18 @@ async function getCustomer({ name, password }) {
   }
 }
 
-async function getAllCustomers() {
-  try {
-  } catch (error) {
-    console.error(error);
-    throw error;
+async function getAllCustomers(customerId) {
+  const customer = getCustomerById(customerId);
+  if (customer.isAdmin === true) {
+    try {
+      const { rows: customers } = await client.query(`
+            SELECT * FROM customers
+            `);
+      return customers;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
   }
 }
 
@@ -97,9 +104,50 @@ async function getCustomerByUsername(username) {
   }
 }
 
-async function updateCustomer() {}
+async function updateCustomer({ id, ...fields }) {
+  const setString = Object.keys(fields)
+    .map((key, index) => `"${key}"=$${index + 1}`)
+    .join(", ");
+  try {
+    // update any fields that need to be updated
+    if (setString.length > 0) {
+      const {
+        rows: [customer],
+      } = await client.query(
+        `
+            UPDATE reviews
+            SET ${setString}
+            WHERE id=${id}
+            RETURNING *;
+          `,
+        Object.values(customer)
+      );
+      return customer;
+    }
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
 
-async function deleteCustomer() {}
+async function deleteCustomer(id) {
+  try {
+    const {
+      rows: [customers],
+    } = await client.query(
+      `
+              DELETE FROM customers
+              WHERE id = ${id}
+              RETURNING *;
+              
+            `
+    );
+    return customers;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
 
 module.exports = {
   getCustomer,
