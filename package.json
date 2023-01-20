@@ -1,0 +1,48 @@
+{
+  "name": "mintmodern",
+  "version": "1.0.0",
+  "description": "What does this group do when two or more members disagree on a choice?   * Goes to a vote between remaining members, on 50/50 split deciding vote goes to project manager (Tri).",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "seed:dev": "nodemon ./src/db/seedData.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mint-Modern/MintModern.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mint-Modern/MintModern/issues"
+  },
+  "dependencies": {
+    "axios": "^1.2.3",
+    "bcrypt": "^5.1.0",
+    "chalk": "^5.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "pg": "^8.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
