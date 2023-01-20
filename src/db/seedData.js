@@ -1,4 +1,6 @@
 const client = require("./client");
+const { createCustomer } = require("./customers");
+const { createProduct } = require("./products");
 
 //drops all tables (if they exist)
 const dropTables = async () => {
@@ -31,8 +33,8 @@ const createTables = async () => {
         name VARCHAR(255) UNIQUE NOT NULL,
         password VARCHAR(255) NOT NULL,
         email VARCHAR(255) UNIQUE NOT NULL,
-        "phoneNumber" VARCHAR(255) UNIQUE NOT NULL,
-        "isAdmin" BOOLEAN DEFAULT false
+        phoneNumber VARCHAR(255) UNIQUE NOT NULL,
+        isAdmin BOOLEAN DEFAULT false
         );
 
         CREATE TABLE products (
@@ -81,11 +83,103 @@ const createTables = async () => {
   }
 };
 
+async function createInitialCustomers() {
+  console.log("Startin to create customers...");
+  try {
+    const customersToCreate = [
+      {
+        name: "Collin",
+        password: "password",
+        email: "weCodingNow0@gmail.com",
+        phoneNumber: "(281) 330-8004",
+        isAdmin: true,
+      },
+      {
+        name: "Krystle",
+        password: "password",
+        email: "weCodingNow1@gmail.com",
+        phoneNumber: "281-330-8004",
+        isAdmin: true,
+      },
+      {
+        name: "Maria",
+        password: "password",
+        email: "weCodingNow2@gmail.com",
+        phoneNumber: "281 330-8004",
+        isAdmin: true,
+      },
+      {
+        name: "Chandler",
+        password: "password",
+        email: "weCodingNow3@gmail.com",
+        phoneNumber: "281--330-8004",
+        isAdmin: true,
+      },
+    ];
+    const customers = await Promise.all(customersToCreate.map(createCustomer));
+
+    console.log("Customers created: ");
+    console.log(customers);
+    console.log("Finished creating customers");
+  } catch (error) {
+    console.error("Error creating users!");
+    throw error;
+  }
+}
+
+async function createInitialProducts() {
+  console.log("Starting to create products...");
+  try {
+    const productsToCreate = [
+      {
+        name: "Avocado Rolls",
+        description: "2 pieces",
+        category: null,
+        price: 4.0,
+      },
+      {
+        name: "Shrimp & Pork Rolls",
+        description: "2 pieces",
+        category: null,
+        price: 4.5,
+      },
+      {
+        name: "Vietnamese Pork Tacos",
+        description: "2 pieces",
+        category: null,
+        price: 5.0,
+      },
+      {
+        name: "Spicy Beef Pho",
+        description: "That gud gud",
+        category: null,
+        price: 9.0,
+      },
+      {
+        name: "Kimchi Burger",
+        description: "Served with sweet potato fries.",
+        category: null,
+        price: 10.0,
+      },
+    ];
+    const products = await Promise.all(productsToCreate.map(createProduct));
+
+    console.log("Products created: ");
+    console.log(products);
+    console.log("Finished creating products!");
+  } catch (error) {
+    console.error("Error creating products!");
+    throw error;
+  }
+}
+
 async function rebuildDB() {
   try {
     client.connect();
     await dropTables();
     await createTables();
+    await createInitialCustomers();
+    await createInitialProducts();
   } catch (error) {
     console.log("Error during rebuildDB");
     throw error;
