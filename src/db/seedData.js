@@ -116,6 +116,13 @@ async function createInitialCustomers() {
         phoneNumber: "281--330-8004",
         isAdmin: true,
       },
+      {
+        name: "mike jones",
+        password: "password",
+        email: "weCodingNow4@gmail.com",
+        phoneNumber: "281--330--8004",
+        isAdmin: false,
+      },
     ];
     const customers = await Promise.all(customersToCreate.map(createCustomer));
 
