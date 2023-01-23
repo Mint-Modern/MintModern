@@ -5,12 +5,15 @@ const server = express();
 const apiRouter = require("./api");
 const morgan = require("morgan");
 const { client } = require("./src/db");
+const cors = require("cors");
 
 client.connect();
 
 server.use(morgan("dev"));
 
 server.use(express.json());
+
+server.use(cors());
 
 server.use("/api", apiRouter);
 

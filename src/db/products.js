@@ -73,7 +73,7 @@ async function attachProductToOrder(orderId) {
   const orderToReturn = await getOrderById(orderId);
   try {
     const { rows: products } = await client.query(`
-      SELECT products.*, orderProducts.id AS "orderProductId", orderProduct."productId"
+      SELECT products.*, orderProducts.id AS "orderProductId", orderProducts."orderId", orderProducts.quantity
       FROM products
       JOIN orderProducts ON orderProducts."productId" = products.id;
       `);
