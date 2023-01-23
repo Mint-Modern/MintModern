@@ -48,10 +48,13 @@ async function getReviewById(id) {
   try {
     const {
       rows: [review],
-    } = await client.query(`
+    } = await client.query(
+      `
     SELECT * FROM reviews
-    WHERE id = ${id}
-    `);
+    WHERE id = $1
+    `,
+      [id]
+    );
     return review;
   } catch (error) {
     console.error(error);

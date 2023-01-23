@@ -70,7 +70,7 @@ async function getProductByName(name) {
 
 //======================= CHECK THIS ONE ======================
 async function attachProductToOrder(orderId) {
-  const orderToReturn = getOrderById(orderId);
+  const orderToReturn = await getOrderById(orderId);
   try {
     const { rows: products } = await client.query(`
       SELECT products.*, orderProducts.id AS "orderProductId", orderProduct."productId"
@@ -135,7 +135,7 @@ async function deleteProduct(id) {
       rows: [products],
     } = await client.query(
       `
-        DELETE FROM reviews
+        DELETE FROM products
         WHERE id = ${id}
         RETURNING *;
 
