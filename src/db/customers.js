@@ -25,7 +25,7 @@ async function createCustomer({ name, password, email, phoneNumber, isAdmin }) {
       `
     INSERT INTO customers(name, password, email, phoneNumber, isAdmin)
     VALUES ($1, $2, $3, $4, $5)
-    ON CONFLICT (name) DO NOTHING
+    ON CONFLICT (name, email, phoneNumber) DO NOTHING
     RETURNING *;
     `,
       [name, hashedPassword, email, phoneNumber, isAdmin]
@@ -55,7 +55,7 @@ async function getCustomer({ name, password }) {
 }
 
 async function getAllCustomers(customerId) {
-  const customer = getCustomerById(customerId);
+  const customer = await getCustomerById(customerId);
   if (customer.isAdmin === true) {
     try {
       const { rows: customers } = await client.query(`
@@ -93,7 +93,7 @@ async function getCustomerByUsername(username) {
       `
         SELECT *
         FROM USERS
-        WHERE username = $1
+        WHERE name = $1
         `,
       [username]
     );
@@ -115,7 +115,7 @@ async function updateCustomer({ id, ...fields }) {
         rows: [customer],
       } = await client.query(
         `
-            UPDATE reviews
+            UPDATE customers
             SET ${setString}
             WHERE id=${id}
             RETURNING *;
