@@ -25,7 +25,7 @@ async function createCustomer({ name, password, email, phoneNumber, isAdmin }) {
       `
     INSERT INTO customers(name, password, email, phoneNumber, isAdmin)
     VALUES ($1, $2, $3, $4, $5)
-    ON CONFLICT (name, email, phoneNumber) DO NOTHING
+    ON CONFLICT (name) DO NOTHING
     RETURNING *;
     `,
       [name, hashedPassword, email, phoneNumber, isAdmin]
