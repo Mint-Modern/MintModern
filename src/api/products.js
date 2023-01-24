@@ -4,8 +4,6 @@ const {
   createProduct,
   getProductById,
   getProductByName,
-  //?????
-  attachProductToOrder,
   getAllProducts,
   updateProduct,
   deleteProduct,
@@ -108,7 +106,5 @@ router.delete("./:productId", requireCustomer, async (req, res, next) => {
     next(error);
   }
 });
-
-// POST /api/orders/:orderId/products ???
 
 module.exports = router;

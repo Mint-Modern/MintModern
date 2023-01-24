@@ -2,7 +2,7 @@ require("dotenv").config();
 const PORT = 3000;
 const express = require("express");
 const server = express();
-const apiRouter = require("./api");
+const apiRouter = require("./src/api");
 const morgan = require("morgan");
 const { client } = require("./src/db");
 const cors = require("cors");
@@ -38,7 +38,7 @@ server.use((error, req, res, next) => {
     name: error.name,
     message: error.message,
     table: error.table,
-  })
+  });
 });
 
 server.use((req, res, next) => {
