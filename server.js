@@ -1,10 +1,10 @@
 require("dotenv").config();
-const PORT = 3000;
+const PORT = 4000;
 const express = require("express");
 const server = express();
 const apiRouter = require("./src/api");
 const morgan = require("morgan");
-const { client } = require("./src/db");
+const client = require("./src/db/client.js");
 const cors = require("cors");
 
 client.connect();
