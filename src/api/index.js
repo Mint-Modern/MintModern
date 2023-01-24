@@ -40,17 +40,17 @@ router.use("/customers", customersRouter);
 const productsRouter = require("./products");
 router.use("/products", productsRouter);
 
-//ROUTER: api/customerReviews
-const customerReviewsRouter = require("./customerReviews");
-router.use("/customer_reviews", customerReviewsRouter);
+// //ROUTER: api/customerReviews
+// const customerReviewsRouter = require("./customerReviews");
+// router.use("/customer_reviews", customerReviewsRouter);
 
-//ROUTER: api/orders
-const ordersRouter = require("./orders");
-router.use("/orders", ordersRouter);
+// //ROUTER: api/orders
+// const ordersRouter = require("./orders");
+// router.use("/orders", ordersRouter);
 
-//ROUTER: api/orderProducts
-const orderProductsRouter = require("./orderProducts");
-router.use("/order_products", orderProductsRouter);
+// //ROUTER: api/orderProducts
+// const orderProductsRouter = require("./orderProducts");
+// router.use("/order_products", orderProductsRouter);
 
 //ROUTER: api/reviews
 const reviewsRouter = require("./reviews");
