@@ -20,8 +20,19 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+// GET /api/products/:productId
+router.get("/:productId", async (req, res, next) => {
+  const { productId } = req.params;
+  try {
+    const product = await getProductById(productId);
+    res.send(product);
+  } catch (error) {
+    next(error);
+  }
+});
+
 // POST /api/products
-router.post("/", requireCustomer, async (req, res, next) => {
+router.post("/", async (req, res, next) => {
   const { name, description, category, price } = req.body;
   const products = await getAllProducts();
   const productData = {};
@@ -50,7 +61,7 @@ router.post("/", requireCustomer, async (req, res, next) => {
 });
 
 //PATCH /api/products/:productId
-router.patch("./:productId", requireCustomer, async (req, res, next) => {
+router.patch("./:productId", async (req, res, next) => {
   const { productId } = req.params;
   const { name, description, category, price } = req.body;
   const fields = {};
@@ -87,7 +98,7 @@ router.patch("./:productId", requireCustomer, async (req, res, next) => {
 });
 
 //DELETE /api/products/:productId
-router.delete("./:productId", requireCustomer, async (req, res, next) => {
+router.delete("./:productId", async (req, res, next) => {
   const { productId } = req.params;
 
   const product = await getProductById(productId);
