@@ -4,7 +4,7 @@ const client = require("./client");
 
 Tri Approved
 
-attachProductToOrder
+addProductToOrder
 getOrderProductById
 updateOrderProduct
 destroyOrderProduct
