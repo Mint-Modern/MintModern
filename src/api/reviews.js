@@ -44,9 +44,15 @@ router.patch("/:reviewId", requireCustomer, async (req, res, next) => {
   const { name, description, rating } = req.body;
   const fields = {};
 
-  fields.name = name;
-  fields.description = description;
-  fields.rating = rating;
+  if (req.body.name) {
+    fields.name = name;
+  }
+  if (req.body.description) {
+    fields.description = description;
+  }
+  if (req.body.rating) {
+    fields.rating = rating;
+  }
 
   const review = await getReviewById(reviewId);
   if (!review) {

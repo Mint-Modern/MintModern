@@ -55,18 +55,19 @@ async function getCustomer({ name, password }) {
 }
 
 async function getAllCustomers(customerId) {
-  const customer = await getCustomerById(customerId);
-  if (customer.isAdmin === true) {
-    try {
-      const { rows: customers } = await client.query(`
+  // const customer = await getCustomerById(customerId);
+  // console.log(customer);
+  // if (customer.isAdmin === true) {
+  try {
+    const { rows: customers } = await client.query(`
             SELECT * FROM customers
             `);
-      return customers;
-    } catch (error) {
-      console.error(error);
-      throw error;
-    }
+    return customers;
+  } catch (error) {
+    console.error(error);
+    throw error;
   }
+  // }
 }
 
 async function getCustomerById(customerId) {

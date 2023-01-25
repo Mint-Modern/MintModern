@@ -8,7 +8,7 @@ const {
   updateProduct,
   deleteProduct,
 } = require("../db");
-const { requireCustomer } = require("./utils");
+// const { requireCustomer } = require("./utils");
 
 // GET /api/products
 router.get("/", async (req, res, next) => {
@@ -54,6 +54,7 @@ router.post("/", async (req, res, next) => {
     }
 
     const product = createProduct(productData);
+    // ASK TRI WHY SENDS BACK EMPTY OBJECT BUT DOES UPDATE THE DATABASE
     res.send(product);
   } catch (error) {
     next(error);
@@ -66,10 +67,18 @@ router.patch("/:productId", async (req, res, next) => {
   const { name, description, category, price } = req.body;
   const fields = {};
 
-  fields.name = name;
-  fields.description = description;
-  fields.category = category;
-  fields.price = price;
+  if (req.body.name) {
+    fields.name = name;
+  }
+  if (req.body.description) {
+    fields.description = description;
+  }
+  if (req.body.category) {
+    fields.category = category;
+  }
+  if (req.body.price) {
+    fields.price = price;
+  }
 
   const product = await getProductById(productId);
   if (!product) {
