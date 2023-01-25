@@ -52,7 +52,7 @@ router.post("/", requireCustomer, async (req, res, next) => {
   orderData.isActive = isActive;
 
   try {
-    const order = createOrder(orderData);
+    const order = await createOrder(orderData);
     res.send(order);
   } catch (error) {
     next(error);
@@ -64,7 +64,7 @@ router.post("/", requireCustomer, async (req, res, next) => {
   const { orderId } = req.params;
 
   try {
-    const productToAdd = attachProductToOrder(orderId);
+    const productToAdd = await attachProductToOrder(orderId);
     res.send(productToAdd);
   } catch (error) {
     next(error);
@@ -75,7 +75,7 @@ router.post("/", requireCustomer, async (req, res, next) => {
 router.delete("/:orderId", requireCustomer, async (req, res, next) => {
   const { orderId } = req.params;
 
-  const order = await getorderById(orderId);
+  const order = await getOrderById(orderId);
   if (!order) {
     next({
       error: "orderDoesNotExist",
@@ -85,7 +85,7 @@ router.delete("/:orderId", requireCustomer, async (req, res, next) => {
   }
 
   try {
-    const orderToDelete = await deleteorder(orderId);
+    const orderToDelete = await deleteOrder(orderId);
     res.send(orderToDelete);
   } catch (error) {
     next(error);
