@@ -8,6 +8,7 @@ const {
   attachReviewToCustomer,
   updateReview,
   deleteReview,
+  getCustomerReviewById,
 } = require("../db");
 const { requireCustomer } = require("./utils");
 
@@ -31,7 +32,7 @@ router.post("/", requireCustomer, async (req, res, next) => {
   reviewData.rating = rating;
 
   try {
-    const review = createReview(reviewData);
+    const review = await createReview(reviewData);
     res.send(review);
   } catch (error) {
     next(error);
@@ -92,6 +93,16 @@ router.delete("/:reviewId", requireCustomer, async (req, res, next) => {
   }
 });
 
-//POST /api/customers/:customerId/reviews ????
+//POST /api/customers/:customerId/reviews
+router.get("/:customerId/reviews", requireCustomer, async (req, res, next) => {
+  const customerId = req.params;
+  console.log("this is req params", customerId);
+  try {
+    const reviewToAdd = await attachReviewToCustomer(customerId);
+    res.send(reviewToAdd);
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = router;
