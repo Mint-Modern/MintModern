@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+import AboutUs from "./components/aboutUs";
 
 const App = () => {
-  return <div>Hello World</div>;
+
+  return (
+    <>
+      <div>Hello World!</div>
+      <AboutUs />
+  </>)
 };
 
 ReactDOM.render(<App />, document.getElementById("app"));
+
+
