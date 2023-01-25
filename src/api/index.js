@@ -16,7 +16,7 @@ router.use(async (req, res, next) => {
       const { id } = jwt.verify(token, JWT_SECRET);
 
       if (id) {
-        req.user = await getCustomerById(id);
+        req.customer = await getCustomerById(id);
         next();
       }
     } catch ({ name, message }) {
@@ -40,17 +40,17 @@ router.use("/customers", customersRouter);
 const productsRouter = require("./products");
 router.use("/products", productsRouter);
 
-// //ROUTER: api/customerReviews
-// const customerReviewsRouter = require("./customerReviews");
-// router.use("/customer_reviews", customerReviewsRouter);
+//ROUTER: api/customerReviews
+const customerReviewsRouter = require("./customerReviews");
+router.use("/customer_reviews", customerReviewsRouter);
 
-// //ROUTER: api/orders
-// const ordersRouter = require("./orders");
-// router.use("/orders", ordersRouter);
+//ROUTER: api/orders
+const ordersRouter = require("./orders");
+router.use("/orders", ordersRouter);
 
-// //ROUTER: api/orderProducts
-// const orderProductsRouter = require("./orderProducts");
-// router.use("/order_products", orderProductsRouter);
+//ROUTER: api/orderProducts
+const orderProductsRouter = require("./orderProducts");
+router.use("/order_products", orderProductsRouter);
 
 //ROUTER: api/reviews
 const reviewsRouter = require("./reviews");

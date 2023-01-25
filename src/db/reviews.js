@@ -104,7 +104,7 @@ async function updateReview({ id, ...fields }) {
             WHERE id=${id}
             RETURNING *;
           `,
-        Object.values(review)
+        Object.values(fields)
       );
       return review;
     }

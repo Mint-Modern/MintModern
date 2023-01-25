@@ -81,7 +81,7 @@ router.post("/register", async (req, res, next) => {
 //POST /api/customers/login
 router.post("/login", async (req, res, next) => {
   const { name, password } = req.body;
-
+  console.log(name, password);
   if (!name || !password) {
     next({
       name: "MissingCredentialsError",
@@ -90,7 +90,7 @@ router.post("/login", async (req, res, next) => {
   }
 
   try {
-    const customer = await getCustomerByUsername(username);
+    const customer = await getCustomerByUsername(name);
     const hashedPassword = customer.password;
     const match = await bcrypt.compare(password, hashedPassword);
     if (customer && match) {
@@ -126,27 +126,25 @@ router.get("/me", requireCustomer, async (req, res, next) => {
     next(error);
   }
 });
-//GET /api/customers/:name/products
-// router.get("/:name/products", async (res, req, next) => {
-//     try {
-//         const { name } = req.params;
-//         // console.log("me: ", me);
-//         const products = await getAllProducts;
-//     } catch (error) {
-//         next(error)
-//     }
-// })
 
 //PATCH /api/customer/:customerId
-router.patch("./:customerId", requireCustomer, async (req, res, next) => {
+router.patch("/:customerId", requireCustomer, async (req, res, next) => {
   const { customerId } = req.params;
   const { name, password, phoneNumber, email } = req.body;
   const fields = {};
 
-  fields.name = name;
-  fields.password = password;
-  fields.phoneNumber = phoneNumber;
-  fields.email = email;
+  if (req.body.name) {
+    fields.name = name;
+  }
+  if (req.body.password) {
+    fields.password = password;
+  }
+  if (req.body.phoneNumber) {
+    fields.phoneNumber = phoneNumber;
+  }
+  if (req.body.email) {
+    fields.email = email;
+  }
 
   const customer = await getCustomerById(customerId);
   if (!customer) {
@@ -156,15 +154,16 @@ router.patch("./:customerId", requireCustomer, async (req, res, next) => {
       name: `${customerId}`,
     });
   }
-
-  const checkCustomerName = await getCustomerByUsername(username);
+  console.log("this is after checkcCustomerId");
+  const checkCustomerName = await getCustomerByUsername(name);
   if (checkCustomerName) {
     next({
       error: "Error",
-      message: `A customer with name ${username} already exists`,
+      message: `A customer with name ${name} already exists`,
       name: `${checkCustomerName}`,
     });
   }
+  console.log("this is after checkcCustomerUsername");
 
   try {
     const update = await updateCustomer({ id: customerId, ...fields });
@@ -175,7 +174,7 @@ router.patch("./:customerId", requireCustomer, async (req, res, next) => {
 });
 
 //DELETE /api/customers/:customerId
-router.delete("./:customerId", requireCustomer, async (req, res, next) => {
+router.delete("/:customerId", requireCustomer, async (req, res, next) => {
   const { customerId } = req.params;
 
   const customer = await getCustomerById(customerId);

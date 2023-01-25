@@ -12,7 +12,7 @@ const { requireCustomer } = require("./utils");
 // })
 
 // PATCH /api/orderProducts/:orderProductId
-router.patch("./:orderProductId", requireCustomer, async (req, res, next) => {
+router.patch("/:orderProductId", requireCustomer, async (req, res, next) => {
   const { orderProductId } = req.params;
   const { orderId, productId, quantity } = req.body;
   const fields = {};
@@ -37,7 +37,7 @@ router.patch("./:orderProductId", requireCustomer, async (req, res, next) => {
 });
 
 // DELETE /api/orderProducts/:orderProductId
-router.delete("./:orderProductId", requireCustomer, async (req, res, next) => {
+router.delete("/:orderProductId", requireCustomer, async (req, res, next) => {
   const { orderProductId } = req.params;
 
   const orderProduct = await getOrderProductById(orderProductId);

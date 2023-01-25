@@ -23,7 +23,7 @@ async function createCustomer({ name, password, email, phoneNumber, isAdmin }) {
       rows: [customer],
     } = await client.query(
       `
-    INSERT INTO customers(name, password, email, phoneNumber, isAdmin)
+    INSERT INTO customers(name, password, email, "phoneNumber", "isAdmin")
     VALUES ($1, $2, $3, $4, $5)
     ON CONFLICT (name) DO NOTHING
     RETURNING *;
@@ -92,7 +92,7 @@ async function getCustomerByUsername(username) {
     } = await client.query(
       `
         SELECT *
-        FROM USERS
+        FROM customers
         WHERE name = $1
         `,
       [username]
@@ -120,7 +120,7 @@ async function updateCustomer({ id, ...fields }) {
             WHERE id=${id}
             RETURNING *;
           `,
-        Object.values(customer)
+        Object.values(fields)
       );
       return customer;
     }

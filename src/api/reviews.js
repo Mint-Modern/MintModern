@@ -66,7 +66,7 @@ router.patch("/:reviewId", requireCustomer, async (req, res, next) => {
 });
 
 //DELETE /api/reviews/:reviewId
-router.delete("./:reviewId", requireCustomer, async (req, res, next) => {
+router.delete("/:reviewId", requireCustomer, async (req, res, next) => {
   const { reviewId } = req.params;
 
   const review = await getReviewById(reviewId);

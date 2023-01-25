@@ -119,7 +119,7 @@ async function updateProduct({ id, ...fields }) {
             WHERE id=${id}
             RETURNING *;
           `,
-        Object.values(product)
+        Object.values(fields)
       );
       return product;
     }

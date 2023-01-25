@@ -61,7 +61,7 @@ router.post("/", async (req, res, next) => {
 });
 
 //PATCH /api/products/:productId
-router.patch("./:productId", async (req, res, next) => {
+router.patch("/:productId", async (req, res, next) => {
   const { productId } = req.params;
   const { name, description, category, price } = req.body;
   const fields = {};
@@ -98,7 +98,7 @@ router.patch("./:productId", async (req, res, next) => {
 });
 
 //DELETE /api/products/:productId
-router.delete("./:productId", async (req, res, next) => {
+router.delete("/:productId", async (req, res, next) => {
   const { productId } = req.params;
 
   const product = await getProductById(productId);
