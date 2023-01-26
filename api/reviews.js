@@ -15,7 +15,7 @@ const { requireCustomer } = require("./utils");
 // GET api/reviews
 router.get("/", async (req, res, next) => {
   try {
-    const reviews = await getAllReviews();
+    const { rows: reviews } = await getAllReviews();
     res.send(reviews);
   } catch (error) {
     next(error);
@@ -31,6 +31,7 @@ router.post("/", requireCustomer, async (req, res, next) => {
   reviewData.description = description;
   reviewData.rating = rating;
 
+  console.log(customerId);
   try {
     const review = await createReview(reviewData);
     res.send(review);
@@ -88,18 +89,6 @@ router.delete("/:reviewId", requireCustomer, async (req, res, next) => {
   try {
     const reviewToDelete = await deleteReview(reviewId);
     res.send(reviewToDelete);
-  } catch (error) {
-    next(error);
-  }
-});
-
-//POST /api/customers/:customerId/reviews
-router.get("/:customerId/reviews", requireCustomer, async (req, res, next) => {
-  const customerId = req.params;
-  console.log("this is req params", customerId);
-  try {
-    const reviewToAdd = await attachReviewToCustomer(customerId);
-    res.send(reviewToAdd);
   } catch (error) {
     next(error);
   }

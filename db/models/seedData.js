@@ -1,4 +1,4 @@
-const client = require("./client");
+const client = require("../client");
 const { createCustomer } = require("./customers");
 const { createProduct } = require("./products");
 const { createReview } = require("./reviews");
@@ -50,7 +50,8 @@ const createTables = async () => {
         id SERIAL PRIMARY KEY,
         name VARCHAR(255),
         description VARCHAR(255),
-        rating INTEGER
+        rating INTEGER,
+        "userId" INTEGER REFERENCES customers(id)
         );
 
         CREATE TABLE orders (
@@ -185,9 +186,24 @@ async function createInitialReviews() {
   console.log("Starting to create reviews...");
   try {
     const reviewsToCreate = [
-      { name: "Spicy Beef Pho", description: "INCREDIBLE", rating: 10 },
-      { name: "Kimchi Burger", description: "DELICIOUS", rating: 10 },
-      { name: "Vietnamese Pork Tacos!", description: "HOLY MOLY", rating: 10 },
+      {
+        name: "Spicy Beef Pho",
+        description: "INCREDIBLE",
+        rating: 10,
+        userId: 1,
+      },
+      {
+        name: "Kimchi Burger",
+        description: "DELICIOUS",
+        rating: 10,
+        userId: 2,
+      },
+      {
+        name: "Vietnamese Pork Tacos!",
+        description: "HOLY MOLY",
+        rating: 10,
+        userId: 3,
+      },
     ];
     const reviews = await Promise.all(reviewsToCreate.map(createReview));
     console.log("Reviews created");
