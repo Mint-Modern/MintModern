@@ -30,8 +30,8 @@ router.get("/:orderId", async (req, res, next) => {
   }
 });
 
-// GET /api/orders/:customerId
-router.get("/:customerId", async (req, res, next) => {
+// GET /api/orders/:customerId/orders
+router.get("/:customerId/orders", async (req, res, next) => {
   const { customerId } = req.params;
   try {
     const orders = await getAllOrdersByCustomer(customerId);

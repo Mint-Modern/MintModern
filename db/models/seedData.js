@@ -193,6 +193,18 @@ async function createInitialOrders() {
         salesTax: 0.1,
         isActive: true,
       },
+      {
+        userId: 1,
+        total: 0,
+        salesTax: 0.1,
+        isActive: false,
+      },
+      {
+        userId: 2,
+        total: 0,
+        salesTax: 0.1,
+        isActive: true,
+      },
     ];
     const orders = await Promise.all(ordersToCreate.map(createOrder));
     console.log("Order created");
