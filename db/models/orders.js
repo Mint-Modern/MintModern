@@ -1,4 +1,5 @@
 const client = require("../client");
+const { attachProductToOrder } = require("./products");
 
 /*
 
@@ -62,7 +63,7 @@ async function getAllOrders() {
 async function getAllOrdersByCustomer(customerId) {
   try {
     const { rows: orders } = await client.query(`
-    SELECT id FROM orders
+    SELECT * FROM orders
     WHERE "userId" = ${customerId};
     `);
     return orders;
@@ -75,11 +76,12 @@ async function getAllOrdersByCustomer(customerId) {
 //getOrderByUserIsActive
 async function getOrderByUserIsActive(customerId) {
   try {
+    console.log(customerId);
     const { rows: order } = await client.query(`
     SELECT * FROM orders
     WHERE "userId" = ${customerId} AND "isActive" = true;
     `);
-    return order;
+    return attachProductToOrder(order);
   } catch (error) {
     console.error(error);
     throw error;

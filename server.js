@@ -15,7 +15,7 @@ server.use(express.json());
 
 server.use(cors());
 
-server.use("./api", apiRouter);
+server.use("/api", apiRouter);
 
 server.get("*", (req, res) => {
   res.status(404).send({

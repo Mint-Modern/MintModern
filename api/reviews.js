@@ -13,7 +13,7 @@ const { requireCustomer } = require("./utils");
 // GET api/reviews
 router.get("/", async (req, res, next) => {
   try {
-    const { rows: reviews } = await getAllReviews();
+    const reviews = await getAllReviews();
     res.send(reviews);
   } catch (error) {
     next(error);

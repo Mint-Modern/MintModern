@@ -2,10 +2,10 @@ const { deleteCustomerReview } = require("../db");
 const router = require("./customers");
 const { requireCustomer } = require("./utils");
 
-// PATCH /api/customerReviews/:customerReviewId
+// PATCH /api/customer_reviews/:customerReviewId
 // not sure if we would need this if we have a route in reviews??
 
-// DELETE /api/customerReviews/:customerReviewId
+// DELETE /api/customer_reviews/:customerReviewId
 router.delete("/:customerReviewId", requireCustomer, async (req, res, next) => {
   const { customerReviewId } = req.params;
 

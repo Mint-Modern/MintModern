@@ -35,7 +35,7 @@ async function createReview({ name, description, rating, userId }) {
 async function getAllReviews() {
   try {
     const { rows: reviews } = await client.query(`
-    SELECT * FROM reviews;
+    SELECT * FROM reviews
     `);
     return reviews;
   } catch (error) {
