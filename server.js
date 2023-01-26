@@ -2,9 +2,9 @@ require("dotenv").config();
 const PORT = 4000;
 const express = require("express");
 const server = express();
-const apiRouter = require("./src/api");
+const apiRouter = require("./api");
 const morgan = require("morgan");
-const client = require("./src/db/client.js");
+const client = require("./db/client.js");
 const cors = require("cors");
 
 client.connect();
@@ -15,7 +15,7 @@ server.use(express.json());
 
 server.use(cors());
 
-server.use("/api", apiRouter);
+server.use("./api", apiRouter);
 
 server.get("*", (req, res) => {
   res.status(404).send({
