@@ -69,8 +69,7 @@ async function getProductByName(name) {
 }
 
 //======================= CHECK THIS ONE ======================
-async function attachProductToOrder(orderId) {
-  const orderToReturn = await getOrderById(orderId);
+async function attachProductToOrder(order) {
   try {
     const { rows: products } = await client.query(`
       SELECT products.*, orderProducts.id AS "orderProductId", orderProducts."orderId", orderProducts.quantity
@@ -79,12 +78,12 @@ async function attachProductToOrder(orderId) {
       `);
 
     const productsToAdd = products.filter(
-      (product) => product.orderId === orderToReturn.id
+      (product) => product.orderId === order.id
     );
 
-    orderToReturn.products = productsToAdd;
+    order.products = productsToAdd;
 
-    return orderToReturn;
+    return order;
   } catch (error) {
     console.error(error);
     throw error;
