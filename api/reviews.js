@@ -4,8 +4,6 @@ const {
   createReview,
   getAllReviews,
   getReviewById,
-  // ??????
-  attachReviewToCustomer,
   updateReview,
   deleteReview,
   getCustomerReviewById,
@@ -24,14 +22,15 @@ router.get("/", async (req, res, next) => {
 
 //POST /api/reviews
 router.post("/", requireCustomer, async (req, res, next) => {
-  const { name, description, rating } = req.body;
+  const { name, description, rating, userId } = req.body;
   const reviewData = {};
 
   reviewData.name = name;
   reviewData.description = description;
   reviewData.rating = rating;
+  reviewData.userId = userId;
 
-  console.log(customerId);
+  console.log(userId);
   try {
     const review = await createReview(reviewData);
     res.send(review);

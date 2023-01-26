@@ -3,7 +3,6 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 const {
   createCustomer,
-  getCustomer,
   getAllCustomers,
   getCustomerById,
   getCustomerByUsername,

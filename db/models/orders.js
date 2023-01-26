@@ -72,9 +72,24 @@ async function getAllOrdersByCustomer(customerId) {
   }
 }
 
+//getOrderByUserIsActive
+async function getOrderByUserIsActive(customerId) {
+  try {
+    const { rows: order } = await client.query(`
+    SELECT * FROM orders
+    WHERE "userId" = ${customerId} AND "isActive" = true;
+    `);
+    return order;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 module.exports = {
   createOrder,
   getOrderById,
   getAllOrders,
   getAllOrdersByCustomer,
+  getOrderByUserIsActive,
 };
