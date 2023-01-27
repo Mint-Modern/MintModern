@@ -10,9 +10,11 @@ const Register = ({ setToken }) => {
 
   const navigate = useNavigate();
 
+
   function showAlert() {
     alert("Customer already exist, please login!");
   }
+
 
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -24,8 +26,11 @@ const Register = ({ setToken }) => {
 
     localStorage.setItem("token", token);
 
-    !token ? showAlert() : navigate("/fullmenu");
-  };
+        setToken(token);
+    
+        // (!token ? showAlert()
+        // : navigate("/myprofile") )
+    };
 
   return (
     <div className="register">
