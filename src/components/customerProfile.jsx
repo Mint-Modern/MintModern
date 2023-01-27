@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useReducer } from "react";
 // import {Link} from "react-router-dom;"
-// need to import my navbar here
+import MyNavbar from "./MyNavbar";
 
-const Customerprofile = ({ setToken, customer }) => {
+
+const Customerprofile = ({ setToken }) => {
     return (
         <div className="custprof">
             <header>
                 <MyNavbar setToken={setToken} />
             </header>
-            <h2>Hello there, {customer}!</h2>
+            <h2>Hello there!</h2>
             Customer Profile here, will add laters
         </div>
     )

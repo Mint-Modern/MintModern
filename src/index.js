@@ -13,7 +13,8 @@ import Register from "./components/register";
 import Customerprofile from "./components/customerProfile";
 
 const App = () => {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const { user, setUser } = useState({});
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -36,6 +37,7 @@ const App = () => {
 
   return (
     <div>
+      {/* <NavBar /> */}
       <Routes>
         <Route path="/" element={<Home token={token} />} />
         <Route path="/aboutus" element={<AboutUs />} />
@@ -45,10 +47,10 @@ const App = () => {
         />
         <Route path="/register" element={<Register setToken={setToken} />} />
         <Route path="/fullmenu" element={<FullMenu products={products} />} />
-        {/* <Route
+        <Route
           path="/myprofile"
-          element={<Customerprofile customer={customer} setToken={setToken} />}
-        ></Route> */}
+          element={<Customerprofile user={user} setToken={setToken} />}
+        ></Route>
       </Routes>
     </div>
   );
