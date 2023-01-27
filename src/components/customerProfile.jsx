@@ -1,16 +1,17 @@
 import React from "react";
-// import {Navlink} from "react-router-dom;"
+// import {Link} from "react-router-dom;"
 // need to import my navbar here
 
-const Customerprofile = ({ setToken, user }) => {
+const Customerprofile = ({ setToken, customer }) => {
     return (
         <div className="custprof">
             <header>
-                {/* <My Navbar component here, setToken={setToken} /> */}
+                <MyNavbar setToken={setToken} />
             </header>
-            Customer Profile here, will add later
+            <h2>Hello there, {customer}!</h2>
+            Customer Profile here, will add laters
         </div>
     )
 }
 
-export default Customerprofile
+export default Customerprofile;

@@ -12,19 +12,16 @@ const NavBar = ({ token, setToken }) => {
       <nav>
         {!token ? (
           <Link className="navlink" to="/login">
-            Sign Up/Sign In
+            Sign In
           </Link>
         ) : (
           <Link className="navlink" to={"/login"} onClickCapture={logout}>
             Logout
           </Link>
         )}
-        <Link className="navlink" to={"/aboutus"}>
-          About us
-        </Link>
-        <Link className="navlink" to={"/fullmenu"}>
-          Menu
-        </Link>
+        <Link className="navlink" to={"/register"}>Register Here</Link>
+        <Link className="navlink" to={"/aboutus"}>About us</Link>
+        <Link className="navlink" to={"/fullmenu"}>Menu</Link>
       </nav>
     </>
   );
