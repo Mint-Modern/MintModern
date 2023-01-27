@@ -1,8 +1,5 @@
-
-
 const baseUrl = "http://localhost:4000/api";
 // const token = localStorage.getItem(token);
-
 
 // =======================Customers Endpoint=======================
 
