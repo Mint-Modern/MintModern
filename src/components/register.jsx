@@ -1,38 +1,27 @@
 import React, { useState } from "react";
 import { createNewOrder, registerCustomer } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
-
 const Register = ({ setToken }) => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-
   const navigate = useNavigate();
-
-
   function showAlert() {
     alert("Customer already exist, please login!");
   }
-
-    function showAlert() {
-        alert("Customer already exist, please login!")
-    }
-
+  function showAlert() {
+    alert("Customer already exist, please login!");
+  }
   const submitHandler = async (event) => {
     event.preventDefault();
 
-        const token = await registerCustomer(name, phoneNumber, email, password );
-
+    const token = await registerCustomer(name, phoneNumber, email, password);
 
     localStorage.setItem("token", token);
-
-        setToken(token);
-    
-        (!token ? showAlert()
-        : navigate("/myprofile") )
-    };
-    
+    setToken(token);
+    !token ? showAlert() : navigate("/myprofile");
+  };
   return (
     <div className="register">
       <h2>REGISTER HERE!</h2>
@@ -96,7 +85,5 @@ const Register = ({ setToken }) => {
       </div>
     </div>
   );
-
 };
-
 export default Register;
