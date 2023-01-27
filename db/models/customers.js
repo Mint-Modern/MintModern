@@ -15,7 +15,13 @@ deleteCustomer **
 
 */
 
-async function createCustomer({ name, password, email, phoneNumber, isAdmin }) {
+async function createCustomer({
+  name,
+  password,
+  email,
+  phoneNumber,
+  isAdmin = false,
+}) {
   try {
     const SALT_COUNT = 10;
     const hashedPassword = await bcrypt.hash(password, SALT_COUNT);

@@ -15,6 +15,7 @@ import Customerprofile from "./components/customerProfile";
 const App = () => {
   const [token, setToken] = useState("");
   const [products, setProducts] = useState([]);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     if (token) {
