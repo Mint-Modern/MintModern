@@ -47,7 +47,7 @@ const Login = ({ token, setToken }) => {
             onChange={(e) => setPasswordLogin(e.target.value)}
           ></input>
           <button type="submit">Login</button>
-          <Link to="/register">Don't Have an account? Register Here</Link>
+          <Link to="/register">Don't have an account? Register Here</Link>
         </form>
       </div>
     </>

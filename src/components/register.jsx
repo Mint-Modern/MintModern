@@ -1,42 +1,43 @@
-import { useState } from "react";
-import React from "react";
-// import {registerCustomer} from "api/auth"; << change from where auth.js is
-// import {NavLink, useNavigate} from "react-router-dom"; << only one person needs to install in dependencies
+import React, {useState} from "react";
+import {registerCustomer} from "../api/auth"
+import {Link, useNavigate} from "react-router-dom"; 
 
 
 const Register = ({ setToken }) => {
-    const [customer, setCustomer] = useState("");
+    const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
 
-    // function showAlert() {
-    //     alert("Customer already exist, please login!")
-    // }
+    const navigate = useNavigate();
+
+    function showAlert() {
+        alert("Customer already exist, please login!")
+    }
 
     const submitHandler = async (event) => {
         event.preventDefault();
 
-        const token = await registerCustomer(customer, password, email, phoneNumber);
+        const token = await registerCustomer(name, password, email, phoneNumber);
 
         localStorage.setItem("token", token);
 
         setToken(token);
     
-        // (!token ? showAlert()
-        // : navigate("/myprofile") )
+        (!token ? showAlert()
+        : navigate("/myprofile") )
     };
 
     return (
         <div className="register">
             <h2>REGISTER HERE!</h2>
             <form className="regform" onSubmit={submitHandler}>
-                <label htmlFor="customer">YOUR NAME HERE</label>
+                <label htmlFor="name">YOUR NAME HERE</label>
                 <input
-                    value={username}
+                    value={name}
                     type={"text"}
                     onChange={(event) => {
-                        setCustomer(event.target.value);
+                        setName(event.target.value);
                     }}
                     placeholder="your name"></input>
                 <label htmlFor="password">PASSWORD</label>
@@ -66,11 +67,10 @@ const Register = ({ setToken }) => {
                     placeholder="phone number"></input>
                 <button type="submit">REGISTER</button>
             </form>
-            {/* <div className="backlinks">
-                <p>Already have an account? <span><NavLink to='/login' id='backlink'>Log in</NavLink></span></p>
-                <p>Go back to <span><NavLink to='/' id='backlink'>home</NavLink></span></p>
-            </div> */} 
-            {/* We will uncomment this when we get the links and routes working */}
+            <div className="backlinks">
+                <p>Already have an account? <span><Link to='/login' id='backlink'>Log in</Link></span></p>
+                <p>Go back to <span><Link to='/' id='backlink'>home</Link></span></p>
+            </div> 
         </div>
     );
 };

@@ -1,17 +1,20 @@
 import React from "react";
-// import {NavLink} from "react-router-dom";
-// need to import public and user navbar
+import { Link } from "react-router-dom";
+import NavBar from "./navbar";
+import MyNavbar from "./MyNavbar";
 
 const Home = ({ token }) => {
     if (!token) {
         return (
             <div>
+                <NavBar/>
                 Public Navbar and other links and bedazzles we would need
             </div>
         )
     } else {
         return (
             <div>
+                <MyNavbar />
                 My Navbar and probably the same concept as main guest page
             </div>
         )
