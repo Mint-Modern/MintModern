@@ -24,6 +24,7 @@ const Register = ({ setToken }) => {
 
         const token = await registerCustomer(name, phoneNumber, email, password );
 
+
     localStorage.setItem("token", token);
 
         setToken(token);
@@ -49,7 +50,7 @@ const Register = ({ setToken }) => {
         <input
           value={password}
           minLength={8}
-          type={"text"}
+          type={"password"}
           onChange={(event) => {
             setPassword(event.target.value);
           }}
