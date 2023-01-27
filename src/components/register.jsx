@@ -15,7 +15,9 @@ const Register = ({ setToken }) => {
   }
   const submitHandler = async (event) => {
     event.preventDefault();
+
     const token = await registerCustomer(name, phoneNumber, email, password);
+
     localStorage.setItem("token", token);
     setToken(token);
     !token ? showAlert() : navigate("/myprofile");
