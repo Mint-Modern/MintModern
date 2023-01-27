@@ -43,7 +43,7 @@ const createTables = async () => {
         id SERIAL PRIMARY KEY,
         name VARCHAR(255),
         description VARCHAR(255),
-        category INTEGER,
+        category VARCHAR(255),
         price DECIMAL
         );
 
@@ -144,32 +144,44 @@ async function createInitialProducts() {
       {
         name: "Avocado Rolls",
         description: "2 pieces",
-        category: null,
+        category: "teasers",
         price: 4.0,
       },
       {
         name: "Shrimp & Pork Rolls",
         description: "2 pieces",
-        category: null,
+        category: "teasers",
         price: 4.5,
       },
       {
         name: "Vietnamese Pork Tacos",
         description: "2 pieces",
-        category: null,
+        category: "teasers",
         price: 5.0,
       },
       {
         name: "Spicy Beef Pho",
         description: "That gud gud",
-        category: null,
+        category: "pho",
         price: 9.0,
       },
       {
         name: "Kimchi Burger",
         description: "Served with sweet potato fries.",
-        category: null,
+        category: "houseSpecials",
         price: 10.0,
+      },
+      {
+        name: "Sate' Veggies",
+        description: "Hey Yooo",
+        category: "rice",
+        price: 8,
+      },
+      {
+        name: "Red Bean Ice Cream Sandwich",
+        description: "Sounds freaky but it ain't",
+        category: "desserts",
+        price: 7,
       },
     ];
     const products = await Promise.all(productsToCreate.map(createProduct));

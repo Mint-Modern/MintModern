@@ -1,5 +1,5 @@
-const baseUrl = "localhost:3000/api";
-const token = localStorage.getItem(token);
+const baseUrl = "http://localhost:4000/api";
+// const token = localStorage.getItem(token);
 
 // =======================Customers Endpoint=======================
 
@@ -56,6 +56,7 @@ export const customerLogin = async (name, password) => {
         password,
       }),
     });
+    console.log(response);
     const token = await response.json();
     return token;
   } catch (error) {
