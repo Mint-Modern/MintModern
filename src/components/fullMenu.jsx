@@ -1,28 +1,27 @@
-// import React from "react";
- 
+import React from "react";
+import Teasers from "./teasers";
+import Baguette from "./baguette";
+import Pho from "./phoSoup";
+import Drinks from "./drinks";
+import HouseSpecials from "./houseSpecials";
+import Rice from "./rice";
+import VermicelliBowl from "./vermicelliBowl";
+import Desserts from "./desserts";
 
-// // const FullMenu = ({products}) => {
+const FullMenu = ({ products }) => {
+  return (
+    <>
+      <h1>Menu</h1>
+      <Teasers products={products} />
+      <Baguette products={products} />
+      <Drinks products={products} />
+      <HouseSpecials products={products} />
+      <Pho products={products} />
+      <Rice products={products} />
+      <VermicelliBowl products={products} />
+      <Desserts products={products} />
+    </>
+  );
+};
 
-// //     let productsToMap = products.map((product, index) => {
-// //     return (
-// //         <div className='products' key={index}>
-// //             <h2>{product.name}</h2>
-// //             <h3>Catergory: {product.category}</h3>
-// //             <h3>Price: {poduct.price}</h3>
-// //             <h3>Name: {product.name}</h3>
-// //             <h3>Description: {product.description}</h3>
-// //         </div>
-// //     );
-// // });
-
-// // return (
-// //     <>
-// //         <h1>Products</h1>
-// //         <div>{productsToMap}</div>
-// //     </>
-// // );
-
-// // };
-
-
-// export default FullMenu;
+export default FullMenu;
