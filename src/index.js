@@ -5,7 +5,7 @@ import NavBar from "./components/navbar";
 import AboutUs from "./components/aboutUs";
 import Login from "./components/login";
 import FullMenu from "./components/fullMenu";
-import { getAllProducts } from "./api/testapi";
+import { getAllProducts } from "./api/auth";
 import { fetchMe } from "./api/auth";
 
 const App = () => {
