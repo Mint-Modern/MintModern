@@ -22,14 +22,13 @@ const Register = ({ setToken }) => {
     const token = await registerCustomer(name, password, email, phoneNumber);
     console.log(token);
     // const order = await createNewOrder({ userId, total, salesTax, isActive });
-    setToken(token);
 
     localStorage.setItem("token", token);
 
         setToken(token);
     
-        // (!token ? showAlert()
-        // : navigate("/myprofile") )
+        (!token ? showAlert()
+        : navigate("/myprofile") )
     };
 
   return (
@@ -49,7 +48,7 @@ const Register = ({ setToken }) => {
         <input
           value={password}
           minLength={8}
-          type={"text"}
+          type={"password"}
           onChange={(event) => {
             setPassword(event.target.value);
           }}
