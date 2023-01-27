@@ -16,6 +16,7 @@ const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const { user, setUser } = useState({});
   const [products, setProducts] = useState([]);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     if (token) {

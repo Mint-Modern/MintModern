@@ -27,11 +27,11 @@ router.post("/register", async (req, res, next) => {
   const { name, password, phoneNumber, email, isAdmin } = req.body;
 
   try {
-    const _customer = await getCustomerByUsername(username);
+    const _customer = await getCustomerByUsername(name);
     if (_customer) {
       next({
         name: "UserExistsError",
-        message: `User ${_customer.username} is already taken.`,
+        message: `User ${_customer.name} is already taken.`,
       });
     }
 

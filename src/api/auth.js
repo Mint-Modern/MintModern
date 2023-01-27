@@ -4,22 +4,27 @@ const baseUrl = "http://localhost:4000/api";
 // =======================Customers Endpoint=======================
 
 // registerCustomer
-export const registerCustomer = async (name, phoneNumber, email, password) => {
+export const registerCustomer = async (
+  name,
+  password,
+  email,
+  phoneNumber
+  // isAdmin = false
+) => {
+  console.log(name);
+  console.log(phoneNumber);
+  console.log(email);
+  console.log(password);
   try {
     const response = await fetch(`${baseUrl}/customers/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        name,
-        phoneNumber,
-        email,
-        password,
-      }),
+      body: JSON.stringify({ name, password, email, phoneNumber }),
     });
     const token = (await response.json()).token;
-    console.log("THIS IS TOKEN", token);
+    console.log("in auth", token);
     return token;
   } catch (error) {
     console.error(error);
@@ -35,6 +40,7 @@ export const fetchMe = async (token) => {
         Authorization: `Bearer ${token}`,
       },
     });
+    console.log(response);
     const data = await response.json();
     return data;
   } catch (error) {
