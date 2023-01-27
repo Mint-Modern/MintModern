@@ -11,9 +11,9 @@ const Register = ({ setToken }) => {
 
     const navigate = useNavigate();
 
-    function showAlert() {
-        alert("Customer already exist, please login!")
-    }
+    // function showAlert() {
+    //     alert("Customer already exist, please login!")
+    // }
 
     const submitHandler = async (event) => {
         event.preventDefault();
@@ -24,8 +24,8 @@ const Register = ({ setToken }) => {
 
         setToken(token);
     
-        (!token ? showAlert()
-        : navigate("/myprofile") )
+        // (!token ? showAlert()
+        // : navigate("/myprofile") )
     };
 
     return (

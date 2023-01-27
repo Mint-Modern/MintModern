@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./navbar";
+// import Logout from "./Logout";
 import MyNavbar from "./MyNavbar";
 
 const Home = ({ token }) => {
@@ -16,6 +17,8 @@ const Home = ({ token }) => {
             <div>
                 <MyNavbar />
                 My Navbar and probably the same concept as main guest page
+                {/* <Logout /> */}
+
             </div>
         )
     }
