@@ -29,13 +29,13 @@ const Login = ({ token, setToken }) => {
             } catch (error) {
               console.error(error);
             }
-            location.reload();
+            // location.reload();
           }}
         >
           <input
             value={customerNameLogin}
             type="text"
-            placeholder="customername"
+            placeholder="username"
             minLength={3}
             onChange={(e) => setCustomerNameLogin(e.target.value)}
           ></input>
@@ -53,3 +53,5 @@ const Login = ({ token, setToken }) => {
     </>
   );
 };
+
+export default Login;
