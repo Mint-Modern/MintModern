@@ -15,23 +15,23 @@ const Register = ({ setToken }) => {
     alert("Customer already exist, please login!");
   }
 
+    function showAlert() {
+        alert("Customer already exist, please login!")
+    }
 
   const submitHandler = async (event) => {
     event.preventDefault();
 
-    const token = await registerCustomer(name, password, email, phoneNumber);
-    console.log(token);
-    // const order = await createNewOrder({ userId, total, salesTax, isActive });
-    setToken(token);
+        const token = await registerCustomer(name, phoneNumber, email, password );
 
     localStorage.setItem("token", token);
 
         setToken(token);
     
-        // (!token ? showAlert()
-        // : navigate("/myprofile") )
+        (!token ? showAlert()
+        : navigate("/myprofile") )
     };
-
+    
   return (
     <div className="register">
       <h2>REGISTER HERE!</h2>
@@ -95,6 +95,7 @@ const Register = ({ setToken }) => {
       </div>
     </div>
   );
+
 };
 
 export default Register;
