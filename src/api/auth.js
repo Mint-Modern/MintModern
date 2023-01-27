@@ -1,11 +1,13 @@
+
+
 const baseUrl = "http://localhost:4000/api";
 // const token = localStorage.getItem(token);
+
 
 // =======================Customers Endpoint=======================
 
 // registerCustomer
 export const registerCustomer = async (name, phoneNumber, email, password) => {
-  //                                  ??????????????????????????????
   try {
     const response = await fetch(`${baseUrl}/customers/register`, {
       method: "POST",
@@ -67,43 +69,381 @@ export const customerLogin = async (name, password) => {
 // =======================Review Endpoint==========================
 
 // getAllReviews
+export const getAllReviews = async () => {
+  try {
+    const response = await fetch(`${baseUrl}/reviews`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // createNewReview
+export const createNewReview = async (name, description, rating) => {
+  try {
+    const response = await fetch(`${baseUrl}/reviews`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        name,
+        description,
+        rating,
+      }),
+    });
+    console.log("createReviews: ", name, description, rating);
+    const data = await response.json();
+    console.log("dataCreateActivity", data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // updateReview
+export const updateReview = async (name, description, rating, userId) => {
+  try {
+    // ask tri if this needs a reviewId
+    const response = await fetch(`${baseUrl}/reviews/${userId}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        name,
+        description,
+        rating,
+      }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // attachCustomerToReview
+export const attachCustomerToReview = async ({
+  userId,
+  reviewId,
+  // ask tri if this needs a description and name??? maybe already attached...
+}) => {
+  console.log("attachActivity", userId, reviewId);
+  try {
+    const response = await fetch(`${baseUrl}/routines/${reviewId}/activities`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        userId,
+        reviewId,
+      }),
+    });
+    console.log(response.body);
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // deleteReview
+export const deleteReview = async (orderId) => {
+  try {
+    const response = await fetch(`${baseUrl}/reviews/${orderId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // =================CustomerReviews Endpoint=======================
 
 // updateCustomerReview
-
+export const updateCustomerReview = async (
+  customerReviewId,
+  userId,
+  reviewId
+  // ask tri if this also needs name, description..
+) => {
+  console.log(
+    "user&reviewId in updateCusRev auth: ",
+    customerReviewId,
+    userId,
+    reviewId
+  );
+  try {
+    const response = await fetch(
+      `${baseUrl}/customer_review/${customerReviewId}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          userId,
+          reviewId,
+        }),
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 // deleteCustomerReview
+export const deleteCustomerReview = async (customerReviewId) => {
+  console.log(customerReviewId);
+  try {
+    const response = await fetch(
+      `${baseUrl}/customer_reviews/${customerReviewId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // ======================Orders Endpoint===========================
 
 // getAllOrders
+export const getAllOrders = async () => {
+  try {
+    const response = await fetch(`${baseUrl}/orders`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // createNewOrder
+export const createNewOrder = async ({ userId, total, salesTax, isActive }) => {
+  try {
+    const response = await fetch(`${baseUrl}/orders`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        userId,
+        total,
+        salesTax,
+        isActive,
+      }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // updateOrder
+export const updateOrder = async (orderId, total, salesTax, isActive) => {
+  try {
+    const response = await fetch(`${baseUrl}/orders/${orderId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        total,
+        salesTax,
+        isActive,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // deleteOrder
+export const deleteOrder = async (orderId) => {
+  try {
+    const response = await fetch(`${baseUrl}/orders/${orderId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // ======================Product Endpoint==========================
 
 // getAllProducts
+export const getAllProducts = async () => {
+  try {
+    const response = await fetch(`${baseUrl}/products`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // updateProduct
+export const updateProduct = async (
+  name,
+  description,
+  category,
+  price,
+  productId
+) => {
+  try {
+    const response = await fetch(`${baseUrl}/products/${productId}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        name,
+        description,
+        category,
+        price,
+      }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // attach?ProductToOrder
+export const attachProductToOrder = async ({
+  orderId,
+  productId,
+  quantity,
+}) => {
+  console.log("attachProductToOrder in auth", orderId, productId, quantity);
+  try {
+    const response = await fetch(`${baseUrl}/products/${productId}/orders`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        orderId,
+        quantity,
+      }),
+    });
+    console.log(response.body);
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // deleteProduct
-
+export const deleteProduct = async (productId) => {
+  try {
+    const response = await fetch(`${baseUrl}/products/${productId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 // =====================OrderProduct Endpoint======================
 
 // updateOrderProduct
 
+export const updateOrderProduct = async (orderProductId, quantity) => {
+  console.log("updateOrderProduct in auth: ", orderProductId, quantity);
+  try {
+    const response = await fetch(
+      `${baseUrl}/order_products/${orderProductId}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          quantity,
+        }),
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 // deleteOrderProduct
+
+export const deleteOrderProduct = async (orderProductId) => {
+  console.log("orderProductId in auth: ", orderProductId);
+  const token = localStorage.getItem("token");
+  try {
+    const response = await fetch(
+      `${baseUrl}/order_products/${orderProductId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
