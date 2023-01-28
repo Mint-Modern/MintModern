@@ -4,7 +4,11 @@ import Logout from "./Logout";
 
 const MyNavbar = ({ setToken }) => {
     return (
-        <header>
+        <div>
+            <header >
+                <Link to='/' id='homelink'><h1>Mint</h1>
+                <h4>Modern Vietnamese Bistro and Bar</h4></Link>
+            </header>
             <nav>
             <Link to={'/myprofile'} className="navlink my">Profile</Link>
                 {/* <Link to='myorders' className="navlink my">My Orders</Link> */}
@@ -12,7 +16,7 @@ const MyNavbar = ({ setToken }) => {
                 {/* <Link to='cart' className="navlink my">Cart</Link> */}
                 <Logout setToken={setToken} />
             </nav>
-        </header>
+        </div>
     )
 }
 
