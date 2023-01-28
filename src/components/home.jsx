@@ -16,9 +16,6 @@ const Home = ({ token }) => {
         return (
             <div>
                 <MyNavbar />
-                My Navbar and probably the same concept as main guest page
-                {/* <Logout /> */}
-
             </div>
         )
     }

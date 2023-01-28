@@ -8,11 +8,10 @@ const Login = ({ token, setToken }) => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <div className="login">
-        <h3 className="title">Login</h3>
-        <form
-          className="login"
+    <div className="login">
+      <h2 className="header">Back for more?</h2>
+      <h4 className="witty">And honestly, we don't blame you!</h4>
+        <form className="usepassforms"
           onSubmit={async (e) => {
             try {
               e.preventDefault();
@@ -47,10 +46,12 @@ const Login = ({ token, setToken }) => {
             onChange={(e) => setPasswordLogin(e.target.value)}
           ></input>
           <button type="submit">Login</button>
-          <Link to="/register">Don't have an account? Register Here</Link>
         </form>
-      </div>
-    </>
+        <div className="backlinks">
+					<p>Don't have an account? <span><Link to='/register' id="backlink">Join us!</Link></span></p>
+					<p>Go back to <span><Link to='/' id="backlink">home</Link></span></p>
+				</div>
+    </div>
   );
 };
 

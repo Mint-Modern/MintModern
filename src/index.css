@@ -1,10 +1,147 @@
+@import url('https://fonts.cdnfonts.com/css/copperplate');
+@import url('https://fonts.cdnfonts.com/css/monteya');
+@import url('https://fonts.cdnfonts.com/css/sundoes');
+@import url('https://fonts.cdnfonts.com/css/instagram-sans-2');
+
 :root {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
-    color: 2D00F7;
-    line-height: 24px;
-    font-weight: 400;
+    color: #132a13;
     background-color: #d8f3dc;
   
   }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+/*********** MULTI-PAGE STYLES ***********/
+
+.header {
+  margin: 0;
+  padding: 25px;
+  padding-bottom: 0;
+
+  display: flex;
+  justify-content: center;
+
+  font-family: 'Sundoes', sans-serif;
+  font-size: 65px;
+  letter-spacing: 3px;
+  color: #31572c;
+  -webkit-text-stroke: .5px #e9f5db;
+}
+
+#homelink, #homelink:visited {
+  text-decoration: none;
+  font-family: 'Copperplate', sans-serif;
+  color: #52b788;
+  -webkit-text-stroke: 1.5px #1b4332;
+}
+
+.backlinks {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-size: 25px;
+  color: #e9f5db;
+  -webkit-text-stroke: .5px #31572c;
+}
+
+#backlink:visited {
+  text-decoration: none;
+  color: #31572c;
+}
+
+Link:visited {
+ text-decoration: none;
+
+}
+
+/****** FORMS *****/
+.usepassforms {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  padding: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+
+
+  background: #73a942;
+  border-radius: 10px;
+}
+
+.usepassforms input {
+  font-family: 'Monteya', sans-serif;
+  font-size: 15px;
+  margin: 10px;
+  padding: 15px;
+  width: 90%;
+  text-align: center;
+  border: #ecf39e solid 2px;
+  border-radius: 10px;
   
+}
+
+.deets {
+  font-family: 'Monteya', sans-serif;
+  font-size: 18px;
+  color: #132a13;
+
+  padding: 15px;
+  padding-bottom: 0;
+  width: 90%;
+  text-align: center;
+}
+
+.usepassforms button {
+  font-family: 'Monteya', sans-serif;
+  font-size: 20px;
+  color: #132a13;
+  letter-spacing: 3px;
+
+  margin: 20px;
+  padding: 15px;
+  width: 105%;
+  text-align: center;
+  border: #ecf39e solid 2px;
+  border-radius: 10px;
+  background-color: #cfe1b9;
+}
+
+/*********** PAGE-SPECIFIC STYLES ***********/
+
+/***** LOGIN/REGISTER *****/
+.login {
+  background-image: url('https://t4.ftcdn.net/jpg/01/10/06/15/360_F_110061523_DeJly2e8vjYQzIGmUhaNHPNnBnNSCfmF.jpg');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.register {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/009/667/401/non_2x/watercolor-seamless-border-frame-web-banner-with-simple-green-leaves-and-branches-forest-wild-herbs-mint-isolated-on-white-background-vector.jpg');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.witty {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px;
+
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-size: 25px;
+  color: #e9f5db;
+  -webkit-text-stroke: .5px #31572c;
+}
+

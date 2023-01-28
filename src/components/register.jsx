@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createNewOrder, registerCustomer } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
+
 const Register = ({ setToken }) => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -24,9 +25,10 @@ const Register = ({ setToken }) => {
   };
   return (
     <div className="register">
-      <h2>REGISTER HERE!</h2>
-      <form className="regform" onSubmit={submitHandler}>
-        <label htmlFor="name">YOUR NAME HERE</label>
+      <h2 className="header">Ready to Commit?</h2>
+      <h4 className="witty">We're definitely all green flags here.</h4>
+      <form className="usepassforms" onSubmit={submitHandler}>
+        <label htmlFor="name"></label>
         <input
           value={name}
           type={"text"}
@@ -35,7 +37,7 @@ const Register = ({ setToken }) => {
           }}
           placeholder="your name"
         ></input>
-        <label htmlFor="password">PASSWORD</label>
+        <label htmlFor="password"></label>
         <input
           value={password}
           minLength={8}
@@ -45,7 +47,7 @@ const Register = ({ setToken }) => {
           }}
           placeholder="password"
         ></input>
-        <label htmlFor="email">EMAIL</label>
+        <label htmlFor="email" className="deets">We need more deets here</label>
         <input
           value={email}
           type={"email"}
@@ -54,7 +56,7 @@ const Register = ({ setToken }) => {
           }}
           placeholder="email address"
         ></input>
-        <label htmlFor="phoneNumber">PHONE NUMBER</label>
+        <label htmlFor="phoneNumber"></label>
         <input
           value={phoneNumber}
           type={"number"}
@@ -63,20 +65,18 @@ const Register = ({ setToken }) => {
           }}
           placeholder="phone number"
         ></input>
-        <button type="submit">REGISTER</button>
+        <button type="submit">Register</button>
       </form>
       <div className="backlinks">
         <p>
-          Already have an account?{" "}
-          <span>
+          Already have an account? <span>
             <Link to="/login" id="backlink">
               Log in
             </Link>
           </span>
         </p>
         <p>
-          Go back to{" "}
-          <span>
+          Go back to <span>
             <Link to="/" id="backlink">
               home
             </Link>
