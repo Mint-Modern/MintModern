@@ -9,7 +9,11 @@ const Baguette = ({ products }) => {
     if (product.category === "baguette")
       return (
         <div className="single-prod" key={index}>
-          <h4 className="prod-name">{product.name}</h4>
+          <h4 className="prod-name"
+            onClick={() => {
+              navigate(`/products/${product.id}`);
+            }}>{product.name}
+          </h4>
           <h5>
             <i>{product.description}</i>
           </h5>

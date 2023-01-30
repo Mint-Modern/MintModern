@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
+import { useParams, useNavigate } from "react-router-dom";
 import { getSingleProduct } from "../api/auth";
 
 const SingleProduct = ({ products }) => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
+  
+  const navigate = useNavigate();
+  const goBack = () => { navigate(-1); }
 
   useEffect(() => {
     const getProduct = async () => {
@@ -15,15 +17,16 @@ const SingleProduct = ({ products }) => {
     getProduct();
   }, []);
 
+  // console.log("I AM PRODUCT", product)
+
   return (
-    <div className="single-product">
-      <div className="header-info">
-        <p className="food-title"></p>
-        <p className="food-number"></p>
-      </div>
-      {/* <div classname="food-buttons">
-                <button classname="detail-button" data-id={idk} onClick={() => {getSingleProduct()}}>See Details</button>
-            </div> */}
+    <div className="single-prod">
+      {/* <p>prolly an image here if we have it?</p> */}
+      <p className="prod-name">{product.name}</p>
+      <p className="cat">from {product.category}</p>
+      <p>{product.description}</p>
+      <p>| {product.price} |</p>
+      <button onClick={goBack}>Back</button>
     </div>
   );
 };
