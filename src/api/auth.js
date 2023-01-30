@@ -11,10 +11,6 @@ export const registerCustomer = async (
   phoneNumber
   // isAdmin = false
 ) => {
-  console.log(name);
-  console.log(phoneNumber);
-  console.log(email);
-  console.log(password);
   try {
     const response = await fetch(`${baseUrl}/customers/register`, {
       method: "POST",
@@ -24,7 +20,6 @@ export const registerCustomer = async (
       body: JSON.stringify({ name, password, email, phoneNumber }),
     });
     const token = (await response.json()).token;
-    console.log("in auth", token);
     return token;
   } catch (error) {
     console.error(error);
@@ -40,7 +35,6 @@ export const fetchMe = async (token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log(response);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -251,7 +245,13 @@ export const getAllOrders = async () => {
 };
 
 // createNewOrder
-export const createNewOrder = async ({ userId, total, salesTax, isActive }) => {
+export const createNewOrder = async ({
+  token,
+  userId,
+  total,
+  salesTax,
+  isActive,
+}) => {
   try {
     const response = await fetch(`${baseUrl}/orders`, {
       method: "POST",

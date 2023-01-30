@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createNewOrder, registerCustomer } from "../api/auth";
+import { createNewOrder, fetchMe, registerCustomer } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = ({ setToken }) => {
@@ -18,6 +18,15 @@ const Register = ({ setToken }) => {
     event.preventDefault();
 
     const token = await registerCustomer(name, phoneNumber, email, password);
+    const customer = await fetchMe(token);
+    const userId = customer.id;
+    const order = await createNewOrder({
+      token,
+      userId,
+      total: 0,
+      salesTax: 0.0945,
+      isActive: true,
+    });
 
     localStorage.setItem("token", token);
     setToken(token);
@@ -47,7 +56,9 @@ const Register = ({ setToken }) => {
           }}
           placeholder="password"
         ></input>
-        <label htmlFor="email" className="deets">We need more deets here</label>
+        <label htmlFor="email" className="deets">
+          We need more deets here
+        </label>
         <input
           value={email}
           type={"email"}
@@ -69,14 +80,16 @@ const Register = ({ setToken }) => {
       </form>
       <div className="backlinks">
         <p>
-          Already have an account? <span>
+          Already have an account?{" "}
+          <span>
             <Link to="/login" id="backlink">
               Log in
             </Link>
           </span>
         </p>
         <p>
-          Go back to <span>
+          Go back to{" "}
+          <span>
             <Link to="/" id="backlink">
               home
             </Link>
