@@ -1,8 +1,11 @@
 import React from "react";
 import MenuNav from "./menuNav";
+import { useNavigate } from "react-router-dom";
 
 const Baguette = ({ products }) => {
-  let productsToMap = products.map((product, index) => {
+  const navigate = useNavigate();
+
+  let productsToMap = products?.map((product, index) => {
     if (product.category === "baguette")
       return (
         <div className="single-prod" key={index}>
@@ -11,6 +14,13 @@ const Baguette = ({ products }) => {
             <i>{product.description}</i>
           </h5>
           <h5>| {product.price} |</h5>
+          <button
+            onClick={() => {
+              navigate(`/products/${product.id}`);
+            }}
+          >
+            Add to cart!
+          </button>
         </div>
       );
   });
