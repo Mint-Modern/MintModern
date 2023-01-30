@@ -57,6 +57,12 @@ const App = () => {
         <Route path="/register" element={<Register setToken={setToken} />} />
         <Route path="/fullmenu" element={<FullMenu products={products} />} />
         <Route
+          path="/products/:id"
+          element={
+            <SingleProduct products={products} setProducts={setProducts} />
+          }
+        />
+        <Route
           path="/myprofile"
           element={<Customerprofile user={user} setToken={setToken} />}
         />
@@ -85,10 +91,6 @@ const App = () => {
         <Route
           path="/fullmenu/vermicelliBowl"
           element={<VermicelliBowl products={products} />}
-        />
-        <Route
-          path="/products"
-          element={<SingleProduct products={products} />}
         />
       </Routes>
     </div>
