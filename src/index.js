@@ -19,6 +19,7 @@ import HouseSpecials from "./components/houseSpecials";
 import Rice from "./components/rice";
 import VermicelliBowl from "./components/vermicelliBowl";
 import Desserts from "./components/desserts";
+import SingleProduct from "./components/singleProduct";
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -84,6 +85,10 @@ const App = () => {
         <Route
           path="/fullmenu/vermicelliBowl"
           element={<VermicelliBowl products={products} />}
+        />
+        <Route
+          path="/products"
+          element={<SingleProduct products={products} />}
         />
       </Routes>
     </div>

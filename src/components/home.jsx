@@ -4,12 +4,14 @@ import NavBar from "./navbar";
 // import Logout from "./Logout";
 import MyNavbar from "./MyNavbar";
 import AboutUs from "./aboutUs";
+import SingleProduct from "./singleProduct";
 
 const Home = ({ token }) => {
     if (!token) {
         return (
             <div>
                 <NavBar/>
+                <SingleProduct/>
                 <div className="aboutus">Other links and bedazzles we would need (pls change or delete classname as needed)</div>
                 <p className="single-prod prod-name">Should we separate user-specific components to a side navbar?? To include customer current and previous orders and reviews?? (DELETE ME AFTERWARDS)</p>
                 <p className="story">Need a component for: Bomb Pics (pls change or delete classname as needed)</p>
@@ -27,6 +29,7 @@ const Home = ({ token }) => {
         return (
             <div>
                 <MyNavbar />
+        
             </div>
         )
     }
