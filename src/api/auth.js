@@ -355,6 +355,16 @@ export const updateProduct = async (
   }
 };
 
+export const getSingleProduct = async (productId) => {
+  try {
+    const response = await fetch(`${baseUrl}/products/${productId}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 // attach?ProductToOrder
 export const attachProductToOrder = async ({
   orderId,
