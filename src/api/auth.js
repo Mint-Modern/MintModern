@@ -63,6 +63,20 @@ export const customerLogin = async (name, password) => {
   }
 };
 
+export const getAllCustomers = async () => {
+  try {
+    const response = await fetch(`${baseUrl}/customers`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 // =======================Review Endpoint==========================
 
 // getAllReviews
@@ -322,6 +336,33 @@ export const getAllProducts = async () => {
       headers: {
         "Content-Type": "application/json",
       },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// createNewProduct
+export const createNewProduct = async ({
+  name,
+  description,
+  category,
+  price,
+}) => {
+  try {
+    const response = await fetch(`${baseUrl}/products`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        description,
+        category,
+        price,
+      }),
     });
     const data = await response.json();
     return data;
