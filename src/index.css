@@ -2,12 +2,13 @@
 @import url('https://fonts.cdnfonts.com/css/monteya');
 @import url('https://fonts.cdnfonts.com/css/sundoes');
 @import url('https://fonts.cdnfonts.com/css/instagram-sans-2');
+@import url('https://fonts.cdnfonts.com/css/astrella');
 
 :root {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
     color: #132a13;
-    background-color: #d8f3dc;
+    background-color: #F7FBF2;
   
   }
 
@@ -33,13 +34,68 @@
   -webkit-text-stroke: .5px #e9f5db;
 }
 
-#homelink, #homelink:visited {
-  text-decoration: none;
-  font-family: 'Copperplate', sans-serif;
-  color: #52b788;
-  -webkit-text-stroke: 1.5px #1b4332;
+/***** NAVBARS *****/
+.allNavs {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient( rgb(251, 250, 225) 11.2%, rgb(206, 240, 185) 47.5%, rgb(100, 163, 111) 100.2%);
+  border-bottom: #31572c solid 5px;
 }
 
+.logo {
+  height: 150px;
+}
+
+/* for when you will put sign in/logout button or drop down for profile on right side
+.homelink {
+  
+} */
+
+.fm-nav, .menu-nav, .main-nav, .my-nav, .mini {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  padding-bottom:  15px;
+  /* OPT 2: font-family: 'Instagram Sans Headline', sans-serif; */
+  font-family: 'Astrella', sans-serif;
+  font-size: 25px;
+  color: #31572c;
+}
+
+.fm-nav a, .menu-nav a, .main-nav a, .my-nav a, .mini {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.fm-nav a:hover, .menu-nav a:hover, .main-nav a:hover, .my-nav a:hover, .mini:hover {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+.fm-nav a:focus, a:active, .menu-nav a:focus, a:active, .main-nav a:focus, a:active, .my-nav a:focus, a:active, .mini, .mini:visited {
+  text-decoration: underline;
+  text-decoration-color: #132a13;
+}
+
+.fm-nav a, a:visited, .menu-nav a, a:visited, .main-nav a, a:visited, .my-nav a, a:visited, .mini, .mini:visited {
+  text-decoration: none;
+  color: #31572c;
+}
+
+/***** LINKS *****/
 .backlinks {
   margin: 0;
   padding: 0;
@@ -107,9 +163,25 @@ Link:visited {
   margin: 20px;
   padding: 15px;
   width: 105%;
+
   text-align: center;
   border: #ecf39e solid 2px;
-  border-radius: 10px;
+  border-radius: 100px;
+  background-color: #cfe1b9;
+}
+
+.logoutbutton {
+  font-family: 'Astrella', sans-serif;
+  font-size: 25px;
+  color: #31572c;
+  /* letter-spacing: 3px; */
+
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  text-align: center;
+  border: #ecf39e solid 2px;
+  border-radius: 50px;
   background-color: #cfe1b9;
 }
 
@@ -117,7 +189,8 @@ Link:visited {
 
 /***** LOGIN/REGISTER *****/
 .login {
-  background-image: url('https://t4.ftcdn.net/jpg/01/10/06/15/360_F_110061523_DeJly2e8vjYQzIGmUhaNHPNnBnNSCfmF.jpg');
+  /* OPT 2: background-image: url('https://t4.ftcdn.net/jpg/01/10/06/15/360_F_110061523_DeJly2e8vjYQzIGmUhaNHPNnBnNSCfmF.jpg'); */
+  background-image: url('https://media.istockphoto.com/id/874696636/vector/watercolor-vector-seamless-pattern-with-branches-and-leaves-of-mint-isolated-on-a-white.jpg?s=612x612&w=0&k=20&c=sOt1FTUnqaLtWSt7d637LRZnW6n7rFU79NKRPBPBSzk=');
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -145,3 +218,96 @@ Link:visited {
   -webkit-text-stroke: .5px #31572c;
 }
 
+/***** HOME *****/
+
+
+/***** DO NOT MOVE OR DELETE ME *****/
+.fullmenu .hideme {
+  display: none;
+  visibility: hidden;
+}
+
+.homepage .abtnav {
+  display: none;
+  visibility: hidden;
+}
+
+/***** MENUS *****/
+.menu {
+  font-family: 'Astrella', sans-serif;
+  font-size: 50px;
+  letter-spacing: 5px;
+  color: #31572c;
+  -webkit-text-stroke: 1px #e9f5db;
+
+  height: 100px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini {
+  padding-bottom: 20px;
+  /* font-family: 'Instagram Sans Headline', sans-serif; */
+  font-family: 'Astrella', sans-serif;
+  font-size: 30px;
+  -webkit-text-stroke: .5px #e9f5db;
+}
+
+.prod-cat {
+  text-align: center;
+  font-family: 'Astrella', sans-serif;
+  font-size: 30px;
+  -webkit-text-stroke: .3px #8cb369;
+  letter-spacing:  5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* y cant i make 2 columns ughhh */
+.products {
+  margin: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-prod {
+  width: 60%;
+  margin: 0;
+  padding-bottom: 15px;
+
+  text-align: center;
+  line-height: 1;
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-size: 20px;
+  color: #31572c;
+}
+
+.prod-name {
+  font-size: 25px;
+}
+
+.aboutus {
+  font-family: 'Instagram Sans Headline', sans-serif;
+  color: #31572c;
+  font-size: 45px;
+  margin-left: 25px;
+}
+
+.story {
+  width: 60%;
+  margin: 0;
+  padding-bottom: 15px;
+  margin-left: 45px;
+
+  text-align: justify;
+  line-height: 1.5;
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-size: 20px;
+  color: #31572c;
+}

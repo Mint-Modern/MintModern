@@ -13,12 +13,26 @@ import Desserts from "./desserts";
 
 const FullMenu = ({ products }) => {
   return (
-    <>
-      <header className="logo" >
-        <Link to='/' id='homelink'><h1>Mint</h1>
-        <h4>Modern Vietnamese Bistro and Bar</h4></Link>
-      </header>
-      <h2 className="header menu">Menu</h2>
+    <div className="menupage">
+      <div className="allNavs">
+        <div className="homelink">
+          <Link to='/'>
+              <img src="https://i.ibb.co/zxB68bW/mint-logo-250x200.png"
+                alt="mint-logo-250x200" className="logo" /> 
+          </Link>
+        </div>
+          <p className="menu">MENU</p>
+        <nav className="fm-nav">
+          <Link to="/fullmenu/teasers">Teasers</Link>
+          <Link to="/fullmenu/baguette">Baguette</Link>
+          <Link to="/fullmenu/pho">Pho</Link>
+          <Link to="/fullmenu/houseSpecials">House Specials</Link>
+          <Link to="/fullmenu/rice">Rice</Link>
+          <Link to="/fullmenu/vermicelliBowl">Vermicelli Bowls</Link>
+          <Link to="/fullmenu/drinks">Drinks</Link>
+          <Link to="/fullmenu/desserts">Desserts</Link>
+        </nav>
+      </div>
       <div className="fullmenu">
         <Teasers products={products} />
         <Baguette products={products} />
@@ -29,7 +43,7 @@ const FullMenu = ({ products }) => {
         <VermicelliBowl products={products} />
         <Desserts products={products} />
       </div>
-    </>
+    </div>
   );
 };
 

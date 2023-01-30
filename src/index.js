@@ -11,6 +11,14 @@ import { fetchMe } from "./api/auth";
 import Home from "./components/home";
 import Register from "./components/register";
 import Customerprofile from "./components/customerProfile";
+import Teasers from "./components/teasers";
+import Baguette from "./components/baguette";
+import Pho from "./components/phoSoup";
+import Drinks from "./components/drinks";
+import HouseSpecials from "./components/houseSpecials";
+import Rice from "./components/rice";
+import VermicelliBowl from "./components/vermicelliBowl";
+import Desserts from "./components/desserts";
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -50,7 +58,33 @@ const App = () => {
         <Route
           path="/myprofile"
           element={<Customerprofile user={user} setToken={setToken} />}
-        ></Route>
+        />
+        <Route
+          path="/fullmenu/teasers"
+          element={<Teasers products={products} />}
+        />
+        <Route
+          path="/fullmenu/desserts"
+          element={<Desserts products={products} />}
+        />
+        <Route
+          path="/fullmenu/baguette"
+          element={<Baguette products={products} />}
+        />
+        <Route path="/fullmenu/pho" element={<Pho products={products} />} />
+        <Route
+          path="/fullmenu/drinks"
+          element={<Drinks products={products} />}
+        />
+        <Route
+          path="/fullmenu/houseSpecials"
+          element={<HouseSpecials products={products} />}
+        />
+        <Route path="/fullmenu/rice" element={<Rice products={products} />} />
+        <Route
+          path="/fullmenu/vermicelliBowl"
+          element={<VermicelliBowl products={products} />}
+        />
       </Routes>
     </div>
   );
