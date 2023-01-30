@@ -120,7 +120,7 @@ router.post("/login", async (req, res, next) => {
 //GET /api/customers/me
 router.get("/me", requireCustomer, async (req, res, next) => {
   try {
-    res.send(req.user);
+    res.send(req.customer);
   } catch (error) {
     next(error);
   }
