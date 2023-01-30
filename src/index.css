@@ -292,6 +292,11 @@ Link:visited {
   font-size: 25px;
 }
 
+.cat {
+  text-transform: capitalize;
+  font-style: italic;
+}
+
 .aboutus {
   font-family: 'Instagram Sans Headline', sans-serif;
   color: #31572c;

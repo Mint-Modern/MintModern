@@ -1,14 +1,30 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
 
 const HouseSpecials = ({ products }) => {
+  const navigate = useNavigate();
+
   let productsToMap = products.map((product, index) => {
     if (product.category === "houseSpecials")
       return (
         <div className="single-prod" key={index}>
-          <h4 className="prod-name">{product.name}</h4>
-          <h5><i>{product.description}</i></h5>
-          <h5>| {product.price} |</h5>  
+          <h4 className="prod-name"
+            onClick={() => {
+              navigate(`/products/${product.id}`);
+            }}>{product.name}
+          </h4>
+          <h5>
+            <i>{product.description}</i>
+          </h5>
+          <h5>| {product.price} |</h5>
+          <button
+            onClick={() => {
+              navigate(`/products/${product.id}`);
+            }}
+          >
+            Add to cart!
+          </button>
         </div>
       );
   });
