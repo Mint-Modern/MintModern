@@ -5,12 +5,12 @@ import NavBar from "./navbar";
 import MyNavbar from "./MyNavbar";
 import AboutUs from "./aboutUs";
 
-import {GoogleMap, useLoadScript, Marker} from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 const Home = ({ token, setToken }) => {
-    // const {isLoaded} = useLoadScript({
-    //     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-    // });
+  // const {isLoaded} = useLoadScript({
+  //     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+  // });
   if (!token /*!isLoaded*/) {
     return (
       <div>
@@ -55,9 +55,10 @@ const Home = ({ token, setToken }) => {
   } else {
     return (
       <div>
-        <MyNavbar setToken = {setToken} />
+        <MyNavbar setToken={setToken} />
       </div>
     );
   }
+};
 
 export default Home;
