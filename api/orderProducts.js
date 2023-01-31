@@ -5,6 +5,7 @@ const {
   getOrderByUserIsActive,
   attachProductToOrder,
   addProductToOrder,
+  getAllOrderProducts,
 } = require("../db");
 const router = require("./customers");
 const { requireCustomer } = require("./utils");
@@ -15,6 +16,16 @@ router.get("/:customerId", requireCustomer, async (req, res, next) => {
   try {
     const getOrderByCustomer = await getOrderByUserIsActive(customerId);
     res.send(getOrderByCustomer);
+  } catch (error) {
+    next(error);
+  }
+});
+
+// GET /api/order_products/
+router.get("/", async (req, res, next) => {
+  try {
+    const orderProducts = await getAllOrderProducts();
+    res.send(orderProducts);
   } catch (error) {
     next(error);
   }
