@@ -2,8 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
 import { attachProductToOrder } from "../api/auth";
+import Cart from "./cart";
 
-const VermicilliBowl = ({ products }) => {
+const VermicilliBowl = ({ products, orderProducts, orders }) => {
   const navigate = useNavigate();
 
   let productsToMap = products?.map((product, index) => {
@@ -29,7 +30,13 @@ const VermicilliBowl = ({ products }) => {
           >
             See Details!
           </button>
-          <button>Add to cart!</button>
+          <button
+            onClick={async () =>
+              await attachProductToOrder({ productId: product.id })
+            }
+          >
+            Add to cart!
+          </button>
         </div>
       );
   });
@@ -51,6 +58,7 @@ const VermicilliBowl = ({ products }) => {
         />
       </h2>
       <div className="products">{productsToMap}</div>
+      <Cart products={products} orderProducts={orderProducts} orders={orders} />
     </>
   );
 };
