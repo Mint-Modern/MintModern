@@ -10,27 +10,30 @@ const EditProduct = ({ product, products, setProducts }) => {
   const navigate = useNavigate();
   const productId = product.id;
 
+  const submitHandler = async (event) => {
+    try {
+      event.preventDefault();
+      let updatedProduct = async () => {
+        await updateProduct(
+          name,
+          description,
+          category,
+          price,
+          productId,
+        )
+      };
+      updatedProduct();
+      setProducts([updatedProduct, ...products]);
+      navigate(-1);
+    } catch (error) {
+      console.error(error);
+    }
+  }
   return (
     <div>
       <form
-        onSubmit={async (event) => {
-          try {
-            event.preventDefault();
-            const updatedProduct = await updateProduct({
-              name,
-              description,
-              category,
-              price,
-              productId,
-            });
-            setProducts([updatedProduct, ...products]);
-            navigate(-1);
-          } catch (error) {
-            console.error(error);
-          }
-        }}
-      >
-        <h1>Create New Product</h1>
+        onSubmit={submitHandler}>
+        <h3>Update {product.name}</h3>
         <label htmlFor="title">Name</label>
         <input
           value={name}
@@ -55,9 +58,9 @@ const EditProduct = ({ product, products, setProducts }) => {
         <label htmlFor="title">Price</label>
         <input
           value={price}
-          type="text"
+          type="number"
           placeholder="price"
-          onChange={(event) => setPrice(parseInt(event.target.value))}
+          onChange={(event) => setPrice(event.target.value)}
         ></input>
         <button type="submit">Update Product</button>
       </form>

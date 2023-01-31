@@ -65,6 +65,7 @@ router.post("/", async (req, res, next) => {
 router.patch("/:productId", async (req, res, next) => {
   const { productId } = req.params;
   const { name, description, category, price } = req.body;
+  console.log("REQ PARAMS", req.params);
   const fields = {};
 
   if (req.body.name) {

@@ -383,6 +383,9 @@ export const updateProduct = async (
   try {
     const response = await fetch(`${baseUrl}/products/${productId}`, {
       method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         name,
         description,
