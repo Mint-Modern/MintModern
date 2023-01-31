@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getAllProducts } from "../../db";
 import { attachProductToOrder, getAllOrders } from "../api/auth";
 
-const AddProduct = ({ order, setOrder, product }) => {
-  const orderId = order.id;
+const AddProduct = ({ setOrder, product }) => {
+  // const orderId = order.id;
   const productId = product.id;
   const [quantity, setQuantity] = useState("");
 
@@ -14,7 +13,6 @@ const AddProduct = ({ order, setOrder, product }) => {
           try {
             event.preventDefault();
             const addProduct = await attachProductToOrder({
-              orderId,
               productId,
               quantity,
             });
