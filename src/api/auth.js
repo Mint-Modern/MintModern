@@ -379,6 +379,7 @@ export const updateProduct = async (
   price,
   productId
 ) => {
+  console.log("i am product", name, description, category, price, productId);
   try {
     const response = await fetch(`${baseUrl}/products/${productId}`, {
       method: "PATCH",
