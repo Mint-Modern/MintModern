@@ -644,6 +644,20 @@ async function createInitialProducts() {
         category: "desserts",
         price: 3.5,
       },
+      {
+        name: "Tapioca Smoothies",
+        description:
+          "Avocado, Blueberry, Coconut, Green Apple, Honeydew, Mango, Matcha Green Tea, Pineapple, Raspberry, Strawberry, Taro",
+        category: "drinks",
+        price: 5.5,
+      },
+      {
+        name: "Tapioca Milk Teas",
+        description:
+          "Green Milk Tea, Matcha Milk Tea, Taro Milk Tea, Thai Milk Tea",
+        category: "drinks",
+        price: 5.5,
+      },
     ];
     const products = await Promise.all(productsToCreate.map(createProduct));
 
