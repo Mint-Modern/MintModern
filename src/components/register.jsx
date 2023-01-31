@@ -8,16 +8,14 @@ const Register = ({ setToken }) => {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const navigate = useNavigate();
-  function showAlert() {
-    alert("Customer already exist, please login!");
-  }
+
   function showAlert() {
     alert("Customer already exist, please login!");
   }
   const submitHandler = async (event) => {
     event.preventDefault();
 
-    const token = await registerCustomer(name, phoneNumber, email, password);
+    const token = await registerCustomer(name, password, email, phoneNumber);
     const customer = await fetchMe(token);
     const userId = customer.id;
     const order = await createNewOrder({
