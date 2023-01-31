@@ -12,10 +12,13 @@
     <title>Mint Modern</title>
     <link rel="icon" href="logo.jpg" type="image/x-icon" />
     <!-- <link rel="stylesheet" href="src/style/style.css" /> -->
+  </head>
+  <body>
+    <div id="app"></div>
     <h3>My Google Maps Demo</h3>
     <!--The div element for the map -->
     <div id="map"></div>
-
+  
     <!-- 
       The `defer` attribute causes the callback to execute after the full HTML
       document has been parsed. For non-blocking uses, avoiding race conditions,
@@ -26,8 +29,5 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
     defer
   ></script>
-  </head>
-  <body>
-    <div id="app"></div>
   </body>
 </html>
