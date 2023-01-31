@@ -414,11 +414,10 @@ export const attachProductToOrder = async ({
 }) => {
   console.log("attachProductToOrder in auth", orderId, productId, quantity);
   try {
-    const response = await fetch(`${baseUrl}/products/${productId}/orders`, {
+    const response = await fetch(`${baseUrl}/orders/${productId}/products`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         orderId,

@@ -6,7 +6,7 @@ const {
   getOrderById,
   getAllOrders,
   getAllOrdersByCustomer,
-  attachProductToOrder,
+  addProductToOrder,
 } = require("../db");
 
 // GET /api/orders
@@ -60,11 +60,16 @@ router.post("/", requireCustomer, async (req, res, next) => {
 });
 
 // POST /api/orders/:orderId/products
-router.post("/", requireCustomer, async (req, res, next) => {
+router.post("/:orderId/products", async (req, res, next) => {
   const { orderId } = req.params;
+  const { productId } = req.body;
 
   try {
-    const productToAdd = await attachProductToOrder(orderId);
+    const productToAdd = await addProductToOrder({
+      orderId,
+      productId,
+      quantity: 1,
+    });
     res.send(productToAdd);
   } catch (error) {
     next(error);

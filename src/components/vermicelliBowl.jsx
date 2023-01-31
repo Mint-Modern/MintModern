@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
+import { attachProductToOrder } from "../api/auth";
 
 const VermicilliBowl = ({ products }) => {
   const navigate = useNavigate();
@@ -26,8 +27,9 @@ const VermicilliBowl = ({ products }) => {
               navigate(`/products/${product.id}`);
             }}
           >
-            Add to cart!
+            See Details!
           </button>
+          <button>Add to cart!</button>
         </div>
       );
   });

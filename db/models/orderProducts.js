@@ -27,7 +27,7 @@ async function addProductToOrder({ orderId, productId, quantity }) {
       rows: [orderProduct],
     } = await client.query(
       `
-    INSERT INTO orderproducts
+    INSERT INTO orderProducts
     ("orderId", "productId", quantity)
     VALUES ($1, $2, $3)
     ON CONFLICT ("orderId", "productId") DO NOTHING

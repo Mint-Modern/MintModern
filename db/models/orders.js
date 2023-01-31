@@ -77,7 +77,9 @@ async function getAllOrdersByCustomer(customerId) {
 async function getOrderByUserIsActive(customerId) {
   try {
     console.log(customerId);
-    const { rows: order } = await client.query(`
+    const {
+      rows: [order],
+    } = await client.query(`
     SELECT * FROM orders
     WHERE "userId" = ${customerId} AND "isActive" = true;
     `);

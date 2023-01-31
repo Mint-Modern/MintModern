@@ -20,11 +20,11 @@ router.get("/:customerId", requireCustomer, async (req, res, next) => {
   }
 });
 
-// post /api/order_products/:customerId
+// post /api/order_products/:productId
 router.post("/:productId", requireCustomer, async (req, res, next) => {
   const order = await getOrderByUserIsActive(req.customer.id);
   console.log(order);
-  const orderId = order[0].id;
+  const orderId = order.id;
   const quantity = 1;
   const { productId } = req.params;
 

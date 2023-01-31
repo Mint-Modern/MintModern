@@ -1,5 +1,4 @@
 const client = require("../client");
-const { getOrderById } = require("./orders");
 
 /*
 
@@ -81,7 +80,11 @@ async function attachProductToOrder(order) {
       (product) => product.orderId === order.id
     );
 
-    order.products = productsToAdd;
+    if (productsToAdd.length) {
+      order.products = productsToAdd;
+    }
+
+    console.log(order);
 
     return order;
   } catch (error) {
