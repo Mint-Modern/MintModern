@@ -4,9 +4,10 @@ import NavBar from "./navbar";
 // import Logout from "./Logout";
 import MyNavbar from "./MyNavbar";
 import AboutUs from "./aboutUs";
+
 import {GoogleMap, useLoadScript, Marker} from "@react-google-maps/api";
 
-const Home = ({ token }) => {
+const Home = ({ token, setToken }) => {
     // const {isLoaded} = useLoadScript({
     //     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
     // });
@@ -54,10 +55,9 @@ const Home = ({ token }) => {
   } else {
     return (
       <div>
-        <MyNavbar />
+        <MyNavbar setToken = {setToken} />
       </div>
     );
   }
-};
 
 export default Home;

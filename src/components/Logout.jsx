@@ -7,7 +7,7 @@ const Logout = ({ setToken }) => {
       className="logoutbutton"
       onClick={() => {
         localStorage.removeItem("token");
-        setToken(null);
+        setToken();
         location.pathname = "/";
       }}
     >

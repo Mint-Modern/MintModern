@@ -48,7 +48,7 @@ const App = () => {
     <div>
       {/* <NavBar /> */}
       <Routes>
-        <Route path="/" element={<Home token={token} />} />
+        <Route path="/" element={<Home token={token} setToken={setToken} />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route
           path="/login"
