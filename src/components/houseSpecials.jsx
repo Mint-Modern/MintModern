@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
+import { attachProductToOrder } from "../api/auth";
 
 const HouseSpecials = ({ products }) => {
   const navigate = useNavigate();
