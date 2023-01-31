@@ -5,7 +5,7 @@ import NavBar from "./navbar";
 import MyNavbar from "./MyNavbar";
 import AboutUs from "./aboutUs";
 
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+// import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 const Home = ({ token, setToken }) => {
   // const {isLoaded} = useLoadScript({

@@ -408,24 +408,17 @@ export const getSingleProduct = async (productId) => {
 };
 
 // attach?ProductToOrder
-export const attachProductToOrder = async ({
-  orderId,
-  productId,
-  quantity,
-}) => {
-  console.log("attachProductToOrder in auth", orderId, productId, quantity);
+export const attachProductToOrder = async ({ productId }) => {
+  // console.log("attachProductToOrder in auth", orderId, productId, quantity);
+  const token = localStorage.getItem("token");
   try {
-    const response = await fetch(`${baseUrl}/orders/${productId}/products`, {
+    const response = await fetch(`${baseUrl}/order_products/${productId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({
-        orderId,
-        quantity,
-      }),
     });
-    console.log(response.body);
     const data = await response.json();
     console.log(data);
     return data;

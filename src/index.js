@@ -6,8 +6,7 @@ import NavBar from "./components/navbar";
 import AboutUs from "./components/aboutUs";
 import Login from "./components/login";
 import FullMenu from "./components/fullMenu";
-import { getAllProducts } from "./api/auth";
-import { fetchMe } from "./api/auth";
+import { getAllProducts, getAllOrders, fetchMe } from "./api/auth";
 import Home from "./components/home";
 import Register from "./components/register";
 import Customerprofile from "./components/customerProfile";
@@ -23,6 +22,8 @@ import SingleProduct from "./components/singleProduct";
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
+  const [orders, setOrders] = useState([]);
+  const [orderProducts, setOrderProducts] = useState([]);
   const [user, setUser] = useState({});
   const [products, setProducts] = useState([]);
 
@@ -44,6 +45,20 @@ const App = () => {
     getProducts();
   }, [token]);
 
+  useEffect(() => {
+    const getOrders = async () => {
+      const response = await getAllOrders();
+      setOrders(response);
+    };
+    getOrders;
+  }, [token]);
+
+  // useEffect(() => {
+  //   const getOrderProducts = async () => {
+  //     const response = await
+  //   }
+  // })
+
   return (
     <div>
       {/* <NavBar /> */}
@@ -55,7 +70,10 @@ const App = () => {
           element={<Login token={token} setToken={setToken} />}
         />
         <Route path="/register" element={<Register setToken={setToken} />} />
-        <Route path="/fullmenu" element={<FullMenu products={products} />} />
+        <Route
+          path="/fullmenu"
+          element={<FullMenu products={products} setProducts={setProducts} />}
+        />
         <Route
           path="/products/:id"
           element={
@@ -90,7 +108,13 @@ const App = () => {
         <Route path="/fullmenu/rice" element={<Rice products={products} />} />
         <Route
           path="/fullmenu/vermicelliBowl"
-          element={<VermicelliBowl products={products} />}
+          element={
+            <VermicelliBowl
+              products={products}
+              orderProducts={orderProducts}
+              orders={orders}
+            />
+          }
         />
       </Routes>
     </div>

@@ -14,7 +14,6 @@ const AddProduct = ({ setOrder, product }) => {
             event.preventDefault();
             const addProduct = await attachProductToOrder({
               productId,
-              quantity,
             });
 
             const orders = await getAllOrders();
