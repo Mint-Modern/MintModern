@@ -26,6 +26,13 @@ const Teasers = ({ products }) => {
               navigate(`/products/${product.id}`);
             }}
           >
+            See Details!
+          </button>
+          <button
+            onClick={async () =>
+              await attachProductToOrder({ productId: product.id })
+            }
+          >
             Add to cart!
           </button>
         </div>
