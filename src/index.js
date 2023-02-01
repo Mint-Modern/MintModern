@@ -120,21 +120,11 @@ const App = () => {
               products={products}
               orderProducts={orderProducts}
               orders={orders}
+              user={user}
             />
           }
         />
-        <Route
-          path="/fullmenu/rice"
-          element={
-            <button
-              onClick={async () =>
-                await attachProductToOrder({ productId: product.id })
-              }
-            >
-              <Rice products={products} />
-            </button>
-          }
-        />
+        <Route path="/fullmenu/rice" element={<Rice products={products} />} />
         <Route
           path="/fullmenu/vermicelliBowl"
           element={

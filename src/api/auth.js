@@ -258,6 +258,20 @@ export const getAllOrders = async () => {
   }
 };
 
+export const getAllOrdersByCustomer = async (customerId) => {
+  try {
+    const response = await fetch(`${baseUrl}/orders/${customerId}/orders`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const getAllOrderProducts = async () => {
   try {
     const response = await fetch(`${baseUrl}/order_products`, {
