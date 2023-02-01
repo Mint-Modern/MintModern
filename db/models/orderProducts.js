@@ -58,6 +58,18 @@ async function getOrderProductById(id) {
   }
 }
 
+async function getAllOrderProducts() {
+  try {
+    const { rows: orderProducts } = await client.query(`
+            SELECT * FROM orderProducts
+            `);
+    return orderProducts;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 async function updateOrderProduct({ id, ...fields }) {
   const setString = Object.keys(fields)
     .map((key, index) => `"${key}"=$${index + 1}`)
@@ -103,4 +115,5 @@ module.exports = {
   getOrderProductById,
   updateOrderProduct,
   destroyOrderProduct,
+  getAllOrderProducts,
 };

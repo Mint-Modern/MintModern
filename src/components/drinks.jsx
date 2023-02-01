@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
 
 const Drinks = ({ products }) => {
   const navigate = useNavigate;
+  const [value, setValue] = useState([]);
+  const optionsSmoothie = [
+    'Avocado', 
+    'Blueberry', 
+    'Coconut', 
+    'Green Apple', 
+    'Honeydew', 
+    'Mango', 
+    'Matcha Green Tea', 
+    'Pineapple', 
+    'Raspberry', 
+    'Strawberry', 
+    'Taro'];
+  const optionsMilkTea = ['Green Milk Tea', 'Matcha Milk Tea', 'Taro Milk Tea', 'Thai Milk Tea'];
 
+  const handleChange = (e) => {
+    setValue(e.target.value)
+  }
   let productsToMap = products?.map((product, index) => {
-    if (product.category === "drinks")
+
+    if (product.category === "smoothies" || product.category === "milkTeas")
       return (
+      <> 
         <div className="single-prod" key={index}>
           <h4
             className="prod-name"
@@ -20,6 +39,27 @@ const Drinks = ({ products }) => {
           <h5>
             <i>{product.description}</i>
           </h5>
+          <h5>
+          <select value={value} onChange={handleChange}>
+              {/* <option value="smoothies">Avocado</option>
+              <option value="smoothies">Blueberry</option>
+              <option value="smoothies">Coconut</option>
+              <option value="smoothies">Green Apple</option>
+              <option value="smoothies">Honeydew</option>
+              <option value="smoothies">Mango</option>
+              <option value="smoothies">Match Green Tea</option>
+              <option value="smoothies">Pineapple</option>
+              <option value="smoothies">Raspberry</option>
+              <option value="smoothies">Strawberry</option> */}
+              {/* <option value="smoothies">{product.description}</option> */}
+              <option>Please Choose Your Flavor</option>
+              {optionsSmoothie.map((option, index) => {
+                return <option key={index}>
+                  {option}
+                </option>
+              })}
+            </select>
+          </h5>
           <h5>| {product.price} |</h5>
           <button
             onClick={() => {
@@ -29,6 +69,7 @@ const Drinks = ({ products }) => {
             Add to cart!
           </button>
         </div>
+      </>
       );
   });
 

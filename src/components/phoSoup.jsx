@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
+import { attachProductToOrder } from "../api/auth";
 
 const Pho = ({ products }) => {
   const navigate = useNavigate();
@@ -25,6 +26,13 @@ const Pho = ({ products }) => {
             onClick={() => {
               navigate(`/products/${product.id}`);
             }}
+          >
+            See Details!
+          </button>
+          <button
+            onClick={async () =>
+              await attachProductToOrder({ productId: product.id })
+            }
           >
             Add to cart!
           </button>

@@ -9,10 +9,13 @@ const Baguette = ({ products }) => {
     if (product.category === "baguette")
       return (
         <div className="single-prod" key={index}>
-          <h4 className="prod-name"
+          <h4
+            className="prod-name"
             onClick={() => {
               navigate(`/products/${product.id}`);
-            }}>{product.name}
+            }}
+          >
+            {product.name}
           </h4>
           <h5>
             <i>{product.description}</i>
@@ -22,6 +25,13 @@ const Baguette = ({ products }) => {
             onClick={() => {
               navigate(`/products/${product.id}`);
             }}
+          >
+            See Details!
+          </button>
+          <button
+            onClick={async () =>
+              await attachProductToOrder({ productId: product.id })
+            }
           >
             Add to cart!
           </button>

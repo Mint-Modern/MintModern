@@ -6,7 +6,12 @@ import NavBar from "./components/navbar";
 import AboutUs from "./components/aboutUs";
 import Login from "./components/login";
 import FullMenu from "./components/fullMenu";
-import { getAllProducts, getAllOrders, fetchMe } from "./api/auth";
+import {
+  getAllProducts,
+  getAllOrders,
+  fetchMe,
+  getAllOrderProducts,
+} from "./api/auth";
 import Home from "./components/home";
 import Register from "./components/register";
 import Customerprofile from "./components/customerProfile";
@@ -21,6 +26,7 @@ import Desserts from "./components/desserts";
 import SingleProduct from "./components/singleProduct";
 import GetCustomersList from "./components/getCustomersList";
 import NewProduct from "./components/newProduct";
+import Cart from "./components/cart";
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -55,11 +61,13 @@ const App = () => {
     getOrders;
   }, [token]);
 
-  // useEffect(() => {
-  //   const getOrderProducts = async () => {
-  //     const response = await
-  //   }
-  // })
+  useEffect(() => {
+    const getOrderProducts = async () => {
+      const response = await getAllOrderProducts();
+      setOrderProducts(response);
+    };
+    getOrderProducts();
+  }, [token]);
 
   return (
     <div>
@@ -107,7 +115,28 @@ const App = () => {
           path="/fullmenu/houseSpecials"
           element={<HouseSpecials products={products} />}
         />
-        <Route path="/fullmenu/rice" element={<Rice products={products} />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              products={products}
+              orderProducts={orderProducts}
+              orders={orders}
+            />
+          }
+        />
+        <Route
+          path="/fullmenu/rice"
+          element={
+            <button
+              onClick={async () =>
+                await attachProductToOrder({ productId: product.id })
+              }
+            >
+              <Rice products={products} />
+            </button>
+          }
+        />
         <Route
           path="/fullmenu/vermicelliBowl"
           element={

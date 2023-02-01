@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
 import { attachProductToOrder } from "../api/auth";
-import Cart from "./cart";
 
 const VermicilliBowl = ({ products, orderProducts, orders }) => {
   const navigate = useNavigate();
@@ -58,7 +57,6 @@ const VermicilliBowl = ({ products, orderProducts, orders }) => {
         />
       </h2>
       <div className="products">{productsToMap}</div>
-      <Cart products={products} orderProducts={orderProducts} orders={orders} />
     </>
   );
 };

@@ -53,6 +53,7 @@ async function getAllOrders() {
     SELECT *
     FROM orders;
     `);
+    console.log("this is orders API", rows);
     return rows;
   } catch (error) {
     console.error(error);
