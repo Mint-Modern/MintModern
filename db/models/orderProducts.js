@@ -63,6 +63,7 @@ async function getAllOrderProducts() {
     const { rows: orderProducts } = await client.query(`
             SELECT * FROM orderProducts
             `);
+    console.log(orderProducts);
     return orderProducts;
   } catch (error) {
     console.error(error);

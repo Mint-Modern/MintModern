@@ -258,7 +258,7 @@ export const getAllOrders = async () => {
   }
 };
 
-export const getAllOrdersByCustomer = async (customerId) => {
+export const getActiveOrderByCustomer = async (customerId) => {
   try {
     const response = await fetch(`${baseUrl}/orders/${customerId}/orders`, {
       headers: {
