@@ -647,7 +647,7 @@ async function createInitialProducts() {
       {
         name: "Tapioca Smoothies",
         description:
-          "Avocado, Blueberry, Coconut, Green Apple, Honeydew, Mango, Matcha Green Tea, Pineapple, Raspberry, Strawberry, Taro",
+          "Avocado, Blueberry, Coconut, Green Apple, Honeydew, Mango, Match Green Tea, Pineapple, Raspberry, Strawberry, Taro",
         category: "smoothies",
         price: 5.5,
       },
