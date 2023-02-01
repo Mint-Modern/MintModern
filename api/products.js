@@ -52,8 +52,9 @@ router.post("/", async (req, res, next) => {
         });
       }
     }
-
-    const product = createProduct(productData);
+    console.log("PRODUCT DATA", productData);
+    const product = await createProduct(productData);
+    console.log("PRODUCT", product);
     // ASK TRI WHY SENDS BACK EMPTY OBJECT BUT DOES UPDATE THE DATABASE
     res.send(product);
   } catch (error) {
