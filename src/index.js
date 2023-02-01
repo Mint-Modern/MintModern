@@ -19,6 +19,8 @@ import Rice from "./components/rice";
 import VermicelliBowl from "./components/vermicelliBowl";
 import Desserts from "./components/desserts";
 import SingleProduct from "./components/singleProduct";
+import GetCustomersList from "./components/getCustomersList";
+import NewProduct from "./components/newProduct";
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -115,6 +117,11 @@ const App = () => {
               orders={orders}
             />
           }
+        />
+        <Route path="/allcustomers" element={<GetCustomersList />} />
+        <Route
+          path="/newproduct"
+          element={<NewProduct products={products} setProducts={setProducts} />}
         />
       </Routes>
     </div>

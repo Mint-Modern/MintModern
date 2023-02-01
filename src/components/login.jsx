@@ -42,7 +42,7 @@ const Login = ({ token, setToken }) => {
             value={passwordLogin}
             type="password"
             placeholder="password"
-            minLength={3}
+            minLength={8}
             onChange={(e) => setPasswordLogin(e.target.value)}
           ></input>
           <button type="submit">Login</button>

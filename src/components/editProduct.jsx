@@ -10,6 +10,8 @@ const EditProduct = ({ product, products, setProducts }) => {
   const navigate = useNavigate();
   const productId = product.id;
 
+  console.log("I AM PRODUCT", product);
+
   const submitHandler = async (event) => {
     try {
       event.preventDefault();
@@ -41,21 +43,21 @@ const EditProduct = ({ product, products, setProducts }) => {
           placeholder="name"
           onChange={(event) => setName(event.target.value)}
         ></input>
-        <label htmlFor="title">Description</label>
+        <label htmlFor="description">Description</label>
         <input
           value={description}
           type="text"
           placeholder="description"
           onChange={(event) => setDescription(event.target.value)}
         ></input>
-        <label htmlFor="title">Category</label>
+        <label htmlFor="category">Category</label>
         <input
           value={category}
           type="text"
           placeholder="category"
           onChange={(event) => setCategory(event.target.value)}
         ></input>
-        <label htmlFor="title">Price</label>
+        <label htmlFor="price">Price</label>
         <input
           value={price}
           type="number"

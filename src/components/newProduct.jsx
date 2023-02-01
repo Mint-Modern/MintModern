@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createNewProduct } from "../api/auth";
+import MyNavbar from "./MyNavbar";
 
 const NewProduct = ({ products, setProducts }) => {
   const [name, setName] = useState("");
@@ -8,35 +10,40 @@ const NewProduct = ({ products, setProducts }) => {
   const [price, setPrice] = useState("");
   const navigate = useNavigate();
 
+  const submitHandler = async (event) => {
+    try {
+      event.preventDefault();
+      let newProduct = async () => {
+        await createNewProduct(
+          name,
+          description,
+          category,
+          price,
+      )
+    };
+      newProduct();
+      setProducts([newProduct, ...products]);
+      navigate("/fullmenu");
+      console.log("new product added!")
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <div>
-      <form
-        onSubmit={async (event) => {
-          try {
-            event.preventDefault();
-            const newProduct = await createNewProduct({
-              name,
-              description,
-              category,
-              price,
-            });
-            setProducts([newProduct, ...products]);
-            navigate("/");
-          } catch (error) {
-            console.error(error);
-          }
-        }}
-      >
-        <h1>Create New Product</h1>
-        <label htmlFor="title">Name</label>
+      <MyNavbar />
+      <h1 className="new-prod">Create New Product</h1>
+      <form className="newprodform" onSubmit={submitHandler}>
+        <label htmlFor="name"></label>
         <input
           value={name}
           type="text"
           required
-          placeholder="name"
+          placeholder="product name"
           onChange={(event) => setName(event.target.value)}
         ></input>
-        <label htmlFor="title">Description</label>
+        <label htmlFor="description"></label>
         <input
           value={description}
           type="text"
@@ -44,7 +51,7 @@ const NewProduct = ({ products, setProducts }) => {
           placeholder="description"
           onChange={(event) => setDescription(event.target.value)}
         ></input>
-        <label htmlFor="title">Category</label>
+        <label htmlFor="category"></label>
         <input
           value={category}
           type="text"
@@ -52,14 +59,18 @@ const NewProduct = ({ products, setProducts }) => {
           placeholder="category"
           onChange={(event) => setCategory(event.target.value)}
         ></input>
-        <label htmlFor="title">Price</label>
+        <label htmlFor="price"></label>
         <input
           value={price}
-          type="text"
+          type="number"
           required
           placeholder="price"
           onChange={(event) => setPrice(parseInt(event.target.value))}
         ></input>
+        <button type="submit">Add New Product</button>
+        <button onClick={() => {navigate(-1);}}>
+          Back
+        </button>
       </form>
     </div>
   );

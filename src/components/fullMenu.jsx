@@ -11,7 +11,7 @@ import Rice from "./rice";
 import VermicelliBowl from "./vermicelliBowl";
 import Desserts from "./desserts";
 
-const FullMenu = ({ products }) => {
+const FullMenu = ({ products, setProducts }) => {
   return (
     <div className="menupage">
       <div className="allNavs">
