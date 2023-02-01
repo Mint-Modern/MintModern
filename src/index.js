@@ -67,7 +67,7 @@ const App = () => {
       setOrderProducts(response);
     };
     getOrderProducts();
-  }, [token]);
+  }, []);
 
   return (
     <div>
@@ -123,6 +123,7 @@ const App = () => {
               orderProducts={orderProducts}
               orders={orders}
               user={user}
+              setOrderProducts={setOrderProducts}
             />
           }
         />

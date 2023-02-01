@@ -5,7 +5,7 @@ const {
   createOrder,
   getOrderById,
   getAllOrders,
-  getAllOrdersByCustomer,
+  getOrderByUserIsActive,
   addProductToOrder,
 } = require("../db");
 
@@ -34,7 +34,7 @@ router.get("/:orderId", async (req, res, next) => {
 router.get("/:customerId/orders", async (req, res, next) => {
   const { customerId } = req.params;
   try {
-    const orders = await getAllOrdersByCustomer(customerId);
+    const orders = await getOrderByUserIsActive(customerId);
     res.send(orders);
   } catch (error) {
     next(error);
