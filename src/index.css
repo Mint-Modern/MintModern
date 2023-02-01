@@ -131,6 +131,15 @@ Link:visited {
   border-radius: 10px;
 }
 
+.newprodform {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  padding: 10px;
+
+  border-radius: 10px;
+}
+
 .usepassforms input {
   font-family: 'Monteya', sans-serif;
   font-size: 15px;
@@ -143,7 +152,19 @@ Link:visited {
   
 }
 
-.deets {
+.newprodform input {
+  font-family: 'Monteya', sans-serif;
+  font-size: 20px;
+  margin: 10px;
+  padding: 15px;
+  width: 75%;
+  text-align: center;
+  border: #ecf39e solid 2px;
+  border-radius: 10px;
+  
+}
+
+.deets, .cust-name {
   font-family: 'Monteya', sans-serif;
   font-size: 18px;
   color: #132a13;
@@ -163,6 +184,22 @@ Link:visited {
   margin: 20px;
   padding: 15px;
   width: 105%;
+
+  text-align: center;
+  border: #ecf39e solid 2px;
+  border-radius: 100px;
+  background-color: #cfe1b9;
+}
+
+.newprodform button {
+  font-family: 'Monteya', sans-serif;
+  font-size: 20px;
+  color: #132a13;
+  letter-spacing: 3px;
+
+  margin: 20px;
+  padding: 15px;
+  width: 80%;
 
   text-align: center;
   border: #ecf39e solid 2px;
@@ -200,6 +237,7 @@ Link:visited {
 
 .register {
   background-image: url('https://static.vecteezy.com/system/resources/previews/009/667/401/non_2x/watercolor-seamless-border-frame-web-banner-with-simple-green-leaves-and-branches-forest-wild-herbs-mint-isolated-on-white-background-vector.jpg');
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -255,7 +293,7 @@ Link:visited {
   -webkit-text-stroke: .5px #e9f5db;
 }
 
-.prod-cat {
+.prod-cat, .all-cust, .new-prod {
   text-align: center;
   font-family: 'Astrella', sans-serif;
   font-size: 30px;
@@ -297,7 +335,7 @@ Link:visited {
   font-style: italic;
 }
 
-.aboutus {
+.aboutus  {
   font-family: 'Instagram Sans Headline', sans-serif;
   color: #31572c;
   font-size: 45px;
@@ -315,4 +353,11 @@ Link:visited {
   font-family: 'Instagram Sans Headline', sans-serif;
   font-size: 20px;
   color: #31572c;
+}
+
+.customers {
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
 }
