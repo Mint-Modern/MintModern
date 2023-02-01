@@ -1,6 +1,7 @@
 import React from "react";
 import MenuNav from "./menuNav";
 import { useNavigate } from "react-router-dom";
+import { attachProductToOrder } from "../api/auth";
 
 const Baguette = ({ products }) => {
   const navigate = useNavigate();
