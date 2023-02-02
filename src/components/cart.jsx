@@ -16,7 +16,10 @@ const Cart = ({ user, orderProducts, setOrderProducts }) => {
   }, [orderProducts]);
   console.log(order);
 
+  let runningTotal = 0;
+
   let productsToMap = order.products?.map((product, index) => {
+    runningTotal += product.price * product.quantity;
     return (
       <>
         <div className="single-prod" key={index}>
@@ -64,7 +67,7 @@ const Cart = ({ user, orderProducts, setOrderProducts }) => {
         />
       </h2>
       <div className="products">{productsToMap}</div>
-      <div className="products">Order Total = {order.total}</div>
+      <div className="products">Order Total = {runningTotal}</div>
       <button>Checkout</button>
     </>
   );

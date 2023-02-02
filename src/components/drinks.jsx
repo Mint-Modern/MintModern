@@ -6,109 +6,116 @@ import { attachProductToOrder } from "../api/auth";
 const Drinks = ({ products }) => {
   const navigate = useNavigate;
   const [value, setValue] = useState("");
-    
-    const handleChange = (e) => {
-      setValue(e.target.value)
-    }
-    
-    
-    let productsToMap = products?.map((product, index) => {
-      const optionsSmoothie = product.description.split(", ");
-      const optionsMilkTea = product.description.split(", ");
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  let productsToMap = products?.map((product, index) => {
+    const optionsSmoothie = product.description?.split(", ");
+    const optionsMilkTea = product.description?.split(", ");
     if (product.category === "smoothies")
       return (
-      <> 
-        <div className="single-prod" key={index}>
-          <h4
-            className="prod-name"
-            onClick={() => {
-              navigate(`/products/${product.id}`);
-            }}
-          >
-            {product.name}
-          </h4>
-          <h5>
-            <i>{product.description}</i>
-          </h5>
-          <h5>
-          
-          <select value={value} multiple={false} key={index} onChange={handleChange}>
-      
-              <option>Please Choose Your Flavor</option>
-              {optionsSmoothie.map((option, index) => {
-                return <option value ={option} key={index}>
-                  {option}
-                </option>
-              })}
-            </select>
-          </h5>
-          <h5>| {product.price} |</h5>
-          <button
-            onClick={() => {
-              navigate(`/products/${product.id}`);
-            }}
-          >
-            See Details!
-          </button>
-          <button
-            onClick={async () =>
-              await attachProductToOrder({ productId: product.id })
-            }
-          >
-            Add to cart!
-          </button>
-        </div>
-      </>
-      );
-      if (product.category === "milkTeas") {
-        return (
-          <> 
-            <div className="single-prod" key={index}>
-              <h4
-                className="prod-name"
-                onClick={() => {
-                  navigate(`/products/${product.id}`);
-                }}
+        <>
+          <div className="single-prod" key={index}>
+            <h4
+              className="prod-name"
+              onClick={() => {
+                navigate(`/products/${product.id}`);
+              }}
+            >
+              {product.name}
+            </h4>
+            <h5>
+              <i>{product.description}</i>
+            </h5>
+            <h5>
+              <select
+                value={value}
+                multiple={false}
+                key={index}
+                onChange={handleChange}
               >
-                {product.name}
-              </h4>
-              <h5>
-                <i>{product.description}</i>
-              </h5>
-              <h5>
-                <select value={value} multiple={false} key={index} onChange={handleChange}>
-                  <option>Please Choose Your Flavor</option>
-                  {optionsMilkTea.map((option, index) => {
-                    return <option value ={option} key={index}>
+                <option>Please Choose Your Flavor</option>
+                {optionsSmoothie.map((option, index) => {
+                  return (
+                    <option value={option} key={index}>
                       {option}
                     </option>
-                  })}
-                </select>
-              </h5>
-              <h5>| {product.price} |</h5>
-              <button
-            onClick={() => {
-              navigate(`/products/${product.id}`);
-            }}
-          >
-            See Details!
-          </button>
-          <button
-            onClick={async () =>
-              await attachProductToOrder({ productId: product.id })
-            }
-          >
-            Add to cart!
-          </button>
-            </div>
-          </>
-          );
-      };
+                  );
+                })}
+              </select>
+            </h5>
+            <h5>| {product.price} |</h5>
+            <button
+              onClick={() => {
+                navigate(`/products/${product.id}`);
+              }}
+            >
+              See Details!
+            </button>
+            <button
+              onClick={async () =>
+                await attachProductToOrder({ productId: product.id })
+              }
+            >
+              Add to cart!
+            </button>
+          </div>
+        </>
+      );
+    if (product.category === "milkTeas") {
+      return (
+        <>
+          <div className="single-prod" key={index}>
+            <h4
+              className="prod-name"
+              onClick={() => {
+                navigate(`/products/${product.id}`);
+              }}
+            >
+              {product.name}
+            </h4>
+            <h5>
+              <i>{product.description}</i>
+            </h5>
+            <h5>
+              <select
+                value={value}
+                multiple={false}
+                key={index}
+                onChange={handleChange}
+              >
+                <option>Please Choose Your Flavor</option>
+                {optionsMilkTea.map((option, index) => {
+                  return (
+                    <option value={option} key={index}>
+                      {option}
+                    </option>
+                  );
+                })}
+              </select>
+            </h5>
+            <h5>| {product.price} |</h5>
+            <button
+              onClick={() => {
+                navigate(`/products/${product.id}`);
+              }}
+            >
+              See Details!
+            </button>
+            <button
+              onClick={async () =>
+                await attachProductToOrder({ productId: product.id })
+              }
+            >
+              Add to cart!
+            </button>
+          </div>
+        </>
+      );
+    }
   });
-  
-  
-
-
 
   return (
     <>
