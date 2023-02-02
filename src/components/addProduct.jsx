@@ -40,4 +40,4 @@ const AddProduct = ({ setOrder, product }) => {
   );
 };
 
-export default AddProduct;
+// export default AddProduct;
