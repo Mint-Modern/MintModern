@@ -1,9 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { deleteOrderProduct, getActiveOrderByCustomer } from "../api/auth";
+import {
+  createNewOrder,
+  deleteOrderProduct,
+  getActiveOrderByCustomer,
+} from "../api/auth";
 import MyNavbar from "./MyNavbar";
 import AddProduct from "./addProduct";
 
-const Cart = ({ user, orderProducts, setOrderProducts }) => {
+const Cart = ({
+  user,
+  orderProducts,
+  setOrderProducts,
+  orders,
+  setOrders,
+  setUser,
+}) => {
   const [order, setOrder] = useState({});
 
   useEffect(() => {
@@ -14,7 +25,21 @@ const Cart = ({ user, orderProducts, setOrderProducts }) => {
     getOrders();
   }, [orderProducts]);
 
-  console.log(order);
+  console.log(user);
+
+  const clickHandler = async (event) => {
+    event.preventDefault();
+    setOrder({ isActive: false });
+    const userId = user.id;
+    const newOrder = await createNewOrder({
+      userId,
+      total: 0,
+      salesTax: 0.0945,
+      isActive: true,
+    });
+    setOrders(...orders, order);
+    console.log("you checked out");
+  };
 
   const updateQuantity = (index, newQuantity) => {
     const updatedProduct = { ...order.products[index], quantity: newQuantity };
@@ -81,8 +106,10 @@ const Cart = ({ user, orderProducts, setOrderProducts }) => {
         />
       </h2>
       <div className="products">{productsToMap}</div>
-      <div className="products">Order Total = {runningTotal}</div>
-      <button>Checkout</button>
+      <div className="products">
+        Order Total = {runningTotal + runningTotal * order.salesTax}
+      </div>
+      <button onClick={clickHandler}>Checkout</button>
     </>
   );
 };

@@ -58,7 +58,7 @@ const App = () => {
       const response = await getAllOrders();
       setOrders(response);
     };
-    getOrders;
+    getOrders();
   }, [token]);
 
   useEffect(() => {
@@ -119,11 +119,12 @@ const App = () => {
           path="/cart"
           element={
             <Cart
-              products={products}
               orderProducts={orderProducts}
               orders={orders}
               user={user}
               setOrderProducts={setOrderProducts}
+              setUser={setUser}
+              setOrders={setOrders}
             />
           }
         />

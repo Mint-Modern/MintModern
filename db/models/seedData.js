@@ -677,37 +677,37 @@ async function createInitialOrders() {
       {
         userId: 1,
         total: 0,
-        salesTax: 0.1,
+        salesTax: 0.0945,
         isActive: true,
       },
       {
         userId: 1,
         total: 0,
-        salesTax: 0.1,
+        salesTax: 0.0945,
         isActive: false,
       },
       {
         userId: 2,
         total: 0,
-        salesTax: 0.1,
+        salesTax: 0.0945,
         isActive: true,
       },
       {
         userId: 3,
         total: 0,
-        salesTax: 0.1,
+        salesTax: 0.0945,
         isActive: true,
       },
       {
         userId: 4,
         total: 0,
-        salesTax: 0.1,
+        salesTax: 0.0945,
         isActive: true,
       },
       {
         userId: 5,
         total: 0,
-        salesTax: 0.1,
+        salesTax: 0.0945,
         isActive: true,
       },
     ];
