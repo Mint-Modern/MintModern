@@ -27,6 +27,7 @@ import SingleProduct from "./components/singleProduct";
 import GetCustomersList from "./components/getCustomersList";
 import NewProduct from "./components/newProduct";
 import Cart from "./components/cart";
+import OrderHistory from "./components/orderHistory";
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -144,10 +145,13 @@ const App = () => {
           path="/newproduct"
           element={<NewProduct products={products} setProducts={setProducts} />}
         />
+        <Route path="/orderhistory" element={<OrderHistory orders={orders} user={user} products={products}/>}/>
       </Routes>
     </div>
   );
 };
+
+
 
 ReactDOM.createRoot(document.getElementById("app")).render(
   <React.StrictMode>
