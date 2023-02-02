@@ -4,6 +4,7 @@ import { fetchMe, getSingleProduct } from "../api/auth";
 import DeleteProduct from "./deleteProduct";
 import EditProduct from "./editProduct";
 
+
 const SingleProduct = ({ products, setProducts }) => {
   const token = localStorage.getItem("token");
   const { id } = useParams();
@@ -69,7 +70,7 @@ const SingleProduct = ({ products, setProducts }) => {
           Update Product
             </button>
         )}
-        <DeleteProduct product={products} products={products} setProducts={setProducts} />
+        <DeleteProduct product={product} products={products} setProducts={setProducts} />
       <button onClick={goBack}>Back</button>
     </div>
   );

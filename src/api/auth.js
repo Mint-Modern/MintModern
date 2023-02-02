@@ -459,7 +459,10 @@ export const attachProductToOrder = async ({ productId }) => {
 };
 
 // deleteProduct
-export const deleteProduct = async (productId) => {
+export const deleteProduct = async ({ productId }) => {
+  console.log("PRODUCT ID", productId);
+  const token = localStorage.getItem("token");
+
   try {
     const response = await fetch(`${baseUrl}/products/${productId}`, {
       method: "DELETE",
@@ -468,6 +471,8 @@ export const deleteProduct = async (productId) => {
         Authorization: `Bearer ${token}`,
       },
     });
+    console.log("prod to delete", response);
+    // return "product deleted";
     const data = await response.json();
     return data;
   } catch (error) {
