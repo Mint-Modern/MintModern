@@ -5,8 +5,7 @@ const DeleteProduct = ({product, products, setProducts}) => {
     return (
         <div>
             <button onClick={async () => {
-                const deleteProd = await deleteProduct(product)
-                // console.log("PRODUCT TO DELETE", deleteProd)
+                setProducts(await deleteProduct(product))
                 const reloadMenu = () => {
                     window.location.href = "/fullmenu"
                 };
