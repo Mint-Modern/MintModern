@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
 import { attachProductToOrder } from "../api/auth";
 
-const VermicilliBowl = ({ products, orderProducts, orders }) => {
+const VermicilliBowl = ({ products }) => {
   const navigate = useNavigate();
 
   let productsToMap = products?.map((product, index) => {
