@@ -19,7 +19,6 @@ const Register = ({ setToken }) => {
     const customer = await fetchMe(token);
     const userId = customer.id;
     const order = await createNewOrder({
-      token,
       userId,
       total: 0,
       salesTax: 0.0945,

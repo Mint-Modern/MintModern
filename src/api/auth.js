@@ -287,13 +287,8 @@ export const getAllOrderProducts = async () => {
 };
 
 // createNewOrder
-export const createNewOrder = async ({
-  token,
-  userId,
-  total,
-  salesTax,
-  isActive,
-}) => {
+export const createNewOrder = async ({ userId, total, salesTax, isActive }) => {
+  const token = localStorage.getItem("token");
   try {
     const response = await fetch(`${baseUrl}/orders`, {
       method: "POST",
