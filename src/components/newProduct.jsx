@@ -14,16 +14,16 @@ const NewProduct = ({ products, setProducts }) => {
     try {
       event.preventDefault();
       let newProduct = async () => {
-        await createNewProduct(
+        await createNewProduct({
           name,
           description,
           category,
           price,
-      )
+        })
     };
       newProduct();
       setProducts([newProduct, ...products]);
-      navigate("/fullmenu");
+      navigate(`/fullmenu/${category}`);
       console.log("new product added!")
     } catch (error) {
       console.error(error);

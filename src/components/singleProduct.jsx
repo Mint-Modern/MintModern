@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchMe, getSingleProduct } from "../api/auth";
+import DeleteProduct from "./deleteProduct";
 import EditProduct from "./editProduct";
 
 const SingleProduct = ({ products, setProducts }) => {
@@ -66,8 +67,9 @@ const SingleProduct = ({ products, setProducts }) => {
           }}
         >
           Update Product
-        </button>
-      )}
+            </button>
+        )}
+        <DeleteProduct product={products} products={products} setProducts={setProducts} />
       <button onClick={goBack}>Back</button>
     </div>
   );
