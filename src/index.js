@@ -28,6 +28,7 @@ import GetCustomersList from "./components/getCustomersList";
 import NewProduct from "./components/newProduct";
 import Cart from "./components/cart";
 import OrderHistory from "./components/orderHistory";
+import Confirmationpage from "./components/confirmationPage";
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -145,13 +146,17 @@ const App = () => {
           path="/newproduct"
           element={<NewProduct products={products} setProducts={setProducts} />}
         />
-        <Route path="/orderhistory" element={<OrderHistory orders={orders} user={user} products={products}/>}/>
+        <Route
+          path="/orderhistory"
+          element={
+            <OrderHistory orders={orders} user={user} products={products} />
+          }
+        />
+        <Route path="/thankyou" element={<Confirmationpage />} />
       </Routes>
     </div>
   );
 };
-
-
 
 ReactDOM.createRoot(document.getElementById("app")).render(
   <React.StrictMode>

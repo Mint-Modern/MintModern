@@ -4,8 +4,7 @@ import MyNavbar from "./MyNavbar";
 import AddProduct from "./addProduct";
 
 const Cart = ({ user, orderProducts, setOrderProducts }) => {
-  const [order, setOrder] = useState([]);
-  const [quantity, setQuantity] = useState("");
+  const [order, setOrder] = useState({});
 
   useEffect(() => {
     const getOrders = async () => {
@@ -14,12 +13,33 @@ const Cart = ({ user, orderProducts, setOrderProducts }) => {
     };
     getOrders();
   }, [orderProducts]);
+
   console.log(order);
+
+  const updateQuantity = (index, newQuantity) => {
+    const updatedProduct = { ...order.products[index], quantity: newQuantity };
+    const updatedProducts = [
+      ...order.products.slice(0, index),
+      updatedProduct,
+      ...order.products.slice(index + 1),
+    ];
+    setOrder({ ...order, products: updatedProducts });
+  };
+
+  let newArray = Array.from({ length: 10 }, (_, i) => i + 1);
+  let optionsToMap = newArray.map((option, index) => {
+    return (
+      <option value={index + 1} key={index}>
+        {index + 1}
+      </option>
+    );
+  });
 
   let runningTotal = 0;
 
   let productsToMap = order.products?.map((product, index) => {
     runningTotal += product.price * product.quantity;
+
     return (
       <>
         <div className="single-prod" key={index}>
@@ -27,16 +47,10 @@ const Cart = ({ user, orderProducts, setOrderProducts }) => {
             {product.quantity} X {product.name}
           </h4>
           <h5>{product.price}</h5>
-          <select onChange={(event) => setQuantity(event.target.value)}>
-            <option key="1" value="1">
-              1
-            </option>
-            <option key="2" value="2">
-              2
-            </option>
-            <option key="3" value="3">
-              3
-            </option>
+          <select
+            onChange={(event) => updateQuantity(index, event.target.value)}
+          >
+            {optionsToMap}
           </select>
           <button
             onClick={async () =>
