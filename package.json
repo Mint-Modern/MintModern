@@ -4,7 +4,8 @@
   "description": "What does this group do when two or more members disagree on a choice?   * Goes to a vote between remaining members, on 50/50 split deciding vote goes to project manager (Tri).",
   "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
+    "start:front": "react-scripts start",
     "build": "react-scripts build",
     "start:dev": "nodemon server.js",
     "seed:dev": "nodemon ./db/models/seedData.js"
