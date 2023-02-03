@@ -3,6 +3,7 @@ import {
   createNewOrder,
   deleteOrderProduct,
   getActiveOrderByCustomer,
+  updateOrder,
 } from "../api/auth";
 import MyNavbar from "./MyNavbar";
 import AddProduct from "./addProduct";
@@ -25,11 +26,10 @@ const Cart = ({
     getOrders();
   }, [orderProducts]);
 
-  console.log(user);
-
   const clickHandler = async (event) => {
     event.preventDefault();
-    setOrder({ isActive: false });
+    setOrder({ ...order, isActive: false });
+    await updateOrder({ orderId: order.id, isActive: false });
     const userId = user.id;
     const newOrder = await createNewOrder({
       userId,
@@ -37,7 +37,7 @@ const Cart = ({
       salesTax: 0.0945,
       isActive: true,
     });
-    setOrders(...orders, order);
+    // location.reload();
     console.log("you checked out");
   };
 

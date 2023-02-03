@@ -311,13 +311,13 @@ export const createNewOrder = async ({ userId, total, salesTax, isActive }) => {
 };
 
 // updateOrder
-export const updateOrder = async (orderId, total, salesTax, isActive) => {
+export const updateOrder = async ({ orderId, total, salesTax, isActive }) => {
+  console.log(orderId, salesTax, isActive, total);
   try {
     const response = await fetch(`${baseUrl}/orders/${orderId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         total,

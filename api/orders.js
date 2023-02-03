@@ -7,6 +7,7 @@ const {
   getAllOrders,
   getOrderByUserIsActive,
   addProductToOrder,
+  updateOrder,
 } = require("../db");
 
 // GET /api/orders
@@ -71,6 +72,41 @@ router.post("/:orderId/products", async (req, res, next) => {
       quantity: 1,
     });
     res.send(productToAdd);
+  } catch (error) {
+    next(error);
+  }
+});
+
+//PATCH /api/orders/:orderId
+router.patch("/:orderId", async (req, res, next) => {
+  const { orderId } = req.params;
+  const { total, salesTax, isActive } = req.body;
+  const fields = {};
+
+  console.log(total, salesTax, isActive);
+
+  if (req.body.total) {
+    fields.total = total;
+  }
+  if (req.body.salesTax) {
+    fields.salesTax = salesTax;
+  }
+  if (req.body.isActive != undefined) {
+    fields.isActive = isActive;
+  }
+
+  const order = await getOrderById(orderId);
+  if (!order) {
+    next({
+      error: "ProductDoesNotExist",
+      message: `Product ${orderId} not found`,
+      name: `${orderId}`,
+    });
+  }
+
+  try {
+    const update = await updateOrder({ id: orderId, ...fields });
+    res.send(update);
   } catch (error) {
     next(error);
   }
