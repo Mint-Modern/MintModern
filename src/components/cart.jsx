@@ -7,16 +7,8 @@ import {
   updateOrder,
 } from "../api/auth";
 import MyNavbar from "./MyNavbar";
-import AddProduct from "./addProduct";
 
-const Cart = ({
-  user,
-  orderProducts,
-  setOrderProducts,
-  orders,
-  setOrders,
-  setUser,
-}) => {
+const Cart = ({ user, orderProducts, setOrderProducts }) => {
   const [order, setOrder] = useState({});
 
   !user.length
@@ -59,6 +51,10 @@ const Cart = ({
       ...order.products.slice(index + 1),
     ];
     setOrder({ ...order, products: updatedProducts });
+    localStorage.setItem(
+      "cart",
+      JSON.stringify({ ...order, products: updatedProducts })
+    );
   };
 
   let newArray = Array.from({ length: 10 }, (_, i) => i + 1);
@@ -70,11 +66,22 @@ const Cart = ({
     );
   });
 
+  const removeItem = (index) => {
+    const updatedProducts = [
+      ...order.products.slice(0, index),
+      ...order.products.slice(index + 1),
+    ];
+    setOrder({ ...order, products: updatedProducts });
+    localStorage.setItem(
+      "cart",
+      JSON.stringify({ ...order, products: updatedProducts })
+    );
+  };
+
   let runningTotal = 0;
 
   let productsToMap = order.products?.map((product, index) => {
     runningTotal += product.price * product.quantity;
-    // product.quantity === null ? (product.quantity = 1) : null;
 
     return (
       <div className="single-prod" key={index}>
@@ -85,13 +92,17 @@ const Cart = ({
         <select onChange={(event) => updateQuantity(index, event.target.value)}>
           {optionsToMap}
         </select>
-        <button
-          onClick={async () =>
-            setOrderProducts(await deleteOrderProduct(product.orderProductId))
-          }
-        >
-          Remove item
-        </button>
+        {user.length ? (
+          <button
+            onClick={async () =>
+              setOrderProducts(await deleteOrderProduct(product.orderProductId))
+            }
+          >
+            Remove item
+          </button>
+        ) : (
+          <button onClick={() => removeItem(index)}>Remove item</button>
+        )}
       </div>
     );
   });
@@ -114,7 +125,12 @@ const Cart = ({
       </h2>
       <div className="products">{productsToMap}</div>
       <div className="products">
-        Order Total = {runningTotal + runningTotal * order.salesTax}
+        Order Total = $
+        {
+          (runningTotal =
+            Math.round((runningTotal + runningTotal * order.salesTax) * 100) /
+            100)
+        }
       </div>
       <button onClick={clickHandler}>Checkout</button>
     </>
