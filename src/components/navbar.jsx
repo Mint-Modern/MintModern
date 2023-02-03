@@ -6,13 +6,11 @@ const NavBar = ({ token, setToken }) => {
     <div className="allNavs abtnav">
       <header id="homelink">
         <Link to="/">
-          <a href="https://imgbb.com/">
-            <img
-              src="https://i.ibb.co/zxB68bW/mint-logo-250x200.png"
-              alt="mint-logo-250x200"
-              className="logo"
-            />
-          </a>
+          <img
+            src="https://i.ibb.co/zxB68bW/mint-logo-250x200.png"
+            alt="mint-logo-250x200"
+            className="logo"
+          />
         </Link>
       </header>
       <nav className="main-nav">
