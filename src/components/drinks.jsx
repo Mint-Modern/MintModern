@@ -16,7 +16,6 @@ const Drinks = ({ products }) => {
     const optionsMilkTea = product.description?.split(", ");
     if (product.category === "smoothies")
       return (
-        <>
           <div className="single-prod" key={index}>
             <h4
               className="prod-name"
@@ -62,11 +61,10 @@ const Drinks = ({ products }) => {
               Add to cart!
             </button>
           </div>
-        </>
+
       );
     if (product.category === "milkTeas") {
       return (
-        <>
           <div className="single-prod" key={index}>
             <h4
               className="prod-name"
@@ -112,7 +110,7 @@ const Drinks = ({ products }) => {
               Add to cart!
             </button>
           </div>
-        </>
+
       );
     }
   });
