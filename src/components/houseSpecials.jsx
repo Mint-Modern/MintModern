@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
 import { attachProductToOrder } from "../api/auth";
 
-const HouseSpecials = ({ products }) => {
+const HouseSpecials = ({ products, user }) => {
   const navigate = useNavigate();
 
   let productsToMap = products?.map((product, index) => {
@@ -30,15 +30,28 @@ const HouseSpecials = ({ products }) => {
             See Details!
           </button>
           <button
-            onClick={async () =>
-              await attachProductToOrder({ productId: product.id })
-            }
+            onClick={async () => {
+              user.length
+                ? await attachProductToOrder({ productId: product.id })
+                : addProductToLocalCart(product);
+            }}
           >
             Add to cart!
           </button>
         </div>
       );
   });
+
+  const addProductToLocalCart = (product) => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || {
+      products: [],
+      isActive: true,
+      salesTax: 0.0945,
+      total: 0,
+    };
+    cart.products.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
 
   return (
     <>

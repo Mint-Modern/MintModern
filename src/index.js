@@ -98,24 +98,27 @@ const App = () => {
         />
         <Route
           path="/fullmenu/teasers"
-          element={<Teasers products={products} />}
+          element={<Teasers products={products} user={user} />}
         />
         <Route
           path="/fullmenu/desserts"
-          element={<Desserts products={products} />}
+          element={<Desserts products={products} user={user} />}
         />
         <Route
           path="/fullmenu/baguette"
-          element={<Baguette products={products} />}
+          element={<Baguette products={products} user={user} />}
         />
-        <Route path="/fullmenu/pho" element={<Pho products={products} />} />
+        <Route
+          path="/fullmenu/pho"
+          element={<Pho products={products} user={user} />}
+        />
         <Route
           path="/fullmenu/drinks"
           element={<Drinks products={products} user={user} />}
         />
         <Route
           path="/fullmenu/houseSpecials"
-          element={<HouseSpecials products={products} />}
+          element={<HouseSpecials products={products} user={user} />}
         />
         <Route
           path="/cart"
@@ -130,16 +133,13 @@ const App = () => {
             />
           }
         />
-        <Route path="/fullmenu/rice" element={<Rice products={products} />} />
+        <Route
+          path="/fullmenu/rice"
+          element={<Rice products={products} user={user} />}
+        />
         <Route
           path="/fullmenu/vermicelliBowl"
-          element={
-            <VermicelliBowl
-              products={products}
-              orderProducts={orderProducts}
-              orders={orders}
-            />
-          }
+          element={<VermicelliBowl products={products} user={user} />}
         />
         <Route path="/allcustomers" element={<GetCustomersList />} />
         <Route
