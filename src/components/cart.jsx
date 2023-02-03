@@ -19,13 +19,20 @@ const Cart = ({
 }) => {
   const [order, setOrder] = useState({});
 
-  useEffect(() => {
-    const getOrders = async () => {
-      const response = await getActiveOrderByCustomer(user.id);
-      setOrder(response);
-    };
-    getOrders();
-  }, [orderProducts]);
+  !user.length
+    ? useEffect(() => {
+        const storedOrder = localStorage.getItem("cart");
+        if (storedOrder) {
+          setOrder(JSON.parse(storedOrder));
+        }
+      }, [])
+    : useEffect(() => {
+        const getOrders = async () => {
+          const response = await getActiveOrderByCustomer(user.id);
+          setOrder(response);
+        };
+        getOrders();
+      }, [orderProducts]);
 
   const navigate = useNavigate();
 
@@ -40,7 +47,7 @@ const Cart = ({
       salesTax: 0.0945,
       isActive: true,
     });
-    navigate("/thankyou")
+    navigate("/thankyou");
     console.log("you checked out");
   };
 
@@ -67,26 +74,25 @@ const Cart = ({
 
   let productsToMap = order.products?.map((product, index) => {
     runningTotal += product.price * product.quantity;
+    // product.quantity === null ? (product.quantity = 1) : null;
 
     return (
-        <div className="single-prod" key={index}>
-          <h4 className="prod-name">
-            {product.quantity} X {product.name}
-          </h4>
-          <h5>{product.price}</h5>
-          <select
-            onChange={(event) => updateQuantity(index, event.target.value)}
-          >
-            {optionsToMap}
-          </select>
-          <button
-            onClick={async () =>
-              setOrderProducts(await deleteOrderProduct(product.orderProductId))
-            }
-          >
-            Remove item
-          </button>
-        </div>
+      <div className="single-prod" key={index}>
+        <h4 className="prod-name">
+          {product.quantity} X {product.name}
+        </h4>
+        <h5>{product.price}</h5>
+        <select onChange={(event) => updateQuantity(index, event.target.value)}>
+          {optionsToMap}
+        </select>
+        <button
+          onClick={async () =>
+            setOrderProducts(await deleteOrderProduct(product.orderProductId))
+          }
+        >
+          Remove item
+        </button>
+      </div>
     );
   });
 
