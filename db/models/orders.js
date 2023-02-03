@@ -9,6 +9,7 @@ createOrder
 getOrderById
 getAllOrders
 getAllOrdersByCustomer
+updateOrder
 
 */
 
@@ -91,10 +92,38 @@ async function getOrderByUserIsActive(customerId) {
   }
 }
 
+async function updateOrder({ id, ...fields }) {
+  const setString = Object.keys(fields)
+    .map((key, index) => `"${key}"=$${index + 1}`)
+    .join(", ");
+  console.log(setString);
+  try {
+    // update any fields that need to be updated
+    if (setString.length > 0) {
+      const {
+        rows: [order],
+      } = await client.query(
+        `
+            UPDATE orders
+            SET ${setString}
+            WHERE id=${id}
+            RETURNING *;
+          `,
+        Object.values(fields)
+      );
+      return order;
+    }
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 module.exports = {
   createOrder,
   getOrderById,
   getAllOrders,
   getAllOrdersByCustomer,
   getOrderByUserIsActive,
+  updateOrder,
 };
