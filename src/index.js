@@ -111,7 +111,7 @@ const App = () => {
         <Route path="/fullmenu/pho" element={<Pho products={products} />} />
         <Route
           path="/fullmenu/drinks"
-          element={<Drinks products={products} />}
+          element={<Drinks products={products} user={user} />}
         />
         <Route
           path="/fullmenu/houseSpecials"
