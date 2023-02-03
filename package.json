@@ -8,7 +8,8 @@
     "start:front": "react-scripts start",
     "build": "react-scripts build",
     "start:dev": "nodemon server.js",
-    "seed:dev": "nodemon ./db/models/seedData.js"
+    "seed:dev": "nodemon ./db/models/seedData.js",
+    "seed": "node ./db/models/seedData.js "
   },
   "repository": {
     "type": "git",
