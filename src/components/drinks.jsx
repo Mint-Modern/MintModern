@@ -6,12 +6,13 @@ import { attachProductToOrder } from "../api/auth";
 const Drinks = ({ products, user }) => {
   const navigate = useNavigate;
   const [value, setValue] = useState("");
+  let productsToMap = []; 
 
   const handleChange = (e) => {
     setValue(e.target.value);
   };
 
-  let productsToMap = products?.map((product, index) => {
+  productsToMap = products?.map((product, index) => {
     const optionsSmoothie = product.description?.split(", ");
     const optionsMilkTea = product.description?.split(", ");
     if (product.category === "smoothies")
