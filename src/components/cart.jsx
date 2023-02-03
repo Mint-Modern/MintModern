@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   createNewOrder,
   deleteOrderProduct,
@@ -26,6 +27,8 @@ const Cart = ({
     getOrders();
   }, [orderProducts]);
 
+  const navigate = useNavigate();
+
   const clickHandler = async (event) => {
     event.preventDefault();
     setOrder({ ...order, isActive: false });
@@ -37,7 +40,7 @@ const Cart = ({
       salesTax: 0.0945,
       isActive: true,
     });
-    // location.reload();
+    navigate("/thankyou")
     console.log("you checked out");
   };
 
@@ -66,7 +69,6 @@ const Cart = ({
     runningTotal += product.price * product.quantity;
 
     return (
-      <>
         <div className="single-prod" key={index}>
           <h4 className="prod-name">
             {product.quantity} X {product.name}
@@ -85,7 +87,6 @@ const Cart = ({
             Remove item
           </button>
         </div>
-      </>
     );
   });
 
