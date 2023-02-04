@@ -506,7 +506,7 @@ export const updateOrderProduct = async (orderProductId, quantity) => {
 
 export const deleteOrderProduct = async (orderProductId) => {
   console.log("orderProductId in auth: ", orderProductId);
-  const token = localStorage.getItem("token");
+
   try {
     const response = await fetch(
       `${baseUrl}/order_products/${orderProductId}`,
@@ -514,7 +514,6 @@ export const deleteOrderProduct = async (orderProductId) => {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
         },
       }
     );

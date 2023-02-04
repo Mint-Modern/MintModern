@@ -309,16 +309,20 @@ Link:visited {
 .products {
   margin: 0;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
 
 .single-prod {
-  width: 60%;
+  
+  width: 23%;
+  height: 300px;
   margin: 0;
   padding-bottom: 15px;
-
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 3px #ccc;
+  margin-bottom: 20px;
   text-align: center;
   line-height: 1;
   font-family: 'Instagram Sans Headline', sans-serif;
@@ -327,7 +331,16 @@ Link:visited {
 }
 
 .prod-name {
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease-in-out;
   font-size: 25px;
+}
+
+.prod-name:hover {
+  color: #007bff;
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 .cat {

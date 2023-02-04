@@ -80,7 +80,7 @@ router.patch("/:orderProductId", requireCustomer, async (req, res, next) => {
 });
 
 // DELETE /api/orderProducts/:orderProductId
-router.delete("/:orderProductId", requireCustomer, async (req, res, next) => {
+router.delete("/:orderProductId", async (req, res, next) => {
   const { orderProductId } = req.params;
 
   const orderProduct = await getOrderProductById(orderProductId);
