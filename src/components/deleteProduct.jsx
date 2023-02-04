@@ -8,8 +8,9 @@ const DeleteProduct = ({product, products, setProducts}) => {
 
     return (
         <div>
-             <button onClick={async () => {
-                setProducts(await deleteProduct({ productId: product.id }))
+        <button className="modifybuttons"
+          onClick={async () => {
+          setProducts(await deleteProduct({ productId: product.id }))
           console.log("product deleted!");
           navigate("/fullmenu")
           location.reload();

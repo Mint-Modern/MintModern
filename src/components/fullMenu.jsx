@@ -15,13 +15,23 @@ const FullMenu = ({ products, setProducts }) => {
   return (
     <div className="menupage">
       <div className="allNavs">
-        <div className="homelink">
-          <Link to='/'>
-              <img src="https://i.ibb.co/zxB68bW/mint-logo-250x200.png"
-                alt="mint-logo-250x200" className="logo" /> 
+        <header id="homelink">
+          <Link to="/" >
+            <img src="https://i.ibb.co/zxB68bW/mint-logo-250x200.png"
+              alt="mint-logo-250x200" className="logo" />
           </Link>
-        </div>
           <p className="menu">MENU</p>
+          <div id="lc-icons">
+            <Link to="/myprofile">
+              <img src="https://i.ibb.co/vxsQDTG/profile-icon-v1.png" 
+                alt="profile-icon-v1" className="icon"/>
+            </Link>
+            <Link to="/cart">
+              <img src="https://i.ibb.co/bXrZxf2/cart-icon-v1.png" 
+                alt="cart-icon-v1" className="icon" />
+            </Link>
+          </div>
+        </header>
         <nav className="fm-nav">
           <Link to="/fullmenu/teasers">Teasers</Link>
           <Link to="/fullmenu/baguette">Baguette</Link>
