@@ -402,7 +402,7 @@ export const updateProduct = async (
   price,
   productId
 ) => {
-  console.log("i am product", name, description, category, price, productId);
+  // console.log("i am product", name, description, category, price, productId);
   try {
     const response = await fetch(`${baseUrl}/products/${productId}`, {
       method: "PATCH",
@@ -425,7 +425,12 @@ export const updateProduct = async (
 
 export const getSingleProduct = async (productId) => {
   try {
-    const response = await fetch(`${baseUrl}/products/${productId}`);
+    const response = await fetch(`${baseUrl}/products/${productId}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
     const data = await response.json();
     return data;
   } catch (error) {

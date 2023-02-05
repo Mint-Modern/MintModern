@@ -11,6 +11,7 @@ const Customerprofile = ({ setToken, user }) => {
                 <MyNavbar setToken={setToken} />
             </header>
             <h2>Hello there {user.name}!</h2>
+            <h2>Add admin status here later</h2>
             Customer Profile here, will add laters
         </div>
     )

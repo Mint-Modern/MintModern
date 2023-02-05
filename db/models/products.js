@@ -14,17 +14,17 @@ deleteProduct **
 
 */
 
-async function createProduct({ name, description, category, price }) {
+async function createProduct({ name, description, category, price, image }) {
   try {
     const {
       rows: [product],
     } = await client.query(
       `
-        INSERT INTO products(name, description, category, price)
-        VALUES ($1, $2, $3, $4)
+        INSERT INTO products(name, description, category, price, image)
+        VALUES ($1, $2, $3, $4, $5)
         RETURNING *;
         `,
-      [name, description, category, price]
+      [name, description, category, price, image]
     );
     return product;
   } catch (error) {

@@ -37,41 +37,46 @@ const SingleProduct = ({ products, setProducts }) => {
     getProduct();
   }, []);
 
-  // console.log("I AM PRODUCT", product)
+  // console.log("I AM PRODUCT IMAGE", product.image)
 
   return !isAdmin ? (
-    <div className="single-prod">
-      {/* <p>prolly an image here if we have it?</p> */}
-      <p className="prod-name">{product.name}</p>
-      <p className="cat">from {product.category}</p>
-      <p>{product.description}</p>
-      <p>| {product.price} |</p>
-      <button onClick={goBack}>Back</button>
+    <div className="sp-page">
+      <img src={product.image} className="placeholder" />
+      <div className="sp">
+        <p className="prod-name">{product.name}</p>
+        <p className="cat">from {product.category}</p>
+        <p>{product.description}</p>
+        <p>| {product.price} |</p>
+        <button onClick={goBack}>Back</button>
+      </div>
     </div>
   ) : (
-    <div className="single-prod">
-      {/* <p>prolly an image here if we have it?</p> */}
-      <p className="prod-name">{product.name}</p>
-      <p className="cat">from {product.category}</p>
-      <p>{product.description}</p>
-      <p>| {product.price} |</p>
-      {editProduct ? (
-        <EditProduct
-          product={product}
-          products={products}
-          setProducts={setProducts}
-        />
-      ) : (
-        <button
-          onClick={() => {
-            setEditProduct(!editProduct);
-          }}
-        >
-          Update Product
-            </button>
-        )}
-        <DeleteProduct product={product} products={products} setProducts={setProducts} />
-      <button onClick={goBack}>Back</button>
+      <div className="sp-page">
+        <img src={product.image} className="placeholder" />
+        <div className="sp">
+          <p className="prod-name">{product.name}</p>
+          <p className="cat">from {product.category}</p>
+          <p>{product.description}</p>
+          <p>| {product.price} |</p>
+        </div>
+        <div className="mb">
+          {editProduct ? (
+            <EditProduct
+              product={product}
+              products={products}
+              setProducts={setProducts}
+            />
+        ) : (
+          <button className="modifybuttons"
+            onClick={() => {
+              setEditProduct(!editProduct);
+            }}
+          > Update Product
+          </button>
+          )}
+          <DeleteProduct product={product} products={products} setProducts={setProducts} />
+          <button className="modifybuttons" onClick={goBack}>Back</button>
+        </div>
     </div>
   );
 };

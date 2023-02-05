@@ -52,20 +52,32 @@
   height: 150px;
 }
 
-/* for when you will put sign in/logout button or drop down for profile on right side
-.homelink {
-  
-} */
+.icon {
+  padding-right: 15px;
+  height: 50px;
+}
+
+#homelink {
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .fm-nav, .menu-nav, .main-nav, .my-nav, .mini {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
-  padding-bottom:  15px;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 40px;
+  padding-bottom: 15px;
   /* OPT 2: font-family: 'Instagram Sans Headline', sans-serif; */
   font-family: 'Astrella', sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   color: #31572c;
 }
 
@@ -131,13 +143,16 @@ Link:visited {
   border-radius: 10px;
 }
 
-.newprodform {
+.newprodform, .editprodform {
   display: flex;
   flex-direction: column;
   place-items: center;
   padding: 10px;
 
+  background-color: #fefee3;
+  border: #008000 solid 2px;
   border-radius: 10px;
+  box-shadow: 0 4px 7px #ccc;
 }
 
 .usepassforms input {
@@ -164,6 +179,21 @@ Link:visited {
   
 }
 
+.editprodform input {
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-size: 15px;
+  color: #132a13;
+
+  margin: 5px;
+  padding: 15px;
+  width: 90%;
+  text-align: center;
+
+  border: #008000 solid 2px;
+  border-radius: 100px;
+  background-color: #cfe1b9;
+}
+
 .deets, .cust-name {
   font-family: 'Monteya', sans-serif;
   font-size: 18px;
@@ -174,6 +204,8 @@ Link:visited {
   width: 90%;
   text-align: center;
 }
+
+/****** BUTTONS *****/
 
 .usepassforms button {
   font-family: 'Monteya', sans-serif;
@@ -209,16 +241,40 @@ Link:visited {
 
 .logoutbutton {
   font-family: 'Astrella', sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   color: #31572c;
   /* letter-spacing: 3px; */
 
   margin: 0;
   padding: 0;
-  width: 15%;
+  width: 10%;
+
   text-align: center;
-  border: #ecf39e solid 2px;
+  border: #008000 solid 2px;
   border-radius: 50px;
+  background-color: #cfe1b9;
+}
+
+.mb {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.modifybuttons, .editprodform button  {
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-size: 15px;
+  color: #132a13;
+  letter-spacing: 3px;
+
+  margin: 10px;
+  padding: 5px;
+  width: 300px;
+
+  text-align: center;
+  border: #008000 solid 2px;
+  border-radius: 100px;
   background-color: #cfe1b9;
 }
 
@@ -273,7 +329,7 @@ Link:visited {
 /***** MENUS *****/
 .menu {
   font-family: 'Astrella', sans-serif;
-  font-size: 50px;
+  font-size: 40px;
   letter-spacing: 5px;
   color: #31572c;
   -webkit-text-stroke: 1px #e9f5db;
@@ -286,10 +342,12 @@ Link:visited {
 }
 
 .mini {
-  padding-bottom: 20px;
+  /* height: 25px; */
   /* font-family: 'Instagram Sans Headline', sans-serif; */
+  padding-top: 15px;
+  width: 25%;
   font-family: 'Astrella', sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   -webkit-text-stroke: .5px #e9f5db;
 }
 
@@ -305,7 +363,6 @@ Link:visited {
   justify-content: center;
 }
 
-/* y cant i make 2 columns ughhh */
 .products {
   margin: 0;
   display: flex;
@@ -315,14 +372,19 @@ Link:visited {
 }
 
 .single-prod {
-  
-  width: 23%;
+  width: 35%;
   height: 300px;
-  margin: 0;
-  padding-bottom: 15px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 3px #ccc;
-  margin-bottom: 20px;
+  margin: 20px;
+  padding: 15px;
+
+  /* border: 1px solid #ccc; */
+  /* box-shadow: 0 2px 3px #ccc; */
+  border-radius: 10px;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+
   text-align: center;
   line-height: 1;
   font-family: 'Instagram Sans Headline', sans-serif;
@@ -330,18 +392,58 @@ Link:visited {
   color: #31572c;
 }
 
+.single-prod:hover {
+  box-shadow: inset 0 0 0 2px #008000, 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
 .prod-name {
   text-decoration: none;
-  color: #333;
+  color: #31572c;;
   transition: all 0.2s ease-in-out;
   font-size: 25px;
 }
 
 .prod-name:hover {
-  color: #007bff;
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
+  -webkit-text-stroke: .2px #38b000;
+  /* color: #38b000; */
+  /* -webkit-transform: translateY(-8px);
+  transform: translateY(-8px); */
 }
+
+.sp-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 80%; */
+  /* height: 300px; */
+  margin: 0;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px #ccc;
+  margin: 20px;
+  text-align: center;
+
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-size: 20px;
+  color: #31572c;
+}
+
+.sp {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 5px;
+
+  text-align: center;
+  line-height: 1;
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-size: 20px;
+  color: #31572c;
+}
+
 
 .cat {
   text-transform: capitalize;
@@ -373,4 +475,17 @@ Link:visited {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
+}
+
+.hello {
+  font-family: 'Astrella', sans-serif;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: #31572c;
+
+  height: 100px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

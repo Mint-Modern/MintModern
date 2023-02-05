@@ -33,31 +33,31 @@ const EditProduct = ({ product, products, setProducts }) => {
   }
   return (
     <div>
-      <form
+      <form className="editprodform"
         onSubmit={submitHandler}>
         <h3>Update {product.name}</h3>
-        <label htmlFor="title">Name</label>
+        <label htmlFor="title"></label>
         <input
           value={name}
           type="text"
           placeholder="name"
           onChange={(event) => setName(event.target.value)}
         ></input>
-        <label htmlFor="description">Description</label>
+        <label htmlFor="description"></label>
         <input
           value={description}
           type="text"
           placeholder="description"
           onChange={(event) => setDescription(event.target.value)}
         ></input>
-        <label htmlFor="category">Category</label>
+        <label htmlFor="category"></label>
         <input
           value={category}
           type="text"
           placeholder="category"
           onChange={(event) => setCategory(event.target.value)}
         ></input>
-        <label htmlFor="price">Price</label>
+        <label htmlFor="price"></label>
         <input
           value={price}
           type="number"

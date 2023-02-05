@@ -45,6 +45,7 @@ const createTables = async () => {
         description VARCHAR(255),
         category VARCHAR(255),
         price DECIMAL,
+        image TEXT NOT NULL,
         quantity INTEGER DEFAULT 1
         );
 
@@ -147,36 +148,42 @@ async function createInitialProducts() {
         description: "2 pieces, served with Peanut Sauce",
         category: "teasers",
         price: 4.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Shrimp & Pork Rolls",
         description: "2 pieces, served with Peanut Sauce",
         category: "teasers",
         price: 4.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Avocado Rolls",
         description: "2 pieces, served with Peanut Sauce",
         category: "teasers",
         price: 4.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Avocado & Shrimp Rolls",
         description: "2 pieces, served with Peanut Sauce",
         category: "teasers",
         price: 4.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Grilled Pork Rolls",
         description: "2 pieces, served with House Fish Sauce",
         category: "teasers",
         price: 4.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Grilled Beef Rolls",
         description: "2 pieces, served with House Fish Sauce",
         category: "teasers",
         price: 5.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Mint Special Rolls",
@@ -184,60 +191,70 @@ async function createInitialProducts() {
           "2 pieces, *Our Eggroll Stuffing Roll*, served with House Fish Sauce",
         category: "teasers",
         price: 4.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Grilled Mushroom Rolls",
         description: "2 pieces, served with Peanut Sauce",
         category: "teasers",
         price: 4.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "White Chicken Rolls",
         description: "2 pieces, served with Peanut Sauce",
         category: "teasers",
         price: 4.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Fried Egg Rolls",
         description: "4 pieces, served with Sweet Chilli Sauce",
         category: "teasers",
         price: 5.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Pork Belly Steamed Buns",
         description: "2 pieces, served with Honey Sriracha Glaze",
         category: "teasers",
         price: 5.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Vietnamese Pork Steamed Buns",
         description: "2 pieces, served with Spicy Cream",
         category: "teasers",
         price: 5.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Grilled Shrimp Steamed Buns",
         description: "2 pieces, served with Spicy Mayo",
         category: "teasers",
         price: 6.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Tofu Steamed Buns",
         description: "2 pieces, served with Spicy Mayo",
         category: "teasers",
         price: 5.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Bacon & Crab Rangoons",
         description: "4 pieces, served with Sweet Chilli Sauce",
         category: "teasers",
         price: 5.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Sticky Chicken Wings",
         description: "4 Winglets, served with Spicy Cream and Sweet Soy Glaze",
         category: "teasers",
         price: 6.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Sweet Fried Shrimp",
@@ -245,66 +262,77 @@ async function createInitialProducts() {
           "4 Shrimp with Tail, served with Sweet Chilli and Spicy Mayo",
         category: "teasers",
         price: 6.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Beef Stew",
         description: "served with Dong Phuong Bread, *Entree Size*",
         category: "teasers",
         price: 8.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Chicken Curry",
         description: "served with Dong Phuong Bread, *Entree Size*",
         category: "teasers",
         price: 8.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Pho Tofu & Mushroom",
         description: "served with Veggie Broth",
         category: "pho",
         price: 9.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Pho Veggie",
         description: "served with Veggie Broth",
         category: "pho",
         price: 9.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Pho Chicken",
         description: "served with Chicken Broth",
         category: "pho",
         price: 9.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Pho Shrimp",
         description: "served with Chicken Broth",
         category: "pho",
         price: 10.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Pho Meatball",
         description: "served with Beef Broth",
         category: "pho",
         price: 9.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Pho Brisket",
         description: "served with Beef Broth",
         category: "pho",
         price: 9.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Pho New York Strip",
         description: "served with Beef Broth",
         category: "pho",
         price: 10.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Pho New York Strip & Meatball",
         description: "served with Beef Broth",
         category: "pho",
         price: 11.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Pho Mint Combo",
@@ -312,19 +340,22 @@ async function createInitialProducts() {
           "served with Beef Broth, contains Brisket, Meatball, & NYS",
         category: "pho",
         price: 11.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Wonton Soup",
         description: "served with Chicken Broth, contains BBQ Pork",
         category: "pho",
         price: 9.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Spicy Beef",
         description:
-          "also known as 'Bun Bo Hue', served with Spicy Lemongrass Beef Broth, contains Brisket, Tofu, and Thick Vermicilli",
+          "also known as 'Bun Bo Hue', served with Spicy Lemongrass Beef Broth, contains Brisket, Tofu, and Thick vermicelli",
         category: "pho",
         price: 9.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Sate Beef Stew",
@@ -332,6 +363,7 @@ async function createInitialProducts() {
           "served with Beef Stew Broth *Richer Broth*, contains Beef Chunks, Carrots, and Pho Noodles",
         category: "pho",
         price: 9.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Fried Tofu",
@@ -339,6 +371,7 @@ async function createInitialProducts() {
           "Served with Homemade Butter, Pickled Carrots, Cilantro, and Cucumber",
         category: "baguette",
         price: 5.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Grilled Pork",
@@ -346,6 +379,7 @@ async function createInitialProducts() {
           "Served with Homemade Butter, Pickled Carrots, Cilantro, and Cucumber",
         category: "baguette",
         price: 6.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Grilled Beef",
@@ -353,6 +387,7 @@ async function createInitialProducts() {
           "Served with Homemade Butter, Pickled Carrots, Cilantro, and Cucumber",
         category: "baguette",
         price: 7.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "French Fries & Mushrooms",
@@ -360,6 +395,7 @@ async function createInitialProducts() {
           "Served with Homemade Butter, Pickled Carrots, Cilantro, and Cucumber",
         category: "baguette",
         price: 6.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Lemongrass Chicken",
@@ -367,6 +403,7 @@ async function createInitialProducts() {
           "Served with Homemade Butter, Pickled Carrots, Cilantro, and Cucumber",
         category: "baguette",
         price: 6.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Vietnamese Meatball & BBQ Pork",
@@ -374,6 +411,7 @@ async function createInitialProducts() {
           "Served with Homemade Butter, Pickled Carrots, Cilantro, and Cucumber, contains Tomato Sauce with Meatball",
         category: "baguette",
         price: 6.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Meat Lover",
@@ -381,6 +419,7 @@ async function createInitialProducts() {
           "Served with Homemade Butter, Homemade Pate, Pickled Carrots, Cilantro, and Cucumber, contains Tomato Sauce with Meatball, BBQ Pork, and Vietnamese Ham",
         category: "baguette",
         price: 7.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Fried Pork Belly",
@@ -388,6 +427,7 @@ async function createInitialProducts() {
           "Served with Homemade Butter, Pickled Carrots, Cilantro, and Cucumber",
         category: "baguette",
         price: 7.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Grilled or Fried Shrimp",
@@ -395,6 +435,7 @@ async function createInitialProducts() {
           "Served with Homemade Butter, Pickled Carrots, Cilantro, and Cucumber",
         category: "baguette",
         price: 8.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Fried Soft Shell Crab",
@@ -402,6 +443,7 @@ async function createInitialProducts() {
           "Served with Homemade Butter, Pickled Carrots, Cilantro, and Cucumber",
         category: "baguette",
         price: 8.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "BBQ Short Ribs",
@@ -409,6 +451,7 @@ async function createInitialProducts() {
           "Served with Homemade Butter, Pickled Carrots, Cilantro, and Cucumber",
         category: "baguette",
         price: 9.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Sizzling Beef Steak and Eggs",
@@ -416,6 +459,7 @@ async function createInitialProducts() {
           "also known as 'Bo Ne', served with Dong Phuong Bread, Butter, and Pate",
         category: "houseSpecials",
         price: 12.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Fried Chicken & Pandan Waffle",
@@ -423,6 +467,7 @@ async function createInitialProducts() {
           "4 pieces of Winglets, Pandan is Green Leaf Extract and contains Coconut, served with Homemade Strawberry Jam and Homemade Caramel, Pandan is also known as ",
         category: "houseSpecials",
         price: 10.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Kimchi Burger",
@@ -430,6 +475,7 @@ async function createInitialProducts() {
           "served with Sweet Potato Fries, dressed with Kimchi, Spicy Mayo, & Brioche Buns",
         category: "houseSpecials",
         price: 10.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Vietnamese Banh Mi Burger",
@@ -437,6 +483,7 @@ async function createInitialProducts() {
           "served with Seasoned Fries, dressed with Homemade Pate, Homemade Butter, Pickled Carrots, Cilantro, Cucumber, & Brioche Buns",
         category: "houseSpecials",
         price: 10.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Mint Moon Crepe",
@@ -444,6 +491,7 @@ async function createInitialProducts() {
           "also known as 'Banh Xeo', served with House Garlic Fish Sauce, Lettuce, Carrots, stuffed with Bean Sprouts, Pork, & Shrimp",
         category: "houseSpecials",
         price: 9.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Seasoned Noodle & Chicken",
@@ -451,6 +499,7 @@ async function createInitialProducts() {
           "also known as 'Pho Ga Kho', served with side of Chicken Broth and our House Seasoned Noodle Sauce",
         category: "houseSpecials",
         price: 10.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
 
       {
@@ -459,6 +508,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber, contains Broccoli & Carrots",
         category: "rice",
         price: 8,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Lemongrass Tofu",
@@ -466,6 +516,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 8,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Tofu & Tomato",
@@ -473,6 +524,7 @@ async function createInitialProducts() {
           "served with White Rice, House Tomato Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 8,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Grilled Pork",
@@ -480,6 +532,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 9.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Lemongrass Chicken",
@@ -487,6 +540,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 9.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Crispy Hen",
@@ -494,6 +548,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Homemade Honey Mustard, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 9.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Mushroom & Asparagus",
@@ -501,6 +556,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 9.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Grilled Shrimp",
@@ -508,6 +564,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 9.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Shakin' New York Strip",
@@ -515,6 +572,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Homemade Honey Mustard, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 11.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Steak & Asparagus",
@@ -522,6 +580,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 10.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Steak & Sate Veggies",
@@ -529,6 +588,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber, contains Broccoli & Carrots",
         category: "rice",
         price: 10.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Fried Soft Shell Crab",
@@ -536,6 +596,7 @@ async function createInitialProducts() {
           "served with White Rice, House Tomato Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 12.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Grilled Salmon",
@@ -543,6 +604,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 12.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "BBQ Short Ribs",
@@ -550,74 +612,85 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 12.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Shrimp Fried Rice",
         description: "contains Shrimp, Eggs, & Onions",
         category: "rice",
         price: 8.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Deluxe Fried Rice",
         description: "contains Chinese Sausage, Shrimp, Eggs, & Onions",
         category: "rice",
         price: 9.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Fried Tofu",
         description:
-          "served with Vermicilli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
-        category: "vermicilliBowl",
+          "served with Vermicelli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
+        category: "vermicelli Bowl",
         price: 7.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Lemongrass Tofu",
         description:
-          "served with Vermicilli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
-        category: "vermicilliBowl",
+          "served with Vermicelli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
+        category: "vermicelli Bowl",
         price: 8.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Egg Rolls",
         description:
-          "served with Vermicilli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
-        category: "vermicilliBowl",
+          "served with Vermicelli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
+        category: "vermicelli Bowl",
         price: 8.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Grilled Pork",
         description:
-          "served with Vermicilli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
-        category: "vermicilliBowl",
+          "served with Vermicelli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
+        category: "vermicelli Bowl",
         price: 9.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Lemongrass Chicken",
         description:
-          "served with Vermicilli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
-        category: "vermicilliBowl",
+          "served with Vermicelli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
+        category: "vermicelli Bowl",
         price: 9.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Mushroom & Asparaguse",
         description:
-          "served with Vermicilli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
-        category: "vermicilliBowl",
+          "served with Vermicelli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
+        category: "vermicelli Bowl",
         price: 9.0,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Grilled Shrimp",
         description:
-          "served with Vermicilli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
-        category: "vermicilliBowl",
+          "served with Vermicelli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
+        category: "vermicelli Bowl",
         price: 9.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Beef Sate",
         description:
-          "served with Vermicilli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
-        category: "vermicilliBowl",
+          "served with Vermicelli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
+        category: "vermicelli Bowl",
         price: 9.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Pandan Waffle with Vanilla Ice Cream",
@@ -625,18 +698,21 @@ async function createInitialProducts() {
           "served with Powdered Sugar, Pandan is Green Leaf Extract and contains Coconut",
         category: "desserts",
         price: 6,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Red Bean Ice Cream Sandwich",
         description: "served with Chinese Sugar Buns and Powdered Sugar",
         category: "desserts",
         price: 6,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Molten Lava Cake",
         description: "no molten here just a basic brownie with Powdered Sugar",
         category: "desserts",
         price: 7,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Ice Cream",
@@ -644,6 +720,7 @@ async function createInitialProducts() {
           "Blue Bell Vanilla Ice Cream, Green Tea Ice Cream, Red Bean Ice Cream",
         category: "desserts",
         price: 3.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Tapioca Smoothies",
@@ -651,6 +728,7 @@ async function createInitialProducts() {
           "Avocado, Blueberry, Coconut, Green Apple, Honeydew, Mango, Match Green Tea, Pineapple, Raspberry, Strawberry, Taro",
         category: "smoothies",
         price: 5.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
       {
         name: "Tapioca Milk Teas",
@@ -658,6 +736,7 @@ async function createInitialProducts() {
           "Green Milk Tea, Matcha Milk Tea, Taro Milk Tea, Thai Milk Tea",
         category: "milkTeas",
         price: 5.5,
+        image: `https://i.imgur.com/mrDgNC5.gif`,
       },
     ];
     const products = await Promise.all(productsToCreate.map(createProduct));

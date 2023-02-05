@@ -7,7 +7,7 @@ const VermicilliBowl = ({ products, user }) => {
   const navigate = useNavigate();
 
   let productsToMap = products?.map((product, index) => {
-    if (product.category === "vermicilliBowl")
+    if (product.category === "vermicelli Bowl")
       return (
         <div className="single-prod" key={index}>
           <h4
@@ -22,13 +22,13 @@ const VermicilliBowl = ({ products, user }) => {
             <i>{product.description}</i>
           </h5>
           <h5>| {product.price} |</h5>
-          <button
+          {/* <button
             onClick={() => {
               navigate(`/products/${product.id}`);
             }}
           >
             See Details!
-          </button>
+          </button> */}
           <button
             onClick={async () => {
               user.length
