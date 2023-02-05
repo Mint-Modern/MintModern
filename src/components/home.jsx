@@ -15,7 +15,7 @@ const Home = ({ token, setToken }) => {
     return (
       <div>
         <NavBar />
-        <div className="aboutus">
+        {/* <div className="aboutus">
           Other links and bedazzles we would need (pls change or delete
           classname as needed)
         </div>
@@ -43,12 +43,11 @@ const Home = ({ token, setToken }) => {
         <p className="story">
           Need a component for: Location & Hours (pls change or delete classname
           as needed)
-        </p>
+        </p> */}
         <div className="homepage">
           {/* We will combine the 2 divs after navbar when all components are done to persistently hide the other navbars in the components */}
           <AboutUs />
         </div>
-        <div>Loading....</div>
         {/* <Map/> */}
       </div>
     );

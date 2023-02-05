@@ -400,6 +400,7 @@ export const updateProduct = async (
   description,
   category,
   price,
+  image,
   productId
 ) => {
   // console.log("i am product", name, description, category, price, productId);
@@ -414,6 +415,7 @@ export const updateProduct = async (
         description,
         category,
         price,
+        image,
       }),
     });
     const data = await response.json();

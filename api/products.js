@@ -33,7 +33,7 @@ router.get("/:productId", async (req, res, next) => {
 
 // POST /api/products
 router.post("/", async (req, res, next) => {
-  const { name, description, category, price } = req.body;
+  const { name, description, category, price, image } = req.body;
   const products = await getAllProducts();
   const productData = {};
 
@@ -41,6 +41,7 @@ router.post("/", async (req, res, next) => {
   productData.description = description;
   productData.category = category;
   productData.price = price;
+  productData.image = image;
 
   try {
     for (const product of products) {
@@ -55,7 +56,6 @@ router.post("/", async (req, res, next) => {
     console.log("PRODUCT DATA", productData);
     const product = await createProduct(productData);
     console.log("PRODUCT", product);
-    // ASK TRI WHY SENDS BACK EMPTY OBJECT BUT DOES UPDATE THE DATABASE
     res.send(product);
   } catch (error) {
     next(error);
@@ -65,7 +65,7 @@ router.post("/", async (req, res, next) => {
 //PATCH /api/products/:productId
 router.patch("/:productId", async (req, res, next) => {
   const { productId } = req.params;
-  const { name, description, category, price } = req.body;
+  const { name, description, category, price, image } = req.body;
   console.log("REQ PARAMS", req.params);
   const fields = {};
 
@@ -80,6 +80,9 @@ router.patch("/:productId", async (req, res, next) => {
   }
   if (req.body.price) {
     fields.price = price;
+  }
+  if (req.body.image) {
+    fields.image = image;
   }
 
   const product = await getProductById(productId);

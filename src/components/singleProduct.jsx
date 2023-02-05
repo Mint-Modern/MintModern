@@ -4,7 +4,6 @@ import { fetchMe, getSingleProduct } from "../api/auth";
 import DeleteProduct from "./deleteProduct";
 import EditProduct from "./editProduct";
 
-
 const SingleProduct = ({ products, setProducts }) => {
   const token = localStorage.getItem("token");
   const { id } = useParams();
@@ -37,8 +36,6 @@ const SingleProduct = ({ products, setProducts }) => {
     getProduct();
   }, []);
 
-  // console.log("I AM PRODUCT IMAGE", product.image)
-
   return !isAdmin ? (
     <div className="sp-page">
       <img src={product.image} className="placeholder" />
@@ -51,32 +48,41 @@ const SingleProduct = ({ products, setProducts }) => {
       </div>
     </div>
   ) : (
-      <div className="sp-page">
-        <img src={product.image} className="placeholder" />
-        <div className="sp">
-          <p className="prod-name">{product.name}</p>
-          <p className="cat">from {product.category}</p>
-          <p>{product.description}</p>
-          <p>| {product.price} |</p>
-        </div>
-        <div className="mb">
-          {editProduct ? (
-            <EditProduct
-              product={product}
-              products={products}
-              setProducts={setProducts}
-            />
+    <div className="sp-page">
+      <img src={product.image} className="placeholder" />
+      <div className="sp">
+        <p className="prod-name">{product.name}</p>
+        <p className="cat">from {product.category}</p>
+        <p>{product.description}</p>
+        <p>| {product.price} |</p>
+      </div>
+      <div className="mb">
+        {editProduct ? (
+          <EditProduct
+            product={product}
+            products={products}
+            setProducts={setProducts}
+          />
         ) : (
-          <button className="modifybuttons"
+          <button
+            className="modifybuttons"
             onClick={() => {
               setEditProduct(!editProduct);
             }}
-          > Update Product
+          >
+            {" "}
+            Update Product
           </button>
-          )}
-          <DeleteProduct product={product} products={products} setProducts={setProducts} />
-          <button className="modifybuttons" onClick={goBack}>Back</button>
-        </div>
+        )}
+        <DeleteProduct
+          product={product}
+          products={products}
+          setProducts={setProducts}
+        />
+        <button className="modifybuttons" onClick={goBack}>
+          Back
+        </button>
+      </div>
     </div>
   );
 };

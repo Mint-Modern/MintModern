@@ -22,16 +22,9 @@ const Teasers = ({ products, user }) => {
             <i>{product.description}</i>
           </h5>
           <h5>| {product.price} |</h5>
-          {/* <button
-            onClick={() => {
-              navigate(`/products/${product.id}`);
-            }}
-          >
-            See Details!
-          </button> */}
           <button
             onClick={async () => {
-              user.length
+              user.name
                 ? await attachProductToOrder({ productId: product.id })
                 : addProductToLocalCart(product);
             }}
