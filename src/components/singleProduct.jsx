@@ -37,11 +37,11 @@ const SingleProduct = ({ products, setProducts }) => {
     getProduct();
   }, []);
 
-  // console.log("I AM PRODUCT", product)
+  // console.log("I AM PRODUCT IMAGE", product.image)
 
   return !isAdmin ? (
     <div className="sp-page">
-      <img src="https://i.imgur.com/mrDgNC5.gif" className="placeholder"/>
+      <img src={product.image} className="placeholder" />
       <div className="sp">
         <p className="prod-name">{product.name}</p>
         <p className="cat">from {product.category}</p>
@@ -52,7 +52,7 @@ const SingleProduct = ({ products, setProducts }) => {
     </div>
   ) : (
       <div className="sp-page">
-        <img src="https://i.imgur.com/mrDgNC5.gif" className="placeholder"/>
+        <img src={product.image} className="placeholder" />
         <div className="sp">
           <p className="prod-name">{product.name}</p>
           <p className="cat">from {product.category}</p>

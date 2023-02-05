@@ -342,9 +342,10 @@ Link:visited {
 }
 
 .mini {
-  padding-bottom: 40px;
   /* height: 25px; */
   /* font-family: 'Instagram Sans Headline', sans-serif; */
+  padding-top: 15px;
+  width: 25%;
   font-family: 'Astrella', sans-serif;
   font-size: 25px;
   -webkit-text-stroke: .5px #e9f5db;

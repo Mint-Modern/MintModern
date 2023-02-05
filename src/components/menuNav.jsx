@@ -9,7 +9,7 @@ const MenuNav = () => {
           <img src="https://i.ibb.co/zxB68bW/mint-logo-250x200.png"
             alt="mint-logo-250x200" className="logo" />
         </Link>
-        <p><Link className="mini" to={"/fullmenu"}>| Back to Full Menu |</Link></p>
+        <Link className="mini" to={"/fullmenu"}>| Back to Full Menu |</Link>
         <div id="lc-icons">
           <Link to="/myprofile">
             <img src="https://i.ibb.co/vxsQDTG/profile-icon-v1.png" 
