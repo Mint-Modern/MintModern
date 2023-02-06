@@ -7,10 +7,9 @@ const EditProduct = ({ product, products, setProducts }) => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
+  const [image, setImage] = useState("");
   const navigate = useNavigate();
   const productId = product.id;
-
-  console.log("I AM PRODUCT", product);
 
   const submitHandler = async (event) => {
     try {
@@ -21,8 +20,9 @@ const EditProduct = ({ product, products, setProducts }) => {
           description,
           category,
           price,
-          productId,
-        )
+          image,
+          productId
+        );
       };
       updatedProduct();
       setProducts([updatedProduct, ...products]);
@@ -30,11 +30,10 @@ const EditProduct = ({ product, products, setProducts }) => {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
   return (
     <div>
-      <form className="editprodform"
-        onSubmit={submitHandler}>
+      <form className="editprodform" onSubmit={submitHandler}>
         <h3>Update {product.name}</h3>
         <label htmlFor="title"></label>
         <input
@@ -63,6 +62,13 @@ const EditProduct = ({ product, products, setProducts }) => {
           type="number"
           placeholder="price"
           onChange={(event) => setPrice(event.target.value)}
+        ></input>
+        <label htmlFor="image"></label>
+        <input
+          value={image}
+          type="text"
+          placeholder="image"
+          onChange={(event) => setImage(event.target.value)}
         ></input>
         <button type="submit">Update Product</button>
       </form>

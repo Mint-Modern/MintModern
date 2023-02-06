@@ -75,7 +75,10 @@ const App = () => {
     <div>
       {/* <NavBar /> */}
       <Routes>
-        <Route path="/" element={<Home token={token} setToken={setToken} />} />
+        <Route
+          path="/"
+          element={<Home user={user} token={token} setToken={setToken} />}
+        />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route
           path="/login"
@@ -84,7 +87,13 @@ const App = () => {
         <Route path="/register" element={<Register setToken={setToken} />} />
         <Route
           path="/fullmenu"
-          element={<FullMenu products={products} setProducts={setProducts} />}
+          element={
+            <FullMenu
+              products={products}
+              setProducts={setProducts}
+              user={user}
+            />
+          }
         />
         <Route
           path="/products/:id"
@@ -130,6 +139,8 @@ const App = () => {
               setOrderProducts={setOrderProducts}
               setUser={setUser}
               setOrders={setOrders}
+              token={token}
+              setToken={setToken}
             />
           }
         />

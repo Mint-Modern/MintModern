@@ -5,6 +5,16 @@ import { attachProductToOrder } from "../api/auth";
 
 const Desserts = ({ products, user }) => {
   const navigate = useNavigate();
+  const addProductToLocalCart = (product) => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || {
+      products: [],
+      isActive: true,
+      salesTax: 0.0945,
+      total: 0,
+    };
+    cart.products.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
 
   let productsToMap = products?.map((product, index) => {
     if (product.category === "desserts")
@@ -22,16 +32,10 @@ const Desserts = ({ products, user }) => {
             <i>{product.description}</i>
           </h5>
           <h5>| {product.price} |</h5>
-          <button
-            onClick={() => {
-              navigate(`/products/${product.id}`);
-            }}
-          >
-            See Details!
-          </button>
+
           <button
             onClick={async () => {
-              user.length
+              user.name
                 ? await attachProductToOrder({ productId: product.id })
                 : addProductToLocalCart(product);
             }}
@@ -41,17 +45,6 @@ const Desserts = ({ products, user }) => {
         </div>
       );
   });
-
-  const addProductToLocalCart = (product) => {
-    let cart = JSON.parse(localStorage.getItem("cart")) || {
-      products: [],
-      isActive: true,
-      salesTax: 0.0945,
-      total: 0,
-    };
-    cart.products.push(product);
-    localStorage.setItem("cart", JSON.stringify(cart));
-  };
 
   return (
     <>

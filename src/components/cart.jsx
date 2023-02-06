@@ -8,10 +8,9 @@ import {
 } from "../api/auth";
 import MyNavbar from "./MyNavbar";
 
-const Cart = ({ user, orderProducts, setOrderProducts }) => {
+const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
   const [order, setOrder] = useState({});
-
-  !user.length
+  !user.name
     ? useEffect(() => {
         const storedOrder = localStorage.getItem("cart");
         if (storedOrder) {
@@ -109,7 +108,7 @@ const Cart = ({ user, orderProducts, setOrderProducts }) => {
 
   return (
     <>
-      <MyNavbar />
+      <MyNavbar setToken={setToken} />
       <h2 className="prod-cat">
         <img
           src="https://i.ibb.co/CQdWn1w/Page-Break-Left-1-2.png"
@@ -124,14 +123,18 @@ const Cart = ({ user, orderProducts, setOrderProducts }) => {
         />
       </h2>
       <div className="products">{productsToMap}</div>
-      <div className="products">
-        Order Total = $
-        {
-          (runningTotal =
-            Math.round((runningTotal + runningTotal * order.salesTax) * 100) /
-            100)
-        }
-      </div>
+      {order.total === NaN ? (
+        0
+      ) : (
+        <div className="products">
+          Order Total = $
+          {
+            (runningTotal =
+              Math.round((runningTotal + runningTotal * order.salesTax) * 100) /
+              100)
+          }
+        </div>
+      )}
       <button onClick={clickHandler}>Checkout</button>
     </>
   );
