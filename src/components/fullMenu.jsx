@@ -23,12 +23,12 @@ const FullMenu = ({ products, setProducts }) => {
           <p className="menu">MENU</p>
           <div id="lc-icons">
             <Link to="/myprofile">
-              <img src="https://i.ibb.co/vxsQDTG/profile-icon-v1.png" 
-                alt="profile-icon-v1" className="icon"/>
+              <img src="https://i.ibb.co/hM7Xn0g/profile-icon-v1-square.png"
+                alt="profile-icon-v1-square" className="icon" />
             </Link>
             <Link to="/cart">
-              <img src="https://i.ibb.co/bXrZxf2/cart-icon-v1.png" 
-                alt="cart-icon-v1" className="icon" />
+              <img src="https://i.ibb.co/FXNrrrQ/bag-icon-v1-square.png"
+                alt="bag-icon-v1-square" className="icon last" />
             </Link>
           </div>
         </header>

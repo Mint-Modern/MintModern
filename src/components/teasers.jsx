@@ -29,15 +29,13 @@ const Teasers = ({ products, user }) => {
           >
             See Details!
           </button> */}
-          <button
+          <img src="https://i.ibb.co/642vNF2/add-icon-v2.png" alt="add-icon-v2" className="add-icon"
             onClick={async () => {
               user.length
                 ? await attachProductToOrder({ productId: product.id })
                 : addProductToLocalCart(product);
             }}
-          >
-            Add to cart!
-          </button>
+          />
         </div>
       );
   });
