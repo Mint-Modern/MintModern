@@ -98,7 +98,11 @@ const App = () => {
         <Route
           path="/products/:id"
           element={
-            <SingleProduct products={products} setProducts={setProducts} />
+            <SingleProduct
+              user={user}
+              products={products}
+              setProducts={setProducts}
+            />
           }
         />
         <Route

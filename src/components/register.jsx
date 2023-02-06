@@ -18,16 +18,17 @@ const Register = ({ setToken }) => {
     const token = await registerCustomer(name, password, email, phoneNumber);
     const customer = await fetchMe(token);
     const userId = customer.id;
+
+    localStorage.setItem("token", token);
+    setToken(token);
+    !token ? showAlert() : navigate("/myprofile");
+
     const order = await createNewOrder({
       userId,
       total: 0,
       salesTax: 0.0945,
       isActive: true,
     });
-
-    localStorage.setItem("token", token);
-    setToken(token);
-    !token ? showAlert() : navigate("/myprofile");
   };
   return (
     <div className="register">
