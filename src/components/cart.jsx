@@ -123,8 +123,8 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
         />
       </h2>
       <div className="products">{productsToMap}</div>
-      {order.total === NaN ? (
-        0
+      {!order.products ? (
+        <div className="products">Order Total = {0}</div>
       ) : (
         <div className="products">
           Order Total = $
