@@ -31,7 +31,7 @@ const HouseSpecials = ({ products, user }) => {
           </button>
           <button
             onClick={async () => {
-              user.length
+              user.name
                 ? await attachProductToOrder({ productId: product.id })
                 : addProductToLocalCart(product);
             }}

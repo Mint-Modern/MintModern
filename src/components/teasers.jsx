@@ -31,7 +31,7 @@ const Teasers = ({ products, user }) => {
           </button> */}
           <img src="https://i.ibb.co/642vNF2/add-icon-v2.png" alt="add-icon-v2" className="add-icon"
             onClick={async () => {
-              user.length
+              user.name
                 ? await attachProductToOrder({ productId: product.id })
                 : addProductToLocalCart(product);
             }}

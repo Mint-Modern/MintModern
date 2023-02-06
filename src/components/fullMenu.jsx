@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./navbar";
 import MyNavbar from "./MyNavbar";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import Teasers from "./teasers";
 import Baguette from "./baguette";
 import Pho from "./phoSoup";
@@ -11,14 +11,17 @@ import Rice from "./rice";
 import VermicelliBowl from "./vermicelliBowl";
 import Desserts from "./desserts";
 
-const FullMenu = ({ products, setProducts }) => {
+const FullMenu = ({ products, setProducts, user }) => {
   return (
     <div className="menupage">
       <div className="allNavs">
         <header id="homelink">
-          <Link to="/" >
-            <img src="https://i.ibb.co/zxB68bW/mint-logo-250x200.png"
-              alt="mint-logo-250x200" className="logo" />
+          <Link to="/">
+            <img
+              src="https://i.ibb.co/zxB68bW/mint-logo-250x200.png"
+              alt="mint-logo-250x200"
+              className="logo"
+            />
           </Link>
           <p className="menu">MENU</p>
           <div id="lc-icons">
@@ -44,14 +47,14 @@ const FullMenu = ({ products, setProducts }) => {
         </nav>
       </div>
       <div className="fullmenu">
-        <Teasers products={products} />
-        <Baguette products={products} />
-        <Drinks products={products} />
-        <HouseSpecials products={products} />
-        <Pho products={products} />
-        <Rice products={products} />
-        <VermicelliBowl products={products} />
-        <Desserts products={products} />
+        <Teasers products={products} user={user} />
+        <Baguette products={products} user={user} />
+        <Drinks products={products} user={user} />
+        <HouseSpecials products={products} user={user} />
+        <Pho products={products} user={user} />
+        <Rice products={products} user={user} />
+        <VermicelliBowl products={products} user={user} />
+        <Desserts products={products} user={user} />
       </div>
     </div>
   );
