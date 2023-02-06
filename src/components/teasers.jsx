@@ -22,15 +22,20 @@ const Teasers = ({ products, user }) => {
             <i>{product.description}</i>
           </h5>
           <h5>| {product.price} |</h5>
-          <button
+          {/* <button
+            onClick={() => {
+              navigate(`/products/${product.id}`);
+            }}
+          >
+            See Details!
+          </button> */}
+          <img src="https://i.ibb.co/642vNF2/add-icon-v2.png" alt="add-icon-v2" className="add-icon"
             onClick={async () => {
               user.name
                 ? await attachProductToOrder({ productId: product.id })
                 : addProductToLocalCart(product);
             }}
-          >
-            Add to cart!
-          </button>
+          />
         </div>
       );
   });

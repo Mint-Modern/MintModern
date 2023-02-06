@@ -53,8 +53,22 @@
 }
 
 .icon {
-  padding-right: 15px;
+  /* padding-right: 15px; */
   height: 50px;
+}
+
+.last {
+  padding-right: 15px;
+}
+
+.add-icon {
+  height: 50px;
+  border-radius: 50%;
+  border: #008000 solid 2px;
+}
+
+.add-icon:hover {
+  background: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
 }
 
 #homelink {

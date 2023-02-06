@@ -4,38 +4,40 @@ LOGO
 
 ICONS
 
-> CART
+> ADD TO CART
 > -NO WORD-
 > v1
-> <img src="https://i.ibb.co/bXrZxf2/cart-icon-v1.png"
-
-    alt="cart-icon-v1" className="icon" />
+> <img src="https://i.ibb.co/bXrZxf2/cart-icon-v1.png" alt="cart-icon-v1" className="icon" />
 
 v2
 <img src="https://i.ibb.co/NWLbTTX/cart-icon-v2-4.png" 
     alt="cart-icon-v2-4" className="icon" />
 
+v2-square
+<img src="https://i.ibb.co/642vNF2/add-icon-v2.png" alt="add-icon-v2" className="add-icon"/>
+
 -W WORD-
 v1
-<img src="https://i.ibb.co/CVNy5Sc/cart-icon-v1-3.png"
-
-    alt="cart-icon-v1-3" className="icon" />
+<img src="https://i.ibb.co/CVNy5Sc/cart-icon-v1-3.png" alt="cart-icon-v1-3" className="icon" />
 
 v2
 <img src="https://i.ibb.co/kS94K9m/cart-icon-v2-3.png" 
     alt="cart-icon-v2-3" className="icon" />
 
-> PROFILE
-> -NO WORD-
-> <img src="https://i.ibb.co/vxsQDTG/profile-icon-v1.png"
+> BAG
+> v1-square
+> <img src="https://i.ibb.co/FXNrrrQ/bag-icon-v1-square.png" alt="bag-icon-v1-square" className="icon" />
 
-    alt="profile-icon-v1" className="icon"/>
+> PROFILE
+> square
+> <img src="https://i.ibb.co/hM7Xn0g/profile-icon-v1-square.png" alt="profile-icon-v1-square" className="icon" />
+
+> -NO WORD-
+> <img src="https://i.ibb.co/vxsQDTG/profile-icon-v1.png" alt="profile-icon-v1" className="icon"/>
 
 -W WORD-
 <img src="https://i.ibb.co/yhrzqjP/profile-icon-v2-1-2.png" 
     alt="profile-icon-v2-1-2" className="icon" />
 
 > IMG PLACEHOLDER
-> <img src="https://i.imgur.com/mrDgNC5.gif"
-
-    className="placeholder"/>
+> <img src="https://i.imgur.com/mrDgNC5.gif" className="placeholder"/>
