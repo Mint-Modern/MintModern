@@ -1,5 +1,5 @@
 const baseUrl = "http://localhost:8080/api";
-// const token = localStorage.getItem(token);
+// const baseUrl = "https://mintmodernbistro.fly.dev/api";
 
 // =======================Customers Endpoint=======================
 
