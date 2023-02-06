@@ -29,7 +29,7 @@ const MenuNav = () => {
           <Link to="/fullmenu/houseSpecials">House Specials</Link>
           <Link to="/fullmenu/rice">Rice</Link>
           <Link to="/fullmenu/vermicelliBowl">Vermicelli Bowls</Link>
-          <Link to="/fullmenu/drinks">Drinks</Link>
+          {/* <Link to="/fullmenu/drinks">Drinks</Link> */}
           <Link to="/fullmenu/desserts">Desserts</Link>
         </nav>
       </div>
