@@ -16,12 +16,12 @@ server.use(express.json());
 server.use(cors());
 
 const path = require("path");
-server.use(express.static(path.resolve(__dirname, "..", "..", "build")));
+server.use(express.static(path.resolve(__dirname, "build")));
 
 server.use("/api", apiRouter);
 
 server.use((req, res, next) => {
-  res.sendFile(path.resolve(__dirname, "..", "..", "build", "index.html"));
+  res.sendFile(path.resolve(__dirname, "build", "index.html"));
 });
 
 server.get("*", (req, res) => {
