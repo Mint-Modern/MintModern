@@ -46,7 +46,7 @@ const Home = ({ token, setToken }) => {
         </p> */}
         <div className="homepage">
           {/* We will combine the 2 divs after navbar when all components are done to persistently hide the other navbars in the components */}
-          <AboutUs />
+          <AboutUs setToken={setToken} />
         </div>
         {/* <Map/> */}
       </div>
@@ -57,7 +57,7 @@ const Home = ({ token, setToken }) => {
         <MyNavbar setToken={setToken} />
         <div className="homepage">
           {/* We will combine the 2 divs after navbar when all components are done to persistently hide the other navbars in the components */}
-          <AboutUs />
+          <AboutUs setToken={setToken} />
         </div>
       </div>
     );

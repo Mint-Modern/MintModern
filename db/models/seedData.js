@@ -121,7 +121,7 @@ async function createInitialCustomers() {
         isAdmin: true,
       },
       {
-        name: "mike jones",
+        name: "Demo",
         password: "password",
         email: "weCodingNow4@gmail.com",
         phoneNumber: "281--330--8004",

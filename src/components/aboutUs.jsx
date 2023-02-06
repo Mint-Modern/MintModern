@@ -1,8 +1,8 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import NavBar from "./navbar";
+import { customerLogin } from "../api/auth";
 
-const AboutUs = () => {
+const AboutUs = ({ setToken }) => {
   return (
     <div>
       <NavBar />
