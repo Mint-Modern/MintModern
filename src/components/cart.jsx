@@ -100,7 +100,9 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
             Remove item
           </button>
         ) : (
-          <button onClick={() => removeItem(index)}>Remove item</button>
+          <button className="modifybuttons" onClick={() => removeItem(index)}>
+            Remove item
+          </button>
         )}
       </div>
     );
@@ -135,7 +137,11 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
           }
         </div>
       )}
-      <button onClick={clickHandler}>Checkout</button>
+      <div className="products">
+        <button className="modifybuttons" onClick={clickHandler}>
+          Checkout
+        </button>
+      </div>
     </>
   );
 };
