@@ -5,6 +5,7 @@ import NavBar from "./navbar";
 import MyNavbar from "./MyNavbar";
 import AboutUs from "./aboutUs";
 import Pressarticles from "./pressArticles";
+import Locationhours from "./locationHours";
 
 // import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
@@ -28,6 +29,7 @@ const Home = ({ token, setToken }) => {
           {/* We will combine the 2 divs after navbar when all components are done to persistently hide the other navbars in the components */}
           <AboutUs />
           <Pressarticles />
+          <Locationhours />
         </div>
       </div>
     );
@@ -39,6 +41,7 @@ const Home = ({ token, setToken }) => {
           {/* We will combine the 2 divs after navbar when all components are done to persistently hide the other navbars in the components */}
           <AboutUs />
           <Pressarticles />
+          <Locationhours />
         </div>
       </div>
     );
