@@ -8,6 +8,8 @@ const NewProduct = ({ products, setProducts }) => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
+  const [image, setImage] = useState("");
+
   const navigate = useNavigate();
 
   const submitHandler = async (event) => {
@@ -19,11 +21,13 @@ const NewProduct = ({ products, setProducts }) => {
           description,
           category,
           price,
+          image
         })
     };
       newProduct();
       setProducts([newProduct, ...products]);
       navigate(`/fullmenu/${category}`);
+      location.reload();
       console.log("new product added!")
     } catch (error) {
       console.error(error);
@@ -66,6 +70,13 @@ const NewProduct = ({ products, setProducts }) => {
           required
           placeholder="price"
           onChange={(event) => setPrice(parseInt(event.target.value))}
+        ></input>
+        <label htmlFor="image"></label>
+        <input
+          value={image}
+          type="text"
+          placeholder="image url"
+          onChange={(event) => setImage(event.target.value)}
         ></input>
         <button type="submit">Add New Product</button>
         <button onClick={() => {navigate(-1);}}>

@@ -3,7 +3,7 @@ import {  useNavigate } from "react-router-dom";
 import { deleteProduct } from "../api/auth";
 
 const DeleteProduct = ({product, products, setProducts}) => {
-    // console.log("PRODUCT", product)
+    // console.log("PRODUCT", product.category)
   const navigate = useNavigate();
 
     return (
@@ -11,9 +11,9 @@ const DeleteProduct = ({product, products, setProducts}) => {
         <button className="modifybuttons"
           onClick={async () => {
           setProducts(await deleteProduct({ productId: product.id }))
-          console.log("product deleted!");
-          navigate("/fullmenu")
+          navigate(`/fullmenu/${product.category}`);
           location.reload();
+          console.log("product deleted!");
             }}>Delete Product</button>
         </div>
     )

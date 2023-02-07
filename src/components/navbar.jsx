@@ -6,14 +6,11 @@ const NavBar = ({ token, setToken }) => {
     <div className="allNavs abtnav">
       <header id="homelink">
         <Link to="/">
-          <img
-            src="https://i.ibb.co/zxB68bW/mint-logo-250x200.png"
-            alt="mint-logo-250x200"
-            className="logo"
-          />
+          <img src="https://i.ibb.co/B6NjcdZ/logo-v2.png"
+            alt="logo-v2-250x150" className="logo" />
         </Link>
         <div id="lc-icons">
-            <Link to="/myprofile">
+            <Link to="/login">
               <img src="https://i.ibb.co/hM7Xn0g/profile-icon-v1-square.png"
                 alt="profile-icon-v1-square" className="icon" />
             </Link>

@@ -12,7 +12,7 @@ const AboutUs = ({ setToken }) => {
         With its name, Mint Modern Vietnamese Bistro & Bar declares its
         membership in the new breed of New Orleans' Vietnamese restaurants, such
         as Ba Chi Canteen or Namese.
-        <p>What exactly makes Mint modern?</p> Partly it's the playful language
+        <p>What exactly makes Mint <i>modern</i>?</p> Partly it's the playful language
         of the menu, which is written entirely in English. Appetizers are
         labeled as "teasers." Spongy steamed buns filled with pork belly are
         called "sliders." And beyond the dishes now familiar to locals like pho,

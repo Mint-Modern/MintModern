@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchMe, getSingleProduct, attachProductToOrder } from "../api/auth";
+import Added from "./addedToCart";
 import DeleteProduct from "./deleteProduct";
 import EditProduct from "./editProduct";
 
@@ -16,6 +17,10 @@ const SingleProduct = ({ products, setProducts, user }) => {
   const goBack = () => {
     navigate(-1);
   };
+
+  function showAlert() {
+    alert("Added to cart!")
+  }
 
   const addProductToLocalCart = (product) => {
     let cart = JSON.parse(localStorage.getItem("cart")) || {
@@ -56,17 +61,16 @@ const SingleProduct = ({ products, setProducts, user }) => {
         <p className="cat">from {product.category}</p>
         <p>{product.description}</p>
         <p>| {product.price} |</p>
-        <button
-          className="modifybuttons"
-          onClick={async () => {
-            user.name
-              ? await attachProductToOrder({ productId: product.id })
-              : addProductToLocalCart(product);
-          }}
-        >
-          Add to cart!
-        </button>
-        <button onClick={goBack}>Back</button>
+        <img src="https://i.ibb.co/642vNF2/add-icon-v2.png" alt="add-icon-v2" className="add-icon"
+            onClick={async () => {
+              user.name
+                ? (await attachProductToOrder({ productId: product.id }))
+                : (addProductToLocalCart(product));
+              setTimeout(showAlert, 3000);
+              goBack()
+            }}
+          />
+        <button className="modifybuttons" onClick={goBack}>Back</button>
       </div>
     </div>
   ) : (
@@ -77,18 +81,17 @@ const SingleProduct = ({ products, setProducts, user }) => {
         <p className="cat">from {product.category}</p>
         <p>{product.description}</p>
         <p>| {product.price} |</p>
+        <img src="https://i.ibb.co/642vNF2/add-icon-v2.png" alt="add-icon-v2" className="add-icon"
+            onClick={async () => {
+              user.name
+                ? (await attachProductToOrder({ productId: product.id }))
+                : (addProductToLocalCart(product));
+              showAlert();
+              goBack()
+            }}
+          />
       </div>
       <div className="mb">
-        <button
-          className="modifybuttons"
-          onClick={async () => {
-            user.name
-              ? await attachProductToOrder({ productId: product.id })
-              : addProductToLocalCart(product);
-          }}
-        >
-          Add to cart!
-        </button>
         {editProduct ? (
           <EditProduct
             product={product}
@@ -114,7 +117,7 @@ const SingleProduct = ({ products, setProducts, user }) => {
         <button className="modifybuttons" onClick={goBack}>
           Back
         </button>
-      </div>
+        </div>
     </div>
   );
 };
