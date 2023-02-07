@@ -100,7 +100,9 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
             Remove item
           </button>
         ) : (
-          <button onClick={() => removeItem(index)}>Remove item</button>
+          <button className="modifybuttons" onClick={() => removeItem(index)}>
+            Remove item
+          </button>
         )}
       </div>
     );
@@ -123,8 +125,8 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
         />
       </h2>
       <div className="products">{productsToMap}</div>
-      {order.total === NaN ? (
-        0
+      {!order.products ? (
+        <div className="products">Order Total = {0}</div>
       ) : (
         <div className="products">
           Order Total = $
@@ -135,7 +137,11 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
           }
         </div>
       )}
-      <button onClick={clickHandler}>Checkout</button>
+      <div className="products">
+        <button className="modifybuttons" onClick={clickHandler}>
+          Checkout
+        </button>
+      </div>
     </>
   );
 };

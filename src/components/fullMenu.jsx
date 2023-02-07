@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Teasers from "./teasers";
 import Baguette from "./baguette";
 import Pho from "./phoSoup";
-import Drinks from "./drinks";
+// import Drinks from "./drinks";
 import HouseSpecials from "./houseSpecials";
 import Rice from "./rice";
 import VermicelliBowl from "./vermicelliBowl";
@@ -39,14 +39,14 @@ const FullMenu = ({ products, setProducts, user }) => {
           <Link to="/fullmenu/houseSpecials">House Specials</Link>
           <Link to="/fullmenu/rice">Rice</Link>
           <Link to="/fullmenu/vermicelliBowl">Vermicelli Bowls</Link>
-          <Link to="/fullmenu/drinks">Drinks</Link>
+          {/* <Link to="/fullmenu/drinks">Drinks</Link> */}
           <Link to="/fullmenu/desserts">Desserts</Link>
         </nav>
       </div>
       <div className="fullmenu">
         <Teasers products={products} user={user} />
         <Baguette products={products} user={user} />
-        <Drinks products={products} user={user} />
+        {/* <Drinks products={products} user={user} /> */}
         <HouseSpecials products={products} user={user} />
         <Pho products={products} user={user} />
         <Rice products={products} user={user} />

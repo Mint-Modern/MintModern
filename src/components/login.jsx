@@ -11,46 +11,57 @@ const Login = ({ token, setToken }) => {
     <div className="login">
       <h2 className="header">Back for more?</h2>
       <h4 className="witty">And honestly, we don't blame you!</h4>
-        <form className="usepassforms"
-          onSubmit={async (e) => {
-            try {
-              e.preventDefault();
-              const data = await customerLogin(
-                customerNameLogin,
-                passwordLogin
-              );
-              const token = data.token;
-              setToken(token);
-              localStorage.setItem("token", token);
-              {
-                token ? navigate("/") : console.log("No Token!");
-              }
-            } catch (error) {
-              console.error(error);
+      <form
+        className="usepassforms"
+        onSubmit={async (e) => {
+          try {
+            e.preventDefault();
+            const data = await customerLogin(customerNameLogin, passwordLogin);
+            const token = data.token;
+            setToken(token);
+            localStorage.setItem("token", token);
+            {
+              token ? navigate("/") : console.log("No Token!");
             }
-            // location.reload();
-          }}
-        >
-          <input
-            value={customerNameLogin}
-            type="text"
-            placeholder="username"
-            minLength={3}
-            onChange={(e) => setCustomerNameLogin(e.target.value)}
-          ></input>
-          <input
-            value={passwordLogin}
-            type="password"
-            placeholder="password"
-            minLength={8}
-            onChange={(e) => setPasswordLogin(e.target.value)}
-          ></input>
-          <button type="submit">Login</button>
-        </form>
-        <div className="backlinks">
-					<p>Don't have an account? <span><Link to='/register' id="backlink">Join us!</Link></span></p>
-					<p>Go back to <span><Link to='/' id="backlink">home</Link></span></p>
-				</div>
+          } catch (error) {
+            console.error(error);
+          }
+        }}
+      >
+        <input
+          value={customerNameLogin}
+          type="text"
+          placeholder="username"
+          minLength={3}
+          onChange={(e) => setCustomerNameLogin(e.target.value)}
+        ></input>
+        <input
+          value={passwordLogin}
+          type="password"
+          placeholder="password"
+          minLength={8}
+          onChange={(e) => setPasswordLogin(e.target.value)}
+        ></input>
+        <button type="submit">Login</button>
+      </form>
+      <div className="backlinks">
+        <p>
+          Don't have an account?{" "}
+          <span>
+            <Link to="/register" id="backlink">
+              Join us!
+            </Link>
+          </span>
+        </p>
+        <p>
+          Go back to{" "}
+          <span>
+            <Link to="/" id="backlink">
+              home
+            </Link>
+          </span>
+        </p>
+      </div>
     </div>
   );
 };

@@ -80,7 +80,7 @@ const App = () => {
           path="/"
           element={<Home user={user} token={token} setToken={setToken} />}
         />
-        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/aboutus" element={<AboutUs setToken={setToken} />} />
         <Route
           path="/login"
           element={<Login token={token} setToken={setToken} />}
@@ -126,10 +126,10 @@ const App = () => {
           path="/fullmenu/pho"
           element={<Pho products={products} user={user} />}
         />
-        <Route
+        {/* <Route
           path="/fullmenu/drinks"
           element={<Drinks products={products} user={user} />}
-        />
+        /> */}
         <Route
           path="/fullmenu/houseSpecials"
           element={<HouseSpecials products={products} user={user} />}

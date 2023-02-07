@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
 import { attachProductToOrder } from "../api/auth";
@@ -6,30 +6,43 @@ import { attachProductToOrder } from "../api/auth";
 const Rice = ({ products, user }) => {
   const navigate = useNavigate();
   let productsToMap = products?.map((product, index) => {
+    const [added, setAdded] = useState(false);
     if (product.category === "rice")
       return (
         <div className="single-prod" key={index}>
-          <div className="top"
+          <div
+            className="top"
             onClick={() => {
               navigate(`/products/${product.id}`);
-            }}>
+            }}
+          >
             <img src={product.image} className="prod-photo" />
-            <h4 className="prod-name">
-            {product.name}
-            </h4>
+            <h4 className="prod-name">{product.name}</h4>
           </div>
           <h5 className="content">
             <i>{product.description}</i>
           </h5>
           <h5 className="content">| {product.price} |</h5>
-          <img src="https://i.ibb.co/642vNF2/add-icon-v2.png" alt="add-icon-v2" className="add-icon"
+          <img
+            src="https://i.ibb.co/642vNF2/add-icon-v2.png"
+            alt="add-icon-v2"
+            className="add-icon"
             onClick={async () => {
               user.name
                 ? await attachProductToOrder({ productId: product.id })
                 : addProductToLocalCart(product);
-              showAlert();
+              setAdded(true);
+              setTimeout(() => {
+                setAdded(false);
+              }, 1000);
             }}
-            /> 
+          />
+          {added && (
+            <div className="pop-up">
+              <div className="overlay"></div>
+              <div className="window_content">Added to Cart!</div>
+            </div>
+          )}
         </div>
       );
   });
