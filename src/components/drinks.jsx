@@ -4,21 +4,21 @@ import MenuNav from "./menuNav";
 import { attachProductToOrder } from "../api/auth";
 
 const Drinks = ({ products, user }) => {
-console.log("drinkproducts", products)
-const navigate = useNavigate();
-const [value, setValue] = useState("");
-const [selectedOption, setSelectedOption] = useState(null);
+  console.log("drinkproducts", products);
+  const navigate = useNavigate();
+  const [value, setValue] = useState("");
+  const [selectedOption, setSelectedOption] = useState(null);
 
-// const handleChange = (e) => {
-//     setValue(e.target.value);
-// };
+  // const handleChange = (e) => {
+  //     setValue(e.target.value);
+  // };
 
-const handleChange = (e) => {
-    setSelectedOption(e.target.selectedOption)
-}
-
+  const handleChange = (e) => {
+    setSelectedOption(e.target.selectedOption);
+  };
 
   let productsToMap = products?.map((product, index) => {
+    const [added, setAdded] = useState(false);
     const optionsTapioca = product.description?.split(", ");
     if (product.category === "tapiocas")
       return (
@@ -36,7 +36,7 @@ const handleChange = (e) => {
             <i>{product.description}</i>
           </h5>
           <h5>
-             <select
+            <select
               value={value || "Please Choose Your Flavor"}
               multiple={false}
               key={index}
@@ -60,8 +60,18 @@ const handleChange = (e) => {
               user.name
                 ? await attachProductToOrder({ productId: product.id })
                 : addProductToLocalCart(product);
+              setAdded(true);
+              setTimeout(() => {
+                setAdded(false);
+              }, 1000);
             }}
           />
+          {added && (
+            <div className="pop-up">
+              <div className="overlay"></div>
+              <div className="window_content">Added to Cart!</div>
+            </div>
+          )}
         </div>
       );
   });
