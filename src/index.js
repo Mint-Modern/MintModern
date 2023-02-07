@@ -126,10 +126,10 @@ const App = () => {
           path="/fullmenu/pho"
           element={<Pho products={products} user={user} />}
         />
-        {/* <Route
+        <Route
           path="/fullmenu/drinks"
           element={<Drinks products={products} user={user} />}
-        /> */}
+        />
         <Route
           path="/fullmenu/houseSpecials"
           element={<HouseSpecials products={products} user={user} />}

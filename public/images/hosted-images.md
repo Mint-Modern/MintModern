@@ -153,6 +153,9 @@ vermicelli bowls
 <img src="https://i.ibb.co/4ppZkZL/223529-vermicelli-noodle-bowl-1x1-120-20f5834a25a144d5afbd533468eb99d8.jpg" alt="223529-vermicelli-noodle-bowl-1x1-120-20f5834a25a144d5afbd533468eb99d8" />
 <img src="https://i.ibb.co/dWbB118/Satay-Beef-Noodle-Soup-11.jpg" alt="Satay-Beef-Noodle-Soup-11" />
 
+drinks
+<img src="https://i.ibb.co/WHmcj00/tapioca.jpg" alt="tapioca"/>
+
 desserts
 <img src="https://i.ibb.co/dDxKZ8L/bluebell-desserts-600sq.jpg" alt="bluebell-desserts-600sq" />
 <img src="https://i.ibb.co/q9b9LRN/icecreamsand-desserts-600sq.jpg" alt="icecreamsand-desserts-600sq" />

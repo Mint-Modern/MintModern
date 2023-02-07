@@ -722,20 +722,12 @@ async function createInitialProducts() {
         image: `https://i.ibb.co/dDxKZ8L/bluebell-desserts-600sq.jpg`,
       },
       {
-        name: "Tapioca Smoothies",
+        name: "Tapiocas",
         description:
-          "Avocado, Blueberry, Coconut, Green Apple, Honeydew, Mango, Match Green Tea, Pineapple, Raspberry, Strawberry, Taro",
-        category: "smoothies",
+          "Avocado, Blueberry, Coconut, Green Apple, Honeydew, Mango, Match Green Tea, Pineapple, Raspberry, Strawberry, Taro, Green Milk Tea, Matcha Milk Tea, Taro Milk Tea, Thai Milk Tea",
+        category: "tapiocas",
         price: 5.5,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
-      },
-      {
-        name: "Tapioca Milk Teas",
-        description:
-          "Green Milk Tea, Matcha Milk Tea, Taro Milk Tea, Thai Milk Tea",
-        category: "milkTeas",
-        price: 5.5,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/WHmcj00/tapioca.jpg`,
       },
     ];
     const products = await Promise.all(productsToCreate.map(createProduct));
