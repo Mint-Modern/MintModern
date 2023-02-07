@@ -540,7 +540,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 9.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/rpwxSJv/Rice-Lemongrass.jpg`,
       },
       {
         name: "Crispy Hen",
@@ -548,7 +548,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Homemade Honey Mustard, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 9.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/XxHkmR9/Rice-Hen.jpg`,
       },
       {
         name: "Mushroom & Asparagus",
@@ -556,7 +556,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 9.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/Fs48yfz/Mushroom-rice-cover-75.jpg`,
       },
       {
         name: "Grilled Shrimp",
@@ -564,7 +564,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 9.5,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/ZStk1MC/Grilled-Shrimp-Scampi-exps165962-TH2847293-B12-14-3b-C-2.jpg`,
       },
       {
         name: "Shakin' New York Strip",
@@ -572,7 +572,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Homemade Honey Mustard, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 11.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/mHqfWrC/Image-url-https-static-onecms-io-wp-content-uploads-sites-19-2016-02-22-1604p45-grilled-steak-with.jpg`,
       },
       {
         name: "Steak & Asparagus",
@@ -580,7 +580,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 10.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/3fHRCYB/Flank-Steak-with-Chimichurri.jpg`,
       },
       {
         name: "Steak & Sate Veggies",
@@ -588,7 +588,7 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber, contains Broccoli & Carrots",
         category: "rice",
         price: 10.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/qd4HsV2/Steak-Veggies-Rice.jpg`,
       },
       {
         name: "Fried Soft Shell Crab",
@@ -596,15 +596,14 @@ async function createInitialProducts() {
           "served with White Rice, House Tomato Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 12.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/8jYG3MK/00688327-Fried-Soft-Shell-Crab-with-Red-Beans-and-Rice.jpg`,
       },
       {
         name: "Grilled Salmon",
-        description:
-          "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
+        description: `served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber`,
         category: "rice",
         price: 12.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/NynjfDs/15924371125eeaa978b2487.jpg`,
       },
       {
         name: "BBQ Short Ribs",
@@ -612,21 +611,21 @@ async function createInitialProducts() {
           "served with White Rice, House Fish Sauce, Pickled Cabbage & Carrots, Tomatoes, and Cucumber",
         category: "rice",
         price: 12.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/xM43L3d/Exps78167-TH143195-C07-30-8b.jpg`,
       },
       {
         name: "Shrimp Fried Rice",
         description: "contains Shrimp, Eggs, & Onions",
         category: "rice",
         price: 8.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: "https://i.ibb.co/n1VvkBq/Shrimp-Fried-Rice-10.jpg",
       },
       {
         name: "Deluxe Fried Rice",
         description: "contains Chinese Sausage, Shrimp, Eggs, & Onions",
         category: "rice",
         price: 9.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/3W2q6dC/2f8c4af7-6631-4b45-876c-f970c1953bc1-441ec437-ac8e-4fc2-8304-7907538071c9-retina-large.jpg`,
       },
       {
         name: "Fried Tofu",
@@ -666,7 +665,7 @@ async function createInitialProducts() {
           "served with Vermicelli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
         category: "vermicelli Bowl",
         price: 9.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/2P5S7rD/Vbowl-Lemongrass-Chicken.jpg`,
       },
       {
         name: "Mushroom & Asparagus",
@@ -674,7 +673,7 @@ async function createInitialProducts() {
           "served with Vermicelli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
         category: "vermicelli Bowl",
         price: 9.0,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/592grMC/Vbowl-Mushroom.jpg`,
       },
       {
         name: "Grilled Shrimp",
@@ -682,7 +681,7 @@ async function createInitialProducts() {
           "served with Vermicelli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
         category: "vermicelli Bowl",
         price: 9.5,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/4ppZkZL/223529-vermicelli-noodle-bowl-1x1-120-20f5834a25a144d5afbd533468eb99d8.jpg`,
       },
       {
         name: "Beef Sate",
@@ -690,7 +689,7 @@ async function createInitialProducts() {
           "served with Vermicelli Rice Noodles, House Fish Sauce, Lettuce, Carrots, and Cucumber",
         category: "vermicelli Bowl",
         price: 9.5,
-        image: `https://i.imgur.com/ZZiMrz0.gif`,
+        image: `https://i.ibb.co/dWbB118/Satay-Beef-Noodle-Soup-11.jpg`,
       },
       {
         name: "Pandan Waffle with Vanilla Ice Cream",
