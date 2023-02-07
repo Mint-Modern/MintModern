@@ -6,7 +6,19 @@ const AboutUs = ({ setToken }) => {
   return (
     <div>
       <NavBar />
-      <h2 className="aboutus">Our Story!</h2>
+      <h2 className="greeting">
+        <img
+          src="https://i.ibb.co/CQdWn1w/Page-Break-Left-1-2.png"
+          alt="Page-Break-Left-1-2"
+          border="0"
+        />
+      Our Story
+        <img
+          src="https://i.ibb.co/x1VqQK5/Page-Break-Right-1-2.png"
+          alt="Page-Break-Right-1-2"
+          border="0"
+        />
+      </h2>
       <p className="story">(PUT PICTURES ON RIGHT SIDE, TRANSITIONING --)</p>
       <div className="story">
         With its name, Mint Modern Vietnamese Bistro & Bar declares its

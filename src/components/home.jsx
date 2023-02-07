@@ -4,6 +4,7 @@ import NavBar from "./navbar";
 // import Logout from "./Logout";
 import MyNavbar from "./MyNavbar";
 import AboutUs from "./aboutUs";
+import Pressarticles from "./pressArticles";
 
 // import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
@@ -15,29 +16,8 @@ const Home = ({ token, setToken }) => {
     return (
       <div>
         <NavBar />
-        {/* <div className="aboutus">
-          Other links and bedazzles we would need (pls change or delete
-          classname as needed)
-        </div>
-        <p className="single-prod prod-name">
-          Should we separate user-specific components to a side navbar?? To
-          include customer current and previous orders and reviews?? (DELETE ME
-          AFTERWARDS)
-        </p>
-        <p className="story">
+        {/* <p className="story">
           Need a component for: Bomb Pics (pls change or delete classname as
-          needed)
-        </p>
-        <p className="story">
-          Need a component for: Seasonal Offerings/Events (if any) (pls change
-          or delete classname as needed)
-        </p>
-        <p className="story">
-          Need a component for: Press Articles (pls change or delete classname
-          as needed)
-        </p>
-        <p className="story">
-          Need a component for: Reviews (pls change or delete classname as
           needed)
         </p>
         <p className="story">
@@ -46,9 +26,9 @@ const Home = ({ token, setToken }) => {
         </p> */}
         <div className="homepage">
           {/* We will combine the 2 divs after navbar when all components are done to persistently hide the other navbars in the components */}
-          <AboutUs setToken={setToken} />
+          <AboutUs />
+          <Pressarticles />
         </div>
-        {/* <Map/> */}
       </div>
     );
   } else {
@@ -57,7 +37,8 @@ const Home = ({ token, setToken }) => {
         <MyNavbar setToken={setToken} />
         <div className="homepage">
           {/* We will combine the 2 divs after navbar when all components are done to persistently hide the other navbars in the components */}
-          <AboutUs setToken={setToken} />
+          <AboutUs />
+          <Pressarticles />
         </div>
       </div>
     );
