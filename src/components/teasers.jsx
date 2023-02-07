@@ -6,36 +6,35 @@ import { attachProductToOrder } from "../api/auth";
 const Teasers = ({ products, user }) => {
   const navigate = useNavigate();
 
+  function showAlert() {
+    alert("Added to cart!");
+  }
+
   let productsToMap = products?.map((product, index) => {
     if (product.category === "teasers")
       return (
         <div className="single-prod" key={index}>
-          <h4
-            className="prod-name"
+          <div className="top"
             onClick={() => {
               navigate(`/products/${product.id}`);
-            }}
-          >
+            }}>
+            <img src={product.image} className="prod-photo" />
+            <h4 className="prod-name">
             {product.name}
-          </h4>
-          <h5>
+            </h4>
+          </div>
+          <h5 className="content">
             <i>{product.description}</i>
           </h5>
-          <h5>| {product.price} |</h5>
-          {/* <button
-            onClick={() => {
-              navigate(`/products/${product.id}`);
-            }}
-          >
-            See Details!
-          </button> */}
+          <h5 className="content">| {product.price} |</h5>
           <img src="https://i.ibb.co/642vNF2/add-icon-v2.png" alt="add-icon-v2" className="add-icon"
             onClick={async () => {
               user.name
                 ? await attachProductToOrder({ productId: product.id })
                 : addProductToLocalCart(product);
+              showAlert();
             }}
-          />
+            /> 
         </div>
       );
   });

@@ -67,7 +67,7 @@ const EditProduct = ({ product, products, setProducts }) => {
         <input
           value={image}
           type="text"
-          placeholder="image"
+          placeholder="image url"
           onChange={(event) => setImage(event.target.value)}
         ></input>
         <button type="submit">Update Product</button>

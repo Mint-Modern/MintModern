@@ -10,28 +10,28 @@ const Pho = ({ products, user }) => {
     if (product.category === "pho")
       return (
         <div className="single-prod" key={index}>
-          <h4
-            className="prod-name"
-            onClick={() => {
-              navigate(`/products/${product.id}`);
-            }}
-          >
-            {product.name}
+        <div className="top"
+          onClick={() => {
+            navigate(`/products/${product.id}`);
+          }}>
+          <img src={product.image} className="prod-photo" />
+          <h4 className="prod-name">
+          {product.name}
           </h4>
-          <h5>
-            <i>{product.description}</i>
-          </h5>
-          <h5>| {product.price} |</h5>
-          <button
-            onClick={async () => {
-              user.name
-                ? await attachProductToOrder({ productId: product.id })
-                : addProductToLocalCart(product);
-            }}
-          >
-            Add to cart!
-          </button>
         </div>
+        <h5 className="content">
+          <i>{product.description}</i>
+        </h5>
+        <h5 className="content">| {product.price} |</h5>
+        <img src="https://i.ibb.co/642vNF2/add-icon-v2.png" alt="add-icon-v2" className="add-icon"
+          onClick={async () => {
+            user.name
+              ? await attachProductToOrder({ productId: product.id })
+              : addProductToLocalCart(product);
+            showAlert();
+          }}
+          /> 
+      </div>
       );
   });
 

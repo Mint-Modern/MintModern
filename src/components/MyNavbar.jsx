@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { fetchMe } from "../api/auth";
 import Logout from "./Logout";
 
-const MyNavbar = ({ setToken, user}) => {
+const MyNavbar = ({ setToken }) => {
   const token = localStorage.getItem("token");
     const [customer, setCustomer] = useState({});
 
@@ -24,19 +24,19 @@ const MyNavbar = ({ setToken, user}) => {
     <div className="allNavs">
       <header id="homelink">
         <Link to="/" >
-          <img src="https://i.ibb.co/zxB68bW/mint-logo-250x200.png"
-            alt="mint-logo-250x200" className="logo" />
+          <img src="https://i.ibb.co/B6NjcdZ/logo-v2.png"
+            alt="logo-v2-250x150" className="logo" />
         </Link>
-        <h2 className="hello"><i>Hello there, {customer.name}!</i></h2>  
+        {/* <h2 className="hello"><i>Hello there, {customer.name}!</i></h2>   */}
         <div id="lc-icons">
-          <Link to="/myprofile">
-            <img src="https://i.ibb.co/vxsQDTG/profile-icon-v1.png" 
-              alt="profile-icon-v1" className="icon"/>
-          </Link>
-          <Link to="/cart">
-            <img src="https://i.ibb.co/bXrZxf2/cart-icon-v1.png" 
-              alt="cart-icon-v1" className="icon last" />
-          </Link>
+            <Link to="/myprofile">
+              <img src="https://i.ibb.co/hM7Xn0g/profile-icon-v1-square.png"
+                alt="profile-icon-v1-square" className="icon" />
+            </Link>
+            <Link to="/cart">
+              <img src="https://i.ibb.co/FXNrrrQ/bag-icon-v1-square.png"
+                alt="bag-icon-v1-square" className="icon last" />
+            </Link>
         </div>
       </header>
       <nav className="my-nav">
@@ -50,8 +50,8 @@ const MyNavbar = ({ setToken, user}) => {
     <div className="allNavs">
     <header id="homelink">
         <Link to="/" >
-          <img src="https://i.ibb.co/zxB68bW/mint-logo-250x200.png"
-            alt="mint-logo-250x200" className="logo" />
+            <img src="https://i.ibb.co/B6NjcdZ/logo-v2.png"
+              alt="logo-v2-250x150" className="logo" />
         </Link>
         <h2 className="hello"><i>Hello there, {customer.name}!</i></h2>
         <div id="lc-icons">

@@ -6,8 +6,8 @@ const MenuNav = () => {
       <div className="allNavs hideme">
         <header id="homelink">
         <Link to="/" >
-          <img src="https://i.ibb.co/zxB68bW/mint-logo-250x200.png"
-            alt="mint-logo-250x200" className="logo" />
+            <img src="https://i.ibb.co/B6NjcdZ/logo-v2.png"
+              alt="logo-v2-250x150" className="logo" />
         </Link>
         <Link className="mini" to={"/fullmenu"}>| Back to Full Menu |</Link>
         <div id="lc-icons">

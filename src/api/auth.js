@@ -373,6 +373,7 @@ export const createNewProduct = async ({
   description,
   category,
   price,
+  image,
 }) => {
   try {
     const response = await fetch(`${baseUrl}/products`, {
@@ -385,6 +386,7 @@ export const createNewProduct = async ({
         description,
         category,
         price,
+        image,
       }),
     });
     const data = await response.json();

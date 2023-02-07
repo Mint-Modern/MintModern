@@ -20,14 +20,15 @@ const GetCustomersList = () => {
   }, []);
 
   // console.log(customers);
-
+  
   let customersToMap = customers.map((customer, index) => {
+    const isAdmin = customer.isAdmin === true;
     return (
-      <div className="story" key={index}>
+      <div className="single-cust" key={index}>
         <h2>{customer.name}</h2>
         <h3>{customer.email}</h3>
         <h3>{customer.phoneNumber}</h3>
-        <h3>{customer.isAdmin}</h3>
+        <h3><i>{isAdmin ? "Admin" : null }</i></h3>
       </div>
     );
   });
@@ -35,8 +36,9 @@ const GetCustomersList = () => {
     <>
       <MyNavbar />
       <h1 className="all-cust">Customers List</h1>
-      <div >{customersToMap}</div>
-      <button onClick={goBack}>Back</button>
+      <div className="cust-list">{customersToMap}
+        <button className="modifybuttons" onClick={goBack}>Back</button>
+      </div>
     </>
   );
 };

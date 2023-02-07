@@ -8,8 +8,8 @@
     font-family: 'copperplate';
     font-size: 16px;
     color: #132a13;
-    background-color: #F7FBF2;
-  
+    /* background-color: #F7FBF2; */
+    background-color: #DBF4DF;
   }
 
   body {
@@ -34,6 +34,13 @@
   -webkit-text-stroke: .5px #e9f5db;
 }
 
+.placeholder {
+  height: 500px;
+  padding: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 /***** NAVBARS *****/
 .allNavs {
   position: sticky;
@@ -49,16 +56,24 @@
 }
 
 .logo {
-  height: 150px;
+  height: 110px;
+  margin-left: 15px;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
 }
 
 .icon {
-  /* padding-right: 15px; */
   height: 50px;
+  border-radius: 50%;
 }
 
 .last {
-  padding-right: 15px;
+  margin-right: 15px;
 }
 
 .add-icon {
@@ -67,13 +82,31 @@
   border: #008000 solid 2px;
 }
 
-.add-icon:hover {
+.add-icon:hover, .icon:hover {
   background: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+}
+
+.logo:hover {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+.hello {
+  font-family: 'Astrella', sans-serif;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: #31572c;
+
+  height: 100px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #homelink {
   width: 100%;
-  height: 90px;
+  height: 100px;
+  margin-bottom: 15px;
 
   display: flex;
   flex-direction: row;
@@ -157,7 +190,7 @@ Link:visited {
   border-radius: 10px;
 }
 
-.newprodform, .editprodform {
+.editprodform {
   display: flex;
   flex-direction: column;
   place-items: center;
@@ -167,6 +200,13 @@ Link:visited {
   border: #008000 solid 2px;
   border-radius: 10px;
   box-shadow: 0 4px 7px #ccc;
+}
+
+.newprodform {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  padding: 10px;
 }
 
 .usepassforms input {
@@ -182,7 +222,7 @@ Link:visited {
 }
 
 .newprodform input {
-  font-family: 'Monteya', sans-serif;
+  font-family: 'Instagram Sans Headline', sans-serif;
   font-size: 20px;
   margin: 10px;
   padding: 15px;
@@ -238,14 +278,14 @@ Link:visited {
 }
 
 .newprodform button {
-  font-family: 'Monteya', sans-serif;
-  font-size: 20px;
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-size: 22px;
   color: #132a13;
   letter-spacing: 3px;
 
   margin: 20px;
   padding: 15px;
-  width: 80%;
+  width:60%;
 
   text-align: center;
   border: #ecf39e solid 2px;
@@ -386,13 +426,11 @@ Link:visited {
 }
 
 .single-prod {
-  width: 35%;
-  height: 300px;
+  width: 30%;
+  height: 30%;
   margin: 20px;
   padding: 15px;
 
-  /* border: 1px solid #ccc; */
-  /* box-shadow: 0 2px 3px #ccc; */
   border-radius: 10px;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -407,21 +445,34 @@ Link:visited {
 }
 
 .single-prod:hover {
+  background-color: #F7FBF2;
   box-shadow: inset 0 0 0 2px #008000, 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
-.prod-name {
-  text-decoration: none;
-  color: #31572c;;
-  transition: all 0.2s ease-in-out;
-  font-size: 25px;
+.top {
+  place-items: center;
 }
 
-.prod-name:hover {
-  -webkit-text-stroke: .2px #38b000;
-  /* color: #38b000; */
-  /* -webkit-transform: translateY(-8px);
-  transform: translateY(-8px); */
+.prod-photo {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.prod-name {
+  margin: 10px;
+  text-decoration: none;
+  color: #31572c;;
+  transition: all 0.4s ease-in-out;
+  font-size: 28px;
+  padding-bottom: 5px;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.top:hover {
+  -webkit-text-stroke: .2px #40916c;
+  border-bottom: #40916c solid 3px;
+  background-color:  #b5e48c ;
 }
 
 .sp-page {
@@ -458,19 +509,19 @@ Link:visited {
   color: #31572c;
 }
 
-
 .cat {
   text-transform: capitalize;
   font-style: italic;
 }
 
-.aboutus  {
+/***** ABOUT US *****/
+
+.aboutus {
   font-family: 'Instagram Sans Headline', sans-serif;
   color: #31572c;
   font-size: 45px;
   margin-left: 25px;
 }
-
 .story {
   width: 60%;
   margin: 0;
@@ -484,6 +535,8 @@ Link:visited {
   color: #31572c;
 }
 
+/***** ALL CUSTOMERS *****/
+
 .customers {
     margin: 10px;
     width: 100%;
@@ -491,15 +544,128 @@ Link:visited {
     flex-flow: row wrap;
 }
 
-.hello {
-  font-family: 'Astrella', sans-serif;
-  font-size: 30px;
-  letter-spacing: 5px;
-  color: #31572c;
+.cust-list {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
 
-  height: 100px;
+.single-cust {
+  width: 30%;
+  height: 30%;
+  margin: 20px;
+  padding: 15px;
+
+  text-align: center;
+  line-height: 1;
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-size: 20px;
+  color: #31572c;
+  border: #008000 solid 2px;
+  border-radius: 10px;
+}
+
+/***** CUSTOMER PROFILE *****/
+/* 
+.custprof {
+  display: flex;
+  flex-flow: column wrap;
+} */
+
+.greeting  {
+  font-family: 'Astrella', sans-serif;
+  color: #31572c;
+  font-size: 35px;
+  letter-spacing: 7px;
+  margin-bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pt1 {
+  width: 100%;
   margin: 0;
   display: flex;
-  align-items: center;
+  flex-flow: column wrap;
   justify-content: center;
+  align-items: baseline;
+  height: 500px;
+}
+
+.right {
+  width: 50%;
+}
+
+.profile {
+  height: 350px;
+  border-radius: 40%;
+  border: #008000 solid 4px;
+  position: float;
+  margin-left: 25px;
+  margin-top: 55px;
+  background: radial-gradient(circle at 49.8% 44.4%, rgb(251, 230, 59) 0%, rgb(161, 255, 63) 90%);
+}
+
+.status  {
+  font-family: 'Instagram Sans Headline', sans-serif;
+  color: #31572c;
+  font-size: 25px;
+  letter-spacing: 7px;
+  text-align: justify;
+  margin: 0;
+  margin-left: 25px;
+
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.sub {
+  position: relative;
+  width: 90%;
+  margin-right: 0;
+  padding-bottom: 15px;
+  top: 0;
+
+  text-align: justify;
+  line-height: 1.5;
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-size: 20px;
+  color: #31572c;
+}
+
+.caps {
+  font-family: 'Astrella', sans-serif;
+}
+
+.sh {
+  font-family: 'Astrella', sans-serif;
+  color: #31572c;
+  font-size: 25px;
+  letter-spacing: 7px;
+  text-align: justify;
+  margin-bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.wips {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.wips h4, .right h4 {
+  border-bottom: solid #008000 3px;
+}
+
+.wips p {
+  text-align: center;
+  margin-bottom: 0;
 }
