@@ -30,6 +30,7 @@ import Cart from "./components/cart";
 import OrderHistory from "./components/orderHistory";
 import Confirmationpage from "./components/confirmationPage";
 import Pressarticles from "./components/pressArticles";
+import Locationhours from "./components/locationHours";
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -170,6 +171,7 @@ const App = () => {
         />
         <Route path="/thankyou" element={<Confirmationpage />} />
         <Route path="/articles" element={<Pressarticles />} />
+        <Route path="/location" element={<Locationhours />} />
       </Routes>
     </div>
   );
