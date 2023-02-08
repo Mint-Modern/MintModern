@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
 import { attachProductToOrder } from "../api/auth";
 
-const Desserts = ({ products, user }) => {
+const SingleProduct = ({ product, user }) => {
   const navigate = useNavigate();
+  const [added, setAdded] = useState(false);
+
   const addProductToLocalCart = (product) => {
     let cart = JSON.parse(localStorage.getItem("cart")) || {
       products: [],
@@ -16,46 +18,49 @@ const Desserts = ({ products, user }) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   };
 
-  let productsToMap = products?.map((product, index) => {
-    const [added, setAdded] = useState(false);
-    if (product.category === "desserts")
-      return (
-        <div className="single-prod" key={index}>
-          <div
-            className="top"
-            onClick={() => {
-              navigate(`/products/${product.id}`);
-            }}
-          >
-            <img src={product.image} className="prod-photo" />
-            <h4 className="prod-name">{product.name}</h4>
-          </div>
-          <h5 className="content">
-            <i>{product.description}</i>
-          </h5>
-          <h5 className="content">| {product.price} |</h5>
-          <img
-            src="https://i.ibb.co/642vNF2/add-icon-v2.png"
-            alt="add-icon-v2"
-            className="add-icon"
-            onClick={async () => {
-              user.name
-                ? await attachProductToOrder({ productId: product.id })
-                : addProductToLocalCart(product);
-              setAdded(true);
-              setTimeout(() => {
-                setAdded(false);
-              }, 1000);
-            }}
-          />
-          {added && (
-            <div className="pop-up">
-              <div className="overlay"></div>
-              <div className="window_content">Added to Cart!</div>
-            </div>
-          )}
+  return (
+    <div className="single-prod">
+      <div
+        className="top"
+        onClick={() => {
+          navigate(`/products/${product.id}`);
+        }}
+      >
+        <img src={product.image} className="prod-photo" />
+        <h4 className="prod-name">{product.name}</h4>
+      </div>
+      <h5 className="content">
+        <i>{product.description}</i>
+      </h5>
+      <h5 className="content">| {product.price} |</h5>
+      <img
+        src="https://i.ibb.co/642vNF2/add-icon-v2.png"
+        alt="add-icon-v2"
+        className="add-icon"
+        onClick={async () => {
+          user.name
+            ? await attachProductToOrder({ productId: product.id })
+            : addProductToLocalCart(product);
+          setAdded(true);
+          setTimeout(() => {
+            setAdded(false);
+          }, 1000);
+        }}
+      />
+      {added && (
+        <div className="pop-up">
+          <div className="overlay"></div>
+          <div className="window_content">Added to Cart!</div>
         </div>
-      );
+      )}
+    </div>
+  );
+};
+
+const Desserts = ({ products, user }) => {
+  let productsToMap = products?.map((product, index) => {
+    if (product.category === "desserts")
+      return <SingleProduct key={index} product={product} user={user} />;
   });
 
   return (

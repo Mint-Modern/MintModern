@@ -31,6 +31,7 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
     event.preventDefault();
     setOrder({ ...order, isActive: false });
     await updateOrder({ orderId: order.id, isActive: false });
+    localStorage.removeItem("cart");
     const userId = user.id;
     const newOrder = await createNewOrder({
       userId,
