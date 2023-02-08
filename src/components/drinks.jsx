@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
 import { attachProductToOrder } from "../api/auth";
 
+import BackToTopButton from "./backToTopButton";
+
 const Drinks = ({ products, user }) => {
   console.log("drinkproducts", products);
   const navigate = useNavigate();
@@ -103,8 +105,11 @@ const handleChange = (e) => {
           alt="Page-Break-Right-1-2"
           border="0"
         />
+
       </h2>
       <div className="products">{productsToMap}</div>
+
+      <BackToTopButton/>
     </>
   );
 };

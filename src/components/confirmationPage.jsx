@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import Locationhours from "./locationHours";
 
 const Confirmationpage = () => {
     return (
@@ -15,6 +16,7 @@ const Confirmationpage = () => {
             <h1>Thank you!</h1>
             <h2>Your order has been placed.</h2>
             <h3>Go back to <span><Link to='/' id="backlink">home.</Link></span></h3>
+            <Locationhours/>
         </div>
     )
 }

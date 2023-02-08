@@ -6,6 +6,7 @@ import {
   getActiveOrderByCustomer,
   updateOrder,
 } from "../api/auth";
+import Locationhours from "./locationHours";
 import MyNavbar from "./MyNavbar";
 
 const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
@@ -156,6 +157,15 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
           </div>
         </div>
       )}
+
+      <div className="products">
+        <button className="modifybuttons" onClick={clickHandler}>
+          Checkout
+        </button>
+
+      </div>
+      <Locationhours/>
+
     </>
   );
 };

@@ -3,34 +3,40 @@ import NavBar from "./navbar";
 
 const Locationhours = () => {
     return (
-        <div>
-            <NavBar />
-            <h2 className="greeting">
-            <img
-                src="https://i.ibb.co/CQdWn1w/Page-Break-Left-1-2.png"
-                alt="Page-Break-Left-1-2"
-                border="0"
-                />
-            Location & Hours
-            <img
-                src="https://i.ibb.co/x1VqQK5/Page-Break-Right-1-2.png"
-                alt="Page-Break-Right-1-2"
-                border="0"
-                />
-            </h2>
-            <div className="locpage">
-                <img src="https://i.ibb.co/LznSrFQ/IMG-1061.jpg" alt="IMG-1061"
-                    className="loc left1" />
-                <div className="location">
-                    <h3>
-                    5100 Freret St., New Orleans, LA 70115
-                    </h3>
-                    <a className="sub" href="https://goo.gl/maps/ZMvAxeNfmHaBRaXJ8" target="_blank">Open on Google Maps</a>
-                </div>
-                <div className="hours">
-
-                </div>
+        <div className="footer">
+            <div className="footer-container">
+          <div className="footer-info">
+            <div className="footer-title">
+            <img src="https://i.ibb.co/SXbTZS6/Mint.png" alt="Mint" className="footer-logo"/>
+              <span>Mint Modern Vietnamese Bistro & Bar</span> 
             </div>
+          </div>
+        </div>
+        <div className="footer-section-wrapper">
+          <div className="footer-section">
+            <h2 className="footer-catergory">Location</h2>
+            <nav className="footer-list">
+              <li>
+                5100 Freret St. 
+              </li>
+              <li>
+                New Orleans, LA 70115
+              </li>
+              <li>
+                Tues-Thurs & Sun: 11am - 9pm
+              </li>
+              <li>
+                Fri-Sat: 11am - 10pm
+              </li>
+            </nav>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <div className="footer-bottom-container">
+            <p className="footer-copyright">© Mint Modern Bistro</p>
+          </div>
+        </div>
+            
         </div>
     )
 }

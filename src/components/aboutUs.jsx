@@ -2,25 +2,14 @@ import React from "react";
 import NavBar from "./navbar";
 import { customerLogin } from "../api/auth";
 import BackToTopButton from "./backToTopButton";
+import Locationhours from "./locationHours";
+
 const AboutUs = ({ setToken }) => {
   return (
     <div>
       <NavBar />
       <BackToTopButton/>
       <main className="story">
-      <h2 className="greeting">
-        <img
-          src="https://i.ibb.co/CQdWn1w/Page-Break-Left-1-2.png"
-          alt="Page-Break-Left-1-2"
-          border="0"
-        />
-      Our Story
-        <img
-          src="https://i.ibb.co/x1VqQK5/Page-Break-Right-1-2.png"
-          alt="Page-Break-Right-1-2"
-          border="0"
-        />
-      </h2>
       <div className="story-text">
       </div>
       <div className="story-words">
@@ -52,40 +41,7 @@ const AboutUs = ({ setToken }) => {
         </p>
       </div>
       </main>
-      <footer>
-        <div className="footer-container">
-          <div className="footer-info">
-            <div className="footer-title">
-              <img src="/public/images/logo.jpg"/>
-              <span>Mint Modern Vietnamese Bistro & Bar</span> 
-            </div>
-          </div>
-        </div>
-        <div className="footer-section-wrapper">
-          <div className="footer-section">
-            <h2 className="footer-catergory">Location</h2>
-            <nav className="footer-list">
-              <li>
-                5100 Freret St. 
-              </li>
-              <li>
-                New Orleans, LA 70115
-              </li>
-              <li>
-                Tues-Thurs & Sun: 11am - 9pm
-              </li>
-              <li>
-                Fri-Sat: 11am - 10pm
-              </li>
-            </nav>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <div className="footer-bottom-container">
-            <p className="footer-copyright">© Mint Modern Bistro</p>
-          </div>
-        </div>
-      </footer>
+      <Locationhours/>
     </div>
   );
 };

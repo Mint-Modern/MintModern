@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { deleteOrderProduct, getActiveOrderByCustomer } from "../api/auth";
 import MyNavbar from "./MyNavbar";
 import AddProduct from "./addProduct";
+import Locationhours from "./locationHours";
 
 const Cart = ({ user, orderProducts, setOrderProducts }) => {
   const [order, setOrder] = useState({});
@@ -83,6 +84,7 @@ const Cart = ({ user, orderProducts, setOrderProducts }) => {
       <div className="products">{productsToMap}</div>
       <div className="products">Order Total = {runningTotal}</div>
       <button>Checkout</button>
+      <Locationhours/>
     </>
   );
 };
