@@ -11,6 +11,8 @@ import MyNavbar from "./MyNavbar";
 
 const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
   const [order, setOrder] = useState({});
+  const navigate = useNavigate();
+
   !user.name
     ? useEffect(() => {
         const storedOrder = localStorage.getItem("cart");
@@ -26,8 +28,6 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
         getOrders();
       }, [orderProducts]);
 
-  const navigate = useNavigate();
-
   const clickHandler = async (event) => {
     event.preventDefault();
     setOrder({ ...order, isActive: false });
@@ -42,6 +42,11 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
     });
     navigate("/thankyou");
     console.log("you checked out");
+  };
+
+  const handler = async (event) => {
+    event.preventDefault();
+    navigate("/fullmenu");
   };
 
   const updateQuantity = (index, newQuantity) => {
@@ -128,17 +133,31 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
       </h2>
       <div className="products">{productsToMap}</div>
       {!order.products ? (
-        <div className="products">Order Total = {0}</div>
-      ) : (
         <div className="products">
-          Order Total = $
-          {
-            (runningTotal =
-              Math.round((runningTotal + runningTotal * order.salesTax) * 100) /
-              100)
-          }
+          <h2 className="prod-cat">Cart is empty, go look at our menu!</h2>
+          <button className="modifybuttons" onClick={handler}>
+            Menu
+          </button>
+        </div>
+      ) : (
+        <div>
+          <div className="products">
+            Order Total = $
+            {
+              (runningTotal =
+                Math.round(
+                  (runningTotal + runningTotal * order.salesTax) * 100
+                ) / 100)
+            }
+          </div>
+          <div className="products">
+            <button className="modifybuttons" onClick={clickHandler}>
+              Checkout
+            </button>
+          </div>
         </div>
       )}
+
       <div className="products">
         <button className="modifybuttons" onClick={clickHandler}>
           Checkout
@@ -146,6 +165,7 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
 
       </div>
       <Locationhours/>
+
     </>
   );
 };
