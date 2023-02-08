@@ -45,6 +45,7 @@
 .allNavs {
   position: sticky;
   top: 0;
+  z-index: 1;
 
   display: flex;
   flex-direction: column;
@@ -122,7 +123,8 @@
   width: 95%;
   height: 40px;
   padding-bottom: 15px;
-  /* OPT 2: font-family: 'Instagram Sans Headline', sans-serif; */
+  z-index: 1;
+  
   font-family: 'Astrella', sans-serif;
   font-size: 20px;
   color: #31572c;
@@ -821,6 +823,7 @@ footer img{
 .overlay {
   background: rgba(49,49,49,0.8);
 }
+
 .window_content {
   position: absolute;
   top: 40%;
@@ -846,3 +849,69 @@ footer img{
   border-color: #008000;
   background-color: inherit;
 }
+
+/***** PRESS ARTICLES *****/
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  line-height: 1.5;
+}
+
+.single-art {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: solid #008000 3px;
+}
+
+.single-art h3 {
+  font-style: italic;
+  text-align: center;
+  margin: 15px;
+}
+
+.news {
+  height: 200px;
+  width: 200px;
+}
+
+.left1 {
+  position: relative;
+  float: left;
+  top: 40px;
+}
+
+.right1 {
+  position: relative;
+  float: right;
+  top: 20px;
+}
+
+/***** LOCATION/HOURS *****/
+
+.locpage {
+  display: flex;
+  place-items: center;
+  padding: 10px;
+}
+
+.loc {
+  height: 500px;
+  width: 550px;
+}
+
+.location {
+  margin-left: 20px;
+  line-height: 1;
+}
+
+.location h3 {
+  font-family: 'Astrella', sans-serif;
+  color: #31572c;
+  font-size: 25px;
+}
+

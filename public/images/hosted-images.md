@@ -30,6 +30,9 @@ v2
 <img src="https://i.ibb.co/kS94K9m/cart-icon-v2-3.png" 
     alt="cart-icon-v2-3" className="icon" />
 
+LOCATION PHOTO
+<img src="https://i.ibb.co/LznSrFQ/IMG-1061.jpg" alt="IMG-1061" className="loc">
+
 > BAG
 > v1-square
 > <img src="https://i.ibb.co/FXNrrrQ/bag-icon-v1-square.png" alt="bag-icon-v1-square" className="icon" />
