@@ -3,10 +3,13 @@ LOGO
     alt="mint-logo-250x200" className="logo" />
 
 <img src="https://i.ibb.co/B6NjcdZ/logo-v2.png" alt="logo-v2-250x150" className="logo"/>
+<img src="https://i.ibb.co/GcpgVZj/mint-backup-logo.png" alt="mint-backup-logo"/>
 
 mint
 <img src="https://i.ibb.co/SXbTZS6/Mint.png" alt="Mint" />
 <img src="https://i.ibb.co/LxmzpJL/mint2-0intro.jpg" alt="mint2-0intro"/>
+<img src="https://i.ibb.co/3YVwhLX/FreretSt.jpg" alt="FreretSt" />
+<img src="https://i.ibb.co/Df5TZMx/bar.jpg" alt="bar"/>
 
 ICONS
 

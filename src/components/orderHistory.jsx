@@ -1,4 +1,5 @@
 import React from "react";
+import Locationhours from "./locationHours";
 
 const OrderHistory = ({ orders, user }) => {
     console.log("getting orders", orders);
@@ -38,6 +39,7 @@ const OrderHistory = ({ orders, user }) => {
               })
             : null}
         </div>
+      <Locationhours/>
       </>
     );
   };

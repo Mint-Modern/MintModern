@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { updateProduct } from "../api/auth";
+import Locationhours from "./locationHours";
 
 const EditProduct = ({ product, products, setProducts }) => {
   const [name, setName] = useState("");
@@ -72,6 +73,7 @@ const EditProduct = ({ product, products, setProducts }) => {
         ></input>
         <button type="submit">Update Product</button>
       </form>
+      <Locationhours/>
     </div>
   );
 };

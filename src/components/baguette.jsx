@@ -3,6 +3,8 @@ import MenuNav from "./menuNav";
 import { useNavigate } from "react-router-dom";
 import { attachProductToOrder } from "../api/auth";
 
+import BackToTopButton from "./backToTopButton";
+
 const SingleProduct = ({ product, user }) => {
   const navigate = useNavigate();
   const [added, setAdded] = useState(false);
@@ -80,6 +82,8 @@ const Baguette = ({ products, user }) => {
         />
       </h2>
       <div className="products">{productsToMap}</div>
+      <BackToTopButton/>
+    
     </>
   );
 };

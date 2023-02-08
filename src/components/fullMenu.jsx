@@ -10,6 +10,8 @@ import HouseSpecials from "./houseSpecials";
 import Rice from "./rice";
 import VermicelliBowl from "./vermicelliBowl";
 import Desserts from "./desserts";
+import BackToTopButton from "./backToTopButton";
+import Locationhours from "./locationHours";
 
 const FullMenu = ({ products, setProducts, user }) => {
   return (
@@ -53,6 +55,8 @@ const FullMenu = ({ products, setProducts, user }) => {
         <VermicelliBowl products={products} user={user} />
         <Desserts products={products} user={user} />
       </div>
+      <Locationhours/>
+      <BackToTopButton/>
     </div>
   );
 };

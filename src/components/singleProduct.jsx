@@ -4,6 +4,7 @@ import { fetchMe, getSingleProduct, attachProductToOrder } from "../api/auth";
 import Added from "./addedToCart";
 import DeleteProduct from "./deleteProduct";
 import EditProduct from "./editProduct";
+import Locationhours from "./locationHours";
 
 const SingleProduct = ({ products, setProducts, user }) => {
   const token = localStorage.getItem("token");
@@ -118,6 +119,7 @@ const SingleProduct = ({ products, setProducts, user }) => {
           Back
         </button>
         </div>
+        <Locationhours/>
     </div>
   );
 };

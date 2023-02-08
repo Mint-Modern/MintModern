@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAllCustomers } from "../api/auth";
 import MyNavbar from "./MyNavbar";
+import Locationhours from "./locationHours";
+import BackToTopButton from "./backToTopButton";
 
 const GetCustomersList = () => {
   const [customers, setCustomers] = useState([]);
@@ -39,6 +41,8 @@ const GetCustomersList = () => {
       <div className="cust-list">{customersToMap}
         <button className="modifybuttons" onClick={goBack}>Back</button>
       </div>
+      <Locationhours/>
+      <BackToTopButton/>
     </>
   );
 };

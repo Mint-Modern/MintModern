@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const MenuNav = () => {
     return (
       <div className="allNavs hideme">
@@ -32,6 +33,7 @@ const MenuNav = () => {
           <Link to="/fullmenu/drinks">Drinks</Link>
           <Link to="/fullmenu/desserts">Desserts</Link>
         </nav>
+  
       </div>
     )
 }

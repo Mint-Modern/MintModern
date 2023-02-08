@@ -1,5 +1,7 @@
 import React, { useReducer } from "react";
+import BackToTopButton from "./backToTopButton";
 import IsAdmin from "./isAdmin";
+import Locationhours from "./locationHours";
 import MyNavbar from "./MyNavbar";
 
 const Customerprofile = ({ setToken, user }) => {
@@ -71,6 +73,8 @@ const Customerprofile = ({ setToken, user }) => {
           <p className="sub">🚧 Cooking in Progress! 🚧</p>
           <p className="sub"><i>Please check back for updates!</i></p> 
         </div> */}
+    <Locationhours/>
+    <BackToTopButton/>
     </div>
   );
 };

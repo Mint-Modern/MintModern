@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createNewProduct } from "../api/auth";
+import Locationhours from "./locationHours";
 import MyNavbar from "./MyNavbar";
 
 const NewProduct = ({ products, setProducts }) => {
@@ -83,6 +84,7 @@ const NewProduct = ({ products, setProducts }) => {
           Back
         </button>
       </form>
+      <Locationhours/>
     </div>
   );
 };

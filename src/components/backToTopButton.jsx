@@ -22,11 +22,12 @@ function BackToTopButton() {
     return <div className="back-to-top-button">
         {backToTopButton && (
             <button 
+              title="back up top"  
               className="back-top"
               onClick={scrollUp}
             >
-                ^
-            </button>
+                <img src="https://i.ibb.co/GcpgVZj/mint-backup-logo.png" alt="mint-backup-logo" className="back-top-button"/>
+               </button>
         )
         }
     </div>

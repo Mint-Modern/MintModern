@@ -16,6 +16,7 @@ const DeleteProduct = ({product, products, setProducts}) => {
           console.log("product deleted!");
             }}>Delete Product</button>
         </div>
+        
     )
 }
 

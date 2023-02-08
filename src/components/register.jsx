@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createNewOrder, fetchMe, registerCustomer } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
+import Locationhours from "./locationHours";
 
 const Register = ({ setToken }) => {
   const [name, setName] = useState("");
@@ -94,6 +95,7 @@ const Register = ({ setToken }) => {
           </span>
         </p>
       </div>
+      <Locationhours/>
     </div>
   );
 };
