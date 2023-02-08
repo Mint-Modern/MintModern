@@ -9,17 +9,13 @@ const navigate = useNavigate();
 const [value, setValue] = useState("");
 const [selectedOption, setSelectedOption] = useState(null);
 
-// const handleChange = (e) => {
-//     setValue(e.target.value);
-// };
-
 const handleChange = (e) => {
-    setSelectedOption(e.target.selectedOption)
+    setSelectedOption(e.target.selectedOption);
+    setValue(e.target.value);
 }
 
-
-  let productsToMap = products?.map((product, index) => {
-    const optionsTapioca = product.description?.split(", ");
+let productsToMap = products?.map((product, index) => {
+  const optionsTapioca = product.description?.split(", ");
     if (product.category === "tapiocas")
       return (
         <div className="single-prod" key={index}>

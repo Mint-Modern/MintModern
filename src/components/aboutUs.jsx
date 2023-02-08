@@ -1,11 +1,13 @@
 import React from "react";
 import NavBar from "./navbar";
 import { customerLogin } from "../api/auth";
-
+import BackToTopButton from "./backToTopButton";
 const AboutUs = ({ setToken }) => {
   return (
     <div>
       <NavBar />
+      <BackToTopButton/>
+      <main className="story">
       <h2 className="greeting">
         <img
           src="https://i.ibb.co/CQdWn1w/Page-Break-Left-1-2.png"
@@ -19,31 +21,29 @@ const AboutUs = ({ setToken }) => {
           border="0"
         />
       </h2>
-      <p className="story">(PUT PICTURES ON RIGHT SIDE, TRANSITIONING --)</p>
-      <div className="story">
-        With its name, Mint Modern Vietnamese Bistro & Bar declares its
-        membership in the new breed of New Orleans' Vietnamese restaurants, such
-        as Ba Chi Canteen or Namese.
-        <p>What exactly makes Mint <i>modern</i>?</p> Partly it's the playful language
+      <div className="story-text">
+      </div>
+      <div className="story-words">
+        Mint Modern
+        <p>What exactly makes Mint <i>Modern</i>?</p> 
+        Partly it's the playful language
         of the menu, which is written entirely in English. Appetizers are
         labeled as "teasers." Spongy steamed buns filled with pork belly are
-        called "sliders." And beyond the dishes now familiar to locals like pho,
+        called "Tacos". And beyond the dishes now familiar to locals like pho,
         bánh mì or vermicelli bowls, Mint has its own take on chicken and
         waffles along with a burger topped with kimchi and accompanied by sweet
         potato fries.
         <p>
-          "We eat ground beef and stuff like that," said Mint's owner Jimmy Tran
-          about the spicy burger, a dish he often made at home. "That's pretty
-          much like what we like, the younger generation."
+          "We started at a fast food store, Burger Orleans on Gentilly," said Mint's owner Jimmy Tran,
+           a dish he created from his family's fast food joint. "That's what brought origins of our Burgers. 
+           We make our patties in house. The kimchi that was just the <i>modern</i> touch."
         </p>
-        5100 Freret St., New Orleans, 504.218.5534
-        <p>What they are known for:</p> Mint is also unusual among Vietnamese
+       
+        <p>What we're are known for:</p> Mint is also unusual among Vietnamese
         restaurants for its long cocktail list that leans toward classics, such
-        as a whiskey sour, a vieux carré or a Singapore sling. The "special"
-        cocktails play with ingredients from the Vietnamese pantry, like the
-        Fishy Surprise with whiskey, Drambuie, grapefruit juice and fish sauce
-        (For the record, fish sauces sinks to the bottom of a cocktail and hits
-        you hard on that last sip.).
+        as Joe's Famous Old Fashions, specialized by the bartender Joe Dupas. The "special"
+        cocktails play with ingredients from the Vietnamese pantry, like The Rieu Dieu, with their touch of Lemongrass which is a common ingredient in most Vietnamese Cuisines. 
+        (For the record, lemongrass is a almost like sugarcane but instead of sweetness it brings spices and herbal essences).
         <p>
           Open through the afternoon and until after regular dinner hour, Mint
           is the kind of place where one might want to linger over drinks. The
@@ -51,6 +51,41 @@ const AboutUs = ({ setToken }) => {
           grays. The bar is large. And the is crowd lively.
         </p>
       </div>
+      </main>
+      <footer>
+        <div className="footer-container">
+          <div className="footer-info">
+            <div className="footer-title">
+              <img src="/public/images/logo.jpg"/>
+              <span>Mint Modern Vietnamese Bistro & Bar</span> 
+            </div>
+          </div>
+        </div>
+        <div className="footer-section-wrapper">
+          <div className="footer-section">
+            <h2 className="footer-catergory">Location</h2>
+            <nav className="footer-list">
+              <li>
+                5100 Freret St. 
+              </li>
+              <li>
+                New Orleans, LA 70115
+              </li>
+              <li>
+                Tues-Thurs & Sun: 11am - 9pm
+              </li>
+              <li>
+                Fri-Sat: 11am - 10pm
+              </li>
+            </nav>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <div className="footer-bottom-container">
+            <p className="footer-copyright">© Mint Modern Bistro</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
