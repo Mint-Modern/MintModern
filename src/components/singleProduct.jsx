@@ -55,6 +55,7 @@ const SingleProduct = ({ products, setProducts, user }) => {
   }, []);
 
   return !isAdmin ? (
+    <>
     <div className="sp-page">
       <img src={product.image} className="placeholder" />
       <div className="sp">
@@ -73,8 +74,11 @@ const SingleProduct = ({ products, setProducts, user }) => {
           />
         <button className="modifybuttons" onClick={goBack}>Back</button>
       </div>
-    </div>
+      </div>
+      <Locationhours/>
+    </>
   ) : (
+    <>
     <div className="sp-page">
       <img src={product.image} className="placeholder" />
       <div className="sp">
@@ -119,8 +123,9 @@ const SingleProduct = ({ products, setProducts, user }) => {
           Back
         </button>
         </div>
-        <Locationhours/>
-    </div>
+        </div>
+        <Locationhours />
+      </>
   );
 };
 

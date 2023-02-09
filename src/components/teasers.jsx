@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import MenuNav from "./menuNav";
 import { attachProductToOrder } from "../api/auth";
 import BackToTopButton from "./backToTopButton";
+import Locationhours from "./locationHours";
 
 
 const SingleProduct = ({ product, user }) => {
@@ -82,7 +83,8 @@ const Teasers = ({ products, user }) => {
         />
       </h2>
       <div className="products">{productsToMap}</div>
-      <BackToTopButton/>
+      <Locationhours />
+      <BackToTopButton />
     </>
   );
 };
