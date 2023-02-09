@@ -942,12 +942,12 @@ footer img {
   background-position: center;
   width: 139.5vh;
   height: 90vh;
+  background-blend-mode: luminosity;
+  color: black;
   /* display: flex;
   justify-content: center;
-  min-height: 650px; */
-  /* background-blend-mode: luminosity;
-  color: black; */
-  /* padding: 00px;
+  min-height: 650px;
+  padding: 00px;
   margin-left: auto;
   margin-right: auto;
   object-fit: contain; */
