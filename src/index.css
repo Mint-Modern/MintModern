@@ -8,7 +8,6 @@
     font-family: 'copperplate';
     font-size: 16px;
     color: #132a13;
-    /* background-color: #F7FBF2; */
     background-color: #DBF4DF;
   }
 
@@ -370,9 +369,6 @@ Link:visited {
   -webkit-text-stroke: .5px #31572c;
 }
 
-/***** HOME *****/
-
-
 /***** DO NOT MOVE OR DELETE ME *****/
 .fullmenu .hideme {
   display: none;
@@ -410,8 +406,6 @@ Link:visited {
 }
 
 .mini {
-  /* height: 25px; */
-  /* font-family: 'Instagram Sans Headline', sans-serif; */
   padding-top: 15px;
   width: 25%;
   font-family: 'Astrella', sans-serif;
@@ -494,8 +488,6 @@ Link:visited {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 80%; */
-  /* height: 300px; */
   margin: 0;
   padding: 15px;
   border: 1px solid #ccc;
@@ -530,7 +522,6 @@ Link:visited {
 }
 
 /***** ABOUT US *****/
-
 .aboutus {
   font-family: 'Instagram Sans Headline', sans-serif;
   color: #31572c;
@@ -564,11 +555,6 @@ Link:visited {
   animation: fadeIn 3s;
   
 }
-
-/* .story-text{
-  height: 300px;
-  width: 700px;
-} */
 
 .story-words{
   padding: 200px;
@@ -765,8 +751,8 @@ Link:visited {
   border-radius: 50%;
 
 }
-/***** PRESS ARTICLES *****/
 
+/***** PRESS ARTICLES *****/
 .articles {
   display: flex;
   flex-direction: column;
@@ -830,7 +816,6 @@ Link:visited {
 
 
 /***** LOCATION/HOURS *****/
-
 .footer {
   background-color: #d9ebc9;
   
@@ -942,8 +927,8 @@ footer img {
 /********HOME**********/
 
 .home {
-  /* background-image: url("https://i.imgur.com/YRYlKBg.jpg"); */
-  background-image: url("https://i.imgur.com/q6U99Nu.jpg");
+  background-image: url("https://i.imgur.com/YRYlKBg.jpg");
+  /* background-image: url("https://i.imgur.com/q6U99Nu.jpg"); */
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -952,21 +937,14 @@ footer img {
   height: 100vh;
   background-blend-mode: luminosity;
   color: black;
-  /* display: flex;
-  justify-content: center;
-  min-height: 650px;
-  padding: 00px;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: contain; */
 }
 
 .home img {
   position: absolute;
-  animation: homeFadeInOut 6s;
+  animation: homeFadeInOut 4s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-duration: 15s;
+  animation-duration: 20s;
   -webkit-transition: opacity 2s ease-in-out;
   -moz-transition: opacity 2s ease-in-out;
   -o-transition: opacity 2s ease-in-out;
