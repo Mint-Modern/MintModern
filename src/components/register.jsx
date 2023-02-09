@@ -95,7 +95,6 @@ const Register = ({ setToken }) => {
           </span>
         </p>
       </div>
-      <Locationhours/>
     </div>
   );
 };
