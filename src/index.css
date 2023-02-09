@@ -935,7 +935,8 @@ footer img {
 /********HOME**********/
 
 .home {
-  background-image: url("https://i.imgur.com/YRYlKBg.jpg");
+  /* background-image: url("https://i.imgur.com/YRYlKBg.jpg"); */
+  background-image: url("https://i.imgur.com/q6U99Nu.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -992,15 +993,15 @@ footer img {
 }
 
 .home img:nth-of-type(1) {
-  animation-delay: 8s;
+  animation-delay: 20s;
 }
   
 .home img:nth-of-type(2) {
-  animation-delay: 8s;
+  animation-delay: 16s;
 }
 
 .home img:nth-of-type(3) {
-  animation-delay: 8s;
+  animation-delay: 12s;
 }
 
 .home img:nth-of-type(4) {

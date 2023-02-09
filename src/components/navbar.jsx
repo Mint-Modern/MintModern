@@ -24,8 +24,10 @@ const NavBar = ({ token, setToken }) => {
         {/* <Link to={"/login"}>Log In</Link> */}
         {/* <Link to={"/register"}>Register Here</Link> */}
         <Link to={"/fullmenu"}>Menu</Link>
+        <p>Reserve a Table!</p>
         <Link to={"/aboutus"}>About us</Link>
         <Link to={"/articles"}>Press Articles</Link>
+        <p>Reviews</p>
         {/* <Link to={"/cart"}>Cart</Link> */}
       </nav>
     </div>
