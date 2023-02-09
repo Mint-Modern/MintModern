@@ -4,13 +4,7 @@ const baseUrl = "https://mintmodernbistro.fly.dev/api";
 // =======================Customers Endpoint=======================
 
 // registerCustomer
-export const registerCustomer = async (
-  name,
-  password,
-  email,
-  phoneNumber
-  // isAdmin = false
-) => {
+export const registerCustomer = async (name, password, email, phoneNumber) => {
   try {
     const response = await fetch(`${baseUrl}/customers/register`, {
       method: "POST",

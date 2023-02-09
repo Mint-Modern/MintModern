@@ -3,7 +3,6 @@ const {
   updateOrderProduct,
   destroyOrderProduct,
   getOrderByUserIsActive,
-  attachProductToOrder,
   addProductToOrder,
   getAllOrderProducts,
 } = require("../db");

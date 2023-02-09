@@ -1,18 +1,5 @@
 const client = require("../client");
 
-/*
-
-Tri Approved
-
-createReview **
-getAllReviews **
-getReviewById **
-attachReviewToCustomer **
-updateReview **
-deleteReview **
-
-*/
-
 async function createReview({ name, description, rating, userId }) {
   try {
     const {

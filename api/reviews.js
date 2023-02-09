@@ -6,7 +6,6 @@ const {
   getReviewById,
   updateReview,
   deleteReview,
-  getCustomerReviewById,
 } = require("../db");
 const { requireCustomer } = require("./utils");
 

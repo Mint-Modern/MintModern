@@ -1,20 +1,6 @@
 const client = require("../client");
 const bcrypt = require("bcrypt");
 
-/* 
-
-Tri Approved
-
-createCustomer **
-getCustomer **
-getAllCustomers (ifAdmin) **
-getCustomerById **
-getCustomerByUsername **
-updateCustomer **
-deleteCustomer **
-
-*/
-
 async function createCustomer({
   name,
   password,
@@ -61,9 +47,6 @@ async function getCustomer({ name, password }) {
 }
 
 async function getAllCustomers(customerId) {
-  // const customer = await getCustomerById(customerId);
-  // console.log(customer);
-  // if (customer.isAdmin === true) {
   try {
     const { rows: customers } = await client.query(`
             SELECT * FROM customers
@@ -73,7 +56,6 @@ async function getAllCustomers(customerId) {
     console.error(error);
     throw error;
   }
-  // }
 }
 
 async function getCustomerById(customerId) {

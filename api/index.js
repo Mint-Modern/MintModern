@@ -30,8 +30,6 @@ router.use(async (req, res, next) => {
   }
 });
 
-// DON'T WE NEED TO USE THIS ROUTERS FOR EACH SPECIFIC ROUTES?
-
 // ROUTER: api/customers
 const customersRouter = require("./customers");
 router.use("/customers", customersRouter);
