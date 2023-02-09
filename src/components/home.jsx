@@ -11,28 +11,19 @@ import BackToTopButton from "./backToTopButton";
 // import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 const Home = ({ token, setToken }) => {
-  // const {isLoaded} = useLoadScript({
-  //     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-  // });
-  if (!token /*!isLoaded*/) {
+
+  if (!token) {
     return (
-      <div>
+      <div >
         <NavBar />
-        {/* <p className="story">
-          Need a component for: Bomb Pics (pls change or delete classname as
-          needed)
-        </p>
-        
-        </p> */}
         <div className="home">
-        <img className="top" src="https://i.ibb.co/3YVwhLX/FreretSt.jpg" alt="FreretSt" />
-        <img className="bottom" src="https://i.ibb.co/Df5TZMx/bar.jpg" alt="bar"/>
+          <img className="bottom" src="https://assets.simpleviewinc.com/simpleview/image/upload/crm/neworleans/69817_3039_01_8d46de5a-5056-b365-ab7d2df3d8829d3b.jpg" alt="pic1" />
+          <img className="bottom" src="https://data.parkbench.com/content/data/businesses/8/c/1/0/8/NjAweDYwMA--_8c108b93b660ed960814ded1332f6424.jpg" alt="pic2" />
+          {/* <img className="bottom" src="https://i.imgur.com/q6U99Nu.jpg" alt="pic3" /> */}
+          <img className="bottom" src="https://i.ibb.co/3YVwhLX/FreretSt.jpg" alt="FreretSt" />
+          <img className="top" src="https://i.imgur.com/YRYlKBg.jpg" alt="bar"/>
         </div>
-        <div className="homepage">
-          {/* We will combine the 2 divs after navbar when all components are done to persistently hide the other navbars in the components */}
-          
-          <Locationhours />
-        </div>
+        <Locationhours />
       </div>
     );
   } else {

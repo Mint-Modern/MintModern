@@ -382,6 +382,11 @@ Link:visited {
   visibility: hidden;
 }
 
+.homepage .footer {
+  display: none;
+  visibility: hidden;
+}
+
 /***** MENUS *****/
 .menu {
   font-family: 'Astrella', sans-serif;
@@ -553,11 +558,10 @@ Link:visited {
   
 }
 
-
-.story-text{
+/* .story-text{
   height: 300px;
   width: 700px;
-}
+} */
 
 .story-words{
   padding: 200px;
@@ -603,11 +607,6 @@ Link:visited {
 }
 
 /***** CUSTOMER PROFILE *****/
-/* 
-.custprof {
-  display: flex;
-  flex-flow: column wrap;
-} */
 
 .greeting  {
   font-family: 'Astrella', sans-serif;
@@ -774,6 +773,9 @@ Link:visited {
 .single-art {
   padding-top: 25px;
   padding-bottom: 25px;
+}
+
+.last1 {
   border-top: solid #008000 3px;
 }
 
@@ -797,21 +799,44 @@ Link:visited {
 .right1 {
   position: relative;
   float: right;
-  top: 20px;
+  top: 30px;
+  left: -50px;
 }
+
+.xlink {
+  margin-top: 5px;
+  padding-bottom: 15px;
+  top: 0;
+
+  text-align: center;
+  line-height: 1.5;
+  font-style: normal;
+  letter-spacing: normal;
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-size: 20px;
+  color: #31572c;
+}
+
+.pagebreak {
+  height: 100px;
+}
+
 
 /***** LOCATION/HOURS *****/
 
-.footer{
+.footer {
   background-color: #d9ebc9;
+  
 }
 
-.footer-logo{
+.footer-logo {
   height: 50px;
 }
 
 
-.footer-container{
+.footer-container {
+  position: sticky;
+  bottom: 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -823,14 +848,14 @@ Link:visited {
 
 }
 
-.footer-info{
+.footer-info {
   width: 16rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
 
-.footer-title{
+.footer-title {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -842,7 +867,7 @@ Link:visited {
   margin-bottom:0.5rem;
 }
 
-footer img{
+footer img {
   width: 1.25rem;
   height: 1.25rem;
   color: black;
@@ -851,15 +876,15 @@ footer img{
   border-radius: 50%;
 }
 
-.footer-title span{
+.footer-title span {
   margin-left: 0.5rem;
 }
 
-.footer-section{
+.footer-section {
   padding-bottom: 1rem;
 }
 
-.footer-section-wrapper{
+.footer-section-wrapper {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -870,7 +895,7 @@ footer img{
   line-height: 1.25rem;
 }
 
-.footer-catergory{
+.footer-catergory {
   color:rgb(86, 159, 61);
   font-weight: 500;
   letter-spacing: 0.1rem;
@@ -910,32 +935,38 @@ footer img{
 /********HOME**********/
 
 .home {
-  position: relative;
-  display: flex;
+  background-image: url("https://i.imgur.com/YRYlKBg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
+  width: 139.5vh;
+  height: 90vh;
+  /* display: flex;
   justify-content: center;
-  min-height: 650px;
-  background-blend-mode: luminosity;
-  color: black;
-  padding: 00px;
+  min-height: 650px; */
+  /* background-blend-mode: luminosity;
+  color: black; */
+  /* padding: 00px;
   margin-left: auto;
   margin-right: auto;
-  object-fit: contain;
-  animation: homeFadeInOut 6s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-
+  object-fit: contain; */
 }
 
 .home img {
   position: absolute;
+  animation: homeFadeInOut 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
   -webkit-transition: opacity 2s ease-in-out;
   -moz-transition: opacity 2s ease-in-out;
   -o-transition: opacity 2s ease-in-out;
   transition: opacity 2s ease-in-out;
-  height: 650px;
-  object-fit: contain;
-  max-width: 100%;
-  max-height: 100vh;
+  margin: 0 auto;
+  width: 139.5vh;
+  height: 90vh;
+
 }
 
 .home img.top:hover {
@@ -958,4 +989,20 @@ footer img{
   100% {
     opacity:1;
   }
+}
+
+.home img:nth-of-type(1) {
+  animation-delay: 8s;
+}
+  
+.home img:nth-of-type(2) {
+  animation-delay: 8s;
+}
+
+.home img:nth-of-type(3) {
+  animation-delay: 8s;
+}
+
+.home img:nth-of-type(4) {
+  animation-delay: 8s;
 }
