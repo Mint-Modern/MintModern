@@ -1,26 +1,5 @@
 const client = require("../client");
 
-/*
-
-Tri Approved
-
-addProductToOrder
-getOrderProductById
-updateOrderProduct
-destroyOrderProduct
-
-SHOULD WE DO addProductToOrder AS WELL?
-
-*/
-
-// async function attachProductToOrder() {
-//   try {
-//   } catch (error) {
-//     console.error(error);
-//     throw error;
-//   }
-// }
-
 async function addProductToOrder({ orderId, productId, quantity }) {
   try {
     const {
@@ -111,7 +90,6 @@ async function destroyOrderProduct(id) {
 }
 
 module.exports = {
-  // attachProductToOrder,
   addProductToOrder,
   getOrderProductById,
   updateOrderProduct,

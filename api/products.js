@@ -8,7 +8,6 @@ const {
   updateProduct,
   deleteProduct,
 } = require("../db");
-// const { requireCustomer } = require("./utils");
 
 // GET /api/products
 router.get("/", async (req, res, next) => {

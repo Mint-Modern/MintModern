@@ -133,6 +133,4 @@ router.delete("/:orderId", requireCustomer, async (req, res, next) => {
   }
 });
 
-// do we need another delete to delete the product from the order????
-
 module.exports = router;

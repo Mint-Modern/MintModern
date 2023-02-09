@@ -1,18 +1,6 @@
 const client = require("../client");
 const { attachProductToOrder } = require("./products");
 
-/*
-
-Tri Approved
-
-createOrder
-getOrderById
-getAllOrders
-getAllOrdersByCustomer
-updateOrder
-
-*/
-
 async function createOrder({ userId, total, salesTax, isActive }) {
   try {
     const {

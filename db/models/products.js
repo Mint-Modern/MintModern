@@ -1,19 +1,5 @@
 const client = require("../client");
 
-/*
-
-Tri Approved
-
-createProduct **
-getProductById **
-getProductByName *maybe **
-attachProductToOrder **
-getAllProducts **
-updateProduct **
-deleteProduct **
-
-*/
-
 async function createProduct({ name, description, category, price, image }) {
   try {
     const {
@@ -67,7 +53,6 @@ async function getProductByName(name) {
   }
 }
 
-//======================= CHECK THIS ONE ======================
 async function attachProductToOrder(order) {
   try {
     const { rows: products } = await client.query(`
