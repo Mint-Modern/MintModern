@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
-import NavBar from "./components/navbar";
 import AboutUs from "./components/aboutUs";
 import Login from "./components/login";
 import FullMenu from "./components/fullMenu";
@@ -75,7 +74,6 @@ const App = () => {
 
   return (
     <div>
-      {/* <NavBar /> */}
       <Routes>
         <Route
           path="/"

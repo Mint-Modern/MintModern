@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { deleteOrderProduct, getActiveOrderByCustomer } from "../api/auth";
 import MyNavbar from "./MyNavbar";
-import AddProduct from "./addProduct";
 import Locationhours from "./locationHours";
 
 const Cart = ({ user, orderProducts, setOrderProducts }) => {

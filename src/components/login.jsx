@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { customerLogin } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
-import Locationhours from "./locationHours";
 
-const Login = ({ token, setToken }) => {
+
+const Login = ({ setToken }) => {
   const [customerNameLogin, setCustomerNameLogin] = useState("");
   const [passwordLogin, setPasswordLogin] = useState("");
   const navigate = useNavigate();

@@ -161,13 +161,6 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
           </div>
         </div>
       )}
-
-      {/* <div className="products">
-        <button className="modifybuttons" onClick={clickHandler}>
-          Checkout
-        </button>
-
-      </div> */}
       <Locationhours />
     </>
   );

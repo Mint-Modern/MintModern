@@ -2,8 +2,7 @@ import React from "react";
 import {  useNavigate } from "react-router-dom";
 import { deleteProduct } from "../api/auth";
 
-const DeleteProduct = ({product, products, setProducts}) => {
-    // console.log("PRODUCT", product.category)
+const DeleteProduct = ({product, setProducts}) => {
   const navigate = useNavigate();
 
     return (

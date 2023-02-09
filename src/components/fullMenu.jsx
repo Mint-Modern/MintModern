@@ -1,6 +1,4 @@
 import React from "react";
-import NavBar from "./navbar";
-import MyNavbar from "./MyNavbar";
 import { Link } from "react-router-dom";
 import Teasers from "./teasers";
 import Baguette from "./baguette";
@@ -13,7 +11,7 @@ import Desserts from "./desserts";
 import BackToTopButton from "./backToTopButton";
 import Locationhours from "./locationHours";
 
-const FullMenu = ({ products, setProducts, user }) => {
+const FullMenu = ({ products, user }) => {
   return (
     <div className="menupage">
       <div className="allNavs">
