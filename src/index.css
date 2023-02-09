@@ -942,8 +942,8 @@ footer img {
 /********HOME**********/
 
 .home {
-  /* background-image: url("https://i.imgur.com/YRYlKBg.jpg"); */
-  background-image: url("https://i.imgur.com/q6U99Nu.jpg");
+  background-image: url("https://i.imgur.com/YRYlKBg.jpg");
+  /* background-image: url("https://i.imgur.com/q6U99Nu.jpg"); */
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -963,10 +963,10 @@ footer img {
 
 .home img {
   position: absolute;
-  animation: homeFadeInOut 6s;
+  animation: homeFadeInOut 4s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-duration: 15s;
+  animation-duration: 20s;
   -webkit-transition: opacity 2s ease-in-out;
   -moz-transition: opacity 2s ease-in-out;
   -o-transition: opacity 2s ease-in-out;
