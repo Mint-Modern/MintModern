@@ -40,9 +40,12 @@ const MyNavbar = ({ setToken }) => {
         </div>
       </header>
       <nav className="my-nav">
-        <Link to='/orderhistory' className="navlink my">My Orders</Link>
+        <Link to={'/orderhistory'} className="navlink my">My Orders</Link>
         <Link to={'/fullmenu'} className="navlink my">Menu</Link>
-        <Link to={"/aboutus"} className="navlink my">About us</Link>
+        <p>Reserve a Table!</p>
+        <Link to={'/aboutus'} className="navlink my">About us</Link>
+        <Link to={'/articles'} className="navlink my">Press Articles</Link>
+        <p>Reviews</p>
         <Logout setToken={setToken} />
       </nav>
     </div>
@@ -66,10 +69,11 @@ const MyNavbar = ({ setToken }) => {
           </div>
       </header>
     <nav className="my-nav">
-      {/* <Link to='/orderhistory' className="navlink my">My Orders</Link> */}
+      <Link to={'/orderhistory'} className="navlink my">Online Orders</Link>
       <Link to={'/fullmenu'} className="navlink my">Menu</Link>
       <Link to={"/allcustomers"}>All Customers</Link>
       <Link to={"/newproduct"}>Add New Products</Link>   
+      <p>Reservations</p>
       <Logout setToken={setToken} />
     </nav>
   </div>
