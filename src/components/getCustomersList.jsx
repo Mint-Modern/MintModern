@@ -21,7 +21,6 @@ const GetCustomersList = () => {
     getCustomers();
   }, []);
 
-  // console.log(customers);
   
   let customersToMap = customers.map((customer, index) => {
     const isAdmin = customer.isAdmin === true;

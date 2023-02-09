@@ -1,6 +1,5 @@
-import React, { useReducer } from "react";
+import React from "react";
 import BackToTopButton from "./backToTopButton";
-import IsAdmin from "./isAdmin";
 import Locationhours from "./locationHours";
 import MyNavbar from "./MyNavbar";
 
@@ -54,8 +53,6 @@ const Customerprofile = ({ setToken, user }) => {
             <p>
               <span className="caps">First Name:</span> {user.name}
             </p>
-            {/* <p><span className="caps">Last Name:</span> <i>add your last name here</i></p>
-          <p><span className="caps">Birth Date:</span> <i>add your birthday here</i></p> */}
             <p>
               <span className="caps">Email:</span> {user.email}
             </p>
@@ -65,14 +62,6 @@ const Customerprofile = ({ setToken, user }) => {
           </div>
         </div>
       </div>
-      {/* <div className="wips">
-        <h4 className="sh">Your Orders</h4>
-          <p className="sub">🚧 Cooking in Progress! 🚧</p>
-          <p className="sub"><i>Please check back for updates!</i></p> 
-        <h4 className="sh">Your Reviews</h4>
-          <p className="sub">🚧 Cooking in Progress! 🚧</p>
-          <p className="sub"><i>Please check back for updates!</i></p> 
-        </div> */}
     <Locationhours/>
     <BackToTopButton/>
     </div>

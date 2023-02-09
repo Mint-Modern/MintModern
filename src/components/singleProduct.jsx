@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchMe, getSingleProduct, attachProductToOrder } from "../api/auth";
-import Added from "./addedToCart";
 import DeleteProduct from "./deleteProduct";
 import EditProduct from "./editProduct";
 import Locationhours from "./locationHours";

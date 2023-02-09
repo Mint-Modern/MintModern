@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = ({ token, setToken }) => {
+const NavBar = () => {
   return (
     <div className="allNavs abtnav">
       <header id="homelink">

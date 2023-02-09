@@ -1,10 +1,9 @@
 import React from "react";
 import NavBar from "./navbar";
-import { customerLogin } from "../api/auth";
 import BackToTopButton from "./backToTopButton";
 import Locationhours from "./locationHours";
 
-const AboutUs = ({ setToken }) => {
+const AboutUs = () => {
   return (
     <div>
       <NavBar />
