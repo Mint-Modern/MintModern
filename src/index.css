@@ -348,7 +348,9 @@ Link:visited {
 }
 
 .register {
-  background-image: url('https://static.vecteezy.com/system/resources/previews/009/667/401/non_2x/watercolor-seamless-border-frame-web-banner-with-simple-green-leaves-and-branches-forest-wild-herbs-mint-isolated-on-white-background-vector.jpg');
+  background: url('https://static.vecteezy.com/system/resources/previews/009/667/401/non_2x/watercolor-seamless-border-frame-web-banner-with-simple-green-leaves-and-branches-forest-wild-herbs-mint-isolated-on-white-background-vector.jpg') no-repeat center / cover;
+  width: 100vw;
+  height: 100;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -940,8 +942,8 @@ footer img {
   background-attachment: scroll;
   background-size: cover;
   background-position: center;
-  width: 139.5vh;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
   background-blend-mode: luminosity;
   color: black;
   /* display: flex;
@@ -958,14 +960,14 @@ footer img {
   animation: homeFadeInOut 6s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-duration: 20s;
+  animation-duration: 15s;
   -webkit-transition: opacity 2s ease-in-out;
   -moz-transition: opacity 2s ease-in-out;
   -o-transition: opacity 2s ease-in-out;
   transition: opacity 2s ease-in-out;
   margin: 0 auto;
-  width: 139.5vh;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
 
 }
 
@@ -978,7 +980,7 @@ footer img {
     opacity:1;
   }
   17% {
-    opacity:1;
+    opacity:2;
   }
   25% {
     opacity:0;
@@ -992,7 +994,7 @@ footer img {
 }
 
 .home img:nth-of-type(1) {
-  animation-delay: 8s;
+  animation-delay: 4s;
 }
   
 .home img:nth-of-type(2) {
@@ -1000,9 +1002,13 @@ footer img {
 }
 
 .home img:nth-of-type(3) {
-  animation-delay: 8s;
+  animation-delay: 12s;
 }
 
 .home img:nth-of-type(4) {
-  animation-delay: 8s;
+  animation-delay: 16s;
+}
+
+.home img:nth-of-type(5) {
+  animation-delay: 20s;
 }
