@@ -66,7 +66,7 @@ const MyNavbar = ({ setToken }) => {
           </div>
       </header>
     <nav className="my-nav">
-      <Link to='/orderhistory' className="navlink my">My Orders</Link>
+      {/* <Link to='/orderhistory' className="navlink my">My Orders</Link> */}
       <Link to={'/fullmenu'} className="navlink my">Menu</Link>
       <Link to={"/allcustomers"}>All Customers</Link>
       <Link to={"/newproduct"}>Add New Products</Link>   
