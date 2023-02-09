@@ -133,12 +133,16 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
       </h2>
       <div className="products">{productsToMap}</div>
       {!order.products ? (
-        <div className="products">
-          <h2 className="prod-cat">Cart is empty, go look at our menu!</h2>
-          <button className="modifybuttons" onClick={handler}>
-            Menu
-          </button>
-        </div>
+        <>
+          <div className="products">
+            <h2 className="prod-cat">Cart is empty, go look at our menu!</h2>
+          </div>
+          <div className="products">
+            <button className="modifybuttons" onClick={handler}>
+              Menu
+            </button>
+          </div>
+        </>
       ) : (
         <div>
           <div className="products">
@@ -158,14 +162,13 @@ const Cart = ({ user, orderProducts, setOrderProducts, setToken }) => {
         </div>
       )}
 
-      <div className="products">
+      {/* <div className="products">
         <button className="modifybuttons" onClick={clickHandler}>
           Checkout
         </button>
 
-      </div>
-      <Locationhours/>
-
+      </div> */}
+      <Locationhours />
     </>
   );
 };
