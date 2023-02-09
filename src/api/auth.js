@@ -1,5 +1,5 @@
-const baseUrl = "http://localhost:8080/api";
-// const baseUrl = "https://mintmodernbistro.fly.dev/api";
+// const baseUrl = "http://localhost:8080/api";
+const baseUrl = "https://mintmodernbistro.fly.dev/api";
 
 // =======================Customers Endpoint=======================
 
